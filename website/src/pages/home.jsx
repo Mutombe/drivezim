@@ -37,6 +37,7 @@ import {
 } from "lucide-react";
 import { Toaster, toast } from "sonner";
 import { useLanguage } from "../lunguageContext";
+import HappyCustomers from "../components/happyCustomers";
 
 const HomePage = () => {
   const { t } = useLanguage();
@@ -146,8 +147,7 @@ const HomePage = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
                   className="inline-block  px-6 py-2 rounded-full"
-                >
-                </motion.div>
+                ></motion.div>
 
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
@@ -192,29 +192,15 @@ const HomePage = () => {
                     <ArrowRight className="w-5 h-5" />
                   </motion.a>
                 </motion.div>
-                                <motion.div
+                <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 1 }}
                   className="flex items-center space-x-6 pt-4"
                 >
-                  <div className="flex -space-x-3">
-                    {[...Array(4)].map((_, i) => (
-                      <div
-                        key={i}
-                        className="w-10 h-10 bg-gradient-to-br from-red-500 to-red-700 rounded-full border-2 border-black flex items-center justify-center"
-                      >
-                        <Star className="w-4 h-4 text-white" />
-                      </div>
-                    ))}
-                  </div>
-                  <div className="text-sm">
-                    <div className="font-bold">5000+ Happy Customers</div>
-                    <div className="text-gray-400">Trusted across Zimbabwe</div>
-                  </div>
+                    <HappyCustomers />
                 </motion.div>
               </motion.div>
-
             </div>
           </div>
         </div>
