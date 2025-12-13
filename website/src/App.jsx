@@ -16,6 +16,7 @@ import ContactPage from "./pages/contact";
 import StoryPage from "./pages/about";
 import HomePage from "./pages/home";
 import LoadingScreen from "./components/loadingScreen";
+import GalleryPage from "./pages/gallery";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -302,6 +303,7 @@ function App() {
               <Route path="/services" element={<ServicesPage />} />
               <Route path="/fleet" element={<FleetPage />} />
               <Route path="/contact" element={<ContactPage />} />
+              <Route path="/gallery" element={<GalleryPage />} />
             </Routes>
             <Footer />
           </PageWrapper>
