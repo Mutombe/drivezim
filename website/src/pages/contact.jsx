@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone, Mail, MapPin, Clock, Wrench, Truck, Shield, Users, Award, ChevronRight, Star, Facebook, Twitter, Linkedin, Instagram, Globe, MessageSquare, Zap, Target, Heart, CheckCircle, AlertCircle, ArrowRight } from 'lucide-react';
 import { Toaster, toast } from 'sonner';
 import { useLanguage } from '../lunguageContext';
+import { FaXTwitter } from "react-icons/fa6";
 
 const ContactPage = () => {
   const { t } = useLanguage();
@@ -25,7 +26,7 @@ const ContactPage = () => {
 
   const socials = [
     { icon: Facebook, href: '#', color: 'hover:text-blue-500' },
-    { icon: Twitter, href: 'https://twitter.com/DriveZimbabwe', color: 'hover:text-sky-500' },
+    { icon: FaXTwitter, href: 'https://twitter.com/DriveZimbabwe', color: 'hover:text-sky-500' },
     { icon: Linkedin, href: 'https://www.linkedin.com/in/drive-zim-drive-zimbabwe-roadside-assistance-0aa0a3251', color: 'hover:text-blue-600' },
     { icon: Instagram, href: '#', color: 'hover:text-pink-500' }
   ];
