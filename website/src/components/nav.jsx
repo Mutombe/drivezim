@@ -33,14 +33,10 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
             <motion.div whileHover={{ scale: 1.05 }} className="relative">
-              <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-red-700 rounded-lg flex items-center justify-center shadow-xl">
-                <Truck className="w-7 h-7 text-white" />
+              <div className="w-16 h-15 flex items-center justify-center ">
+                <img src="/logo3.png" alt="Drive Zimbabwe Logo" className="w-15 h-15" />
               </div>
             </motion.div>
-            <div className="hidden sm:block">
-              <div className="text-white font-bold text-xl tracking-tight">DRIVE</div>
-              <div className="text-red-500 text-xs font-medium tracking-widest">ZIMBABWE</div>
-            </div>
           </Link>
 
           {/* Desktop Nav */}

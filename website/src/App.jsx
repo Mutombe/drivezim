@@ -15,6 +15,7 @@ import FleetPage from "./pages/fleet";
 import ContactPage from "./pages/contact";
 import StoryPage from "./pages/about";
 import HomePage from "./pages/home";
+import LoadingScreen from "./components/loadingScreen";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -24,89 +25,6 @@ const ScrollToTop = () => {
   }, [pathname]);
 
   return null;
-};
-
-// Loading Component
-const LoadingScreen = () => {
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 bg-gradient-to-br from-purple-950 via-purple-900 to-purple-950 z-50 flex items-center justify-center"
-    >
-      <div className="text-center">
-        <motion.div
-          animate={{
-            scale: [1, 1.15, 1],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="relative inline-block"
-        >
-          {/* Logo Container */}
-          <div className="relative w-32 h-32 flex items-center justify-center">
-            {/* Logo Circle Background */}
-            <motion.div
-              animate={{
-                rotate: [0, 360],
-              }}
-              transition={{
-                duration: 20,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-              className="absolute inset-0 rounded-2xl"
-            />
-            
-            {/* Logo Letter */}
-            <img
-              src="/logo4.png"
-              alt="Logo"
-              className="w-22 h-26"
-            />
-          </div>
-
-          {/* Glow effect behind logo */}
-          <motion.div
-            animate={{
-              opacity: [0.3, 0.6, 0.3],
-              scale: [0.9, 1.1, 0.9],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="absolute inset-0 -z-10 blur-2xl"
-          >
-            <div className="w-full h-full bg-gradient-to-r from-amber-400 to-amber-600 opacity-50 rounded-full" />
-          </motion.div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="mt-8 flex flex-col items-center"
-        >
-          {/* Circular Spinner */}
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{
-              duration: 1,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-            className="w-12 h-12 rounded-full border-4 border-amber-400/20 border-t-amber-400"
-          />
-        </motion.div>
-      </div>
-    </motion.div>
-  );
 };
 
 
@@ -157,7 +75,7 @@ function App() {
   return (
     <LanguageProvider>
       <Router>
-        <div className="min-h-screen bg-gradient-to-br from-purple-950 via-purple-900 to-amber-900 niveau-font">
+        <div className="min-h-screen bg-gradient-to-b from-gray-900 via-black to-gray-900 mansfield-font">
           <style jsx>{`
             /* Grift Font Face - Light */
             @font-face {
@@ -166,126 +84,6 @@ function App() {
                 url("./fonts/grift-light.ttf") format("truetype");
               font-weight: 300;
               font-style: normal;
-              font-display: swap;
-            }
-
-            /* Grift Font Face - Light Italic */
-            @font-face {
-              font-family: "Grift";
-              src: url("./fonts/grift-lightitalic.otf") format("opentype"),
-                url("./fonts/grift-lightitalic.ttf") format("truetype");
-              font-weight: 300;
-              font-style: italic;
-              font-display: swap;
-            }
-
-            /* Grift Font Face - Regular */
-            @font-face {
-              font-family: "Grift";
-              src: url("./fonts/grift-black.otf") format("opentype"),
-                url("./fonts/grift-black.ttf") format("truetype");
-              font-weight: 400;
-              font-style: normal;
-              font-display: swap;
-            }
-
-            /* Grift Font Face - Italic */
-            @font-face {
-              font-family: "Grift";
-              src: url("./fonts/grift-italic.otf") format("opentype"),
-                url("./fonts/grift-italic.ttf") format("truetype");
-              font-weight: 400;
-              font-style: italic;
-              font-display: swap;
-            }
-
-            /* Grift Font Face - Medium */
-            @font-face {
-              font-family: "Grift";
-              src: url("./fonts/grift-medium.otf") format("opentype"),
-                url("./fonts/grift-medium.ttf") format("truetype");
-              font-weight: 500;
-              font-style: normal;
-              font-display: swap;
-            }
-
-            /* Grift Font Face - Medium Italic */
-            @font-face {
-              font-family: "Grift";
-              src: url("./fonts/grift-mediumitalic.otf") format("opentype"),
-                url("./fonts/grift-mediumitalic.ttf") format("truetype");
-              font-weight: 500;
-              font-style: italic;
-              font-display: swap;
-            }
-
-            /* Grift Font Face - Bold */
-            @font-face {
-              font-family: "Grift";
-              src: url("./fonts/grift-bold.otf") format("opentype"),
-                url("./fonts/grift-bold.ttf") format("truetype");
-              font-weight: 700;
-              font-style: normal;
-              font-display: swap;
-            }
-
-            /* Grift Font Face - Bold Italic */
-            @font-face {
-              font-family: "Grift";
-              src: url("./fonts/grift-bolditalic.otf") format("opentype"),
-                url("./fonts/grift-bolditalic.ttf") format("truetype");
-              font-weight: 700;
-              font-style: italic;
-              font-display: swap;
-            }
-
-            /* Grift Font Face - Extrabold */
-            @font-face {
-              font-family: "Grift";
-              src: url("./fonts/grift-extrabold.otf") format("opentype"),
-                url("./fonts/grift-extrabold.ttf") format("truetype");
-              font-weight: 800;
-              font-style: normal;
-              font-display: swap;
-            }
-
-            /* Grift Font Face - Extrabold Italic */
-            @font-face {
-              font-family: "Grift";
-              src: url("./fonts/grift-extrabolditalic.otf") format("opentype"),
-                url("./fonts/grift-extrabolditalic.ttf") format("truetype");
-              font-weight: 800;
-              font-style: italic;
-              font-display: swap;
-            }
-
-            /* Grift Font Face - Extralight */
-            @font-face {
-              font-family: "Grift";
-              src: url("./fonts/grift-extralight.otf") format("opentype"),
-                url("./fonts/grift-extralight.ttf") format("truetype");
-              font-weight: 200;
-              font-style: normal;
-              font-display: swap;
-            }
-
-            /* Grift Font Face - Extralight Italic */
-            @font-face {
-              font-family: "Grift";
-              src: url("./fonts/grift-extralightitalic.otf") format("opentype"),
-                url("./fonts/grift-extralightitalic.ttf") format("truetype");
-              font-weight: 200;
-              font-style: italic;
-              font-display: swap;
-            }
-
-            /* Grift Font Face - Black */
-            @font-face {
-              font-family: "Grift";
-              src: url("./fonts/grift-blackitalic.otf") format("opentype"),
-                url("./fonts/grift-blackitalic.ttf") format("truetype");
-              font-weight: 900;
-              font-style: italic;
               font-display: swap;
             }
 
@@ -307,6 +105,168 @@ function App() {
               font-display: swap;
             }
 
+            /* Mansfield Font Face - Thin */
+            @font-face {
+              font-family: "Mansfield";
+              src: url("./fonts/Mansfield-Thin-iF66c703e503e5b.ttf") format("truetype");
+              font-weight: 100;
+              font-style: normal;
+              font-display: swap;
+            }
+
+            /* Mansfield Font Face - Thin Italic */
+            @font-face {
+              font-family: "Mansfield";
+              src: url("./fonts/Mansfield-Thin-Italic-iF66c703e4edb9c.ttf") format("truetype");
+              font-weight: 100;
+              font-style: italic;
+              font-display: swap;
+            }
+
+            /* Mansfield Font Face - Extra Light */
+            @font-face {
+              font-family: "Mansfield";
+              src: url("./fonts/Mansfield-Extra-Light-iF66c703e49cb27.ttf") format("truetype");
+              font-weight: 200;
+              font-style: normal;
+              font-display: swap;
+            }
+
+            /* Mansfield Font Face - Extra Light Italic */
+            @font-face {
+              font-family: "Mansfield";
+              src: url("./fonts/Mansfield-Extra-Light-Italic-iF66c703e491cc4.ttf") format("truetype");
+              font-weight: 200;
+              font-style: italic;
+              font-display: swap;
+            }
+
+            /* Mansfield Font Face - Light */
+            @font-face {
+              font-family: "Mansfield";
+              src: url("./fonts/Mansfield-Light-iF66c703e4baba9.ttf") format("truetype");
+              font-weight: 300;
+              font-style: normal;
+              font-display: swap;
+            }
+
+            /* Mansfield Font Face - Light Italic */
+            @font-face {
+              font-family: "Mansfield";
+              src: url("./fonts/Mansfield-Light-Italic-iF66c703e4b09c0.ttf") format("truetype");
+              font-weight: 300;
+              font-style: italic;
+              font-display: swap;
+            }
+
+            /* Mansfield Font Face - Regular */
+            @font-face {
+              font-family: "Mansfield";
+              src: url("./fonts/Mansfield-iF66c703e50e674.ttf") format("truetype");
+              font-weight: 400;
+              font-style: normal;
+              font-display: swap;
+            }
+
+            /* Mansfield Font Face - Italic */
+            @font-face {
+              font-family: "Mansfield";
+              src: url("./fonts/Mansfield-Italic-iF66c703e4a6951.ttf") format("truetype");
+              font-weight: 400;
+              font-style: italic;
+              font-display: swap;
+            }
+
+            /* Mansfield Font Face - Medium */
+            @font-face {
+              font-family: "Mansfield";
+              src: url("./fonts/Mansfield-Medium-iF66c703e4cf4a2.ttf") format("truetype");
+              font-weight: 500;
+              font-style: normal;
+              font-display: swap;
+            }
+
+            /* Mansfield Font Face - Medium Italic */
+            @font-face {
+              font-family: "Mansfield";
+              src: url("./fonts/Mansfield-Medium-Italic-iF66c703e4c5283.ttf") format("truetype");
+              font-weight: 500;
+              font-style: italic;
+              font-display: swap;
+            }
+
+            /* Mansfield Font Face - Semi Bold */
+            @font-face {
+              font-family: "Mansfield";
+              src: url("./fonts/Mansfield-Semi-Bold-iF66c703e4e3977.ttf") format("truetype");
+              font-weight: 600;
+              font-style: normal;
+              font-display: swap;
+            }
+
+            /* Mansfield Font Face - Semi Bold Italic */
+            @font-face {
+              font-family: "Mansfield";
+              src: url("./fonts/Mansfield-Semi-Bold-Italic-iF66c703e4d92e5.ttf") format("truetype");
+              font-weight: 600;
+              font-style: italic;
+              font-display: swap;
+            }
+
+            /* Mansfield Font Face - Bold */
+            @font-face {
+              font-family: "Mansfield";
+              src: url("./fonts/Mansfield-Bold-iF66c703e473e0c.ttf") format("truetype");
+              font-weight: 700;
+              font-style: normal;
+              font-display: swap;
+            }
+
+            /* Mansfield Font Face - Bold Italic */
+            @font-face {
+              font-family: "Mansfield";
+              src: url("./fonts/Mansfield-Bold-Italic-iF66c703e469c14.ttf") format("truetype");
+              font-weight: 700;
+              font-style: italic;
+              font-display: swap;
+            }
+
+            /* Mansfield Font Face - Extra Bold */
+            @font-face {
+              font-family: "Mansfield";
+              src: url("./fonts/Mansfield-Extra-Bold-iF66c703e487e58.ttf") format("truetype");
+              font-weight: 800;
+              font-style: normal;
+              font-display: swap;
+            }
+
+            /* Mansfield Font Face - Extra Bold Italic */
+            @font-face {
+              font-family: "Mansfield";
+              src: url("./fonts/Mansfield-Extra-Bold-Italic-iF66c703e47ddeb.ttf") format("truetype");
+              font-weight: 800;
+              font-style: italic;
+              font-display: swap;
+            }
+
+            /* Mansfield Font Face - Black */
+            @font-face {
+              font-family: "Mansfield";
+              src: url("./fonts/Mansfield-Black-iF66c703e45fe6e.ttf") format("truetype");
+              font-weight: 900;
+              font-style: normal;
+              font-display: swap;
+            }
+
+            /* Mansfield Font Face - Black Italic */
+            @font-face {
+              font-family: "Mansfield";
+              src: url("./fonts/Mansfield-Black-Italic-iF66c703e454469.ttf") format("truetype");
+              font-weight: 900;
+              font-style: italic;
+              font-display: swap;
+            }
+
             /* Font utility classes */
             .grift-font {
               font-family: "Grift", "Inter", "Segoe UI", Tahoma, Geneva, Verdana,
@@ -315,6 +275,11 @@ function App() {
 
             .niveau-font {
               font-family: "Niveau Grotesk", "Inter", "Segoe UI", Tahoma, Geneva,
+                Verdana, sans-serif;
+            }
+
+            .mansfield-font {
+              font-family: "Mansfield", "Inter", "Segoe UI", Tahoma, Geneva,
                 Verdana, sans-serif;
             }
 
