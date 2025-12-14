@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Truck } from 'lucide-react';
+import { BsTruckFlatbed } from "react-icons/bs";
+
 
 const LoadingScreen = () => {
   return (
@@ -76,7 +78,7 @@ const LoadingScreen = () => {
                 }}
               />
               <div style={{ display: 'none' }} className="w-20 h-20">
-                <Truck className="w-20 h-20 text-red-600" />
+                <BsTruckFlatbed className="w-20 h-20 text-red-600" />
               </div>
             </div>
           </div>

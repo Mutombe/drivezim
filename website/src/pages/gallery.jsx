@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, Maximize2, Truck, Wrench, Shield, Users } from 'lucide-react';
+import { MdStarPurple500 } from "react-icons/md";
 
 const GalleryPage = () => {
   const [selectedImage, setSelectedImage] = useState(null);

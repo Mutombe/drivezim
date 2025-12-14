@@ -1,6 +1,19 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Phone, Clock, Wrench, Truck, Shield, Zap, Battery, Key, Fuel, MapPin, CheckCircle, ArrowRight, Star, Award } from 'lucide-react';
+import { MdStarPurple500 } from "react-icons/md";
+import { FiZap } from "react-icons/fi";
+import { SiFsecure } from "react-icons/si";
+import { LiaAwardSolid } from "react-icons/lia";
+import { LiaPeopleCarrySolid } from "react-icons/lia";
+import { CiFaceSmile } from "react-icons/ci";
+import { HiArrowTrendingUp } from "react-icons/hi2";
+import { RiCustomerService2Line } from "react-icons/ri";
+import { GiSpearHook } from "react-icons/gi";
+import { GiAlarmClock } from "react-icons/gi";
+import { IoCheckmarkDone } from "react-icons/io5";
+import { BsTruckFlatbed } from "react-icons/bs";
+import { MdOutlineSettings } from "react-icons/md";
 
 // Mock translation object
 const mockTranslations = {
@@ -15,7 +28,7 @@ const ServicesPage = () => {
 
   const allServices = [
     {
-      icon: Truck,
+      icon: BsTruckFlatbed,
       title: 'Emergency Towing',
       desc: 'Professional towing services for all vehicle types, anywhere, anytime',
       features: ['Light & Heavy Duty Towing', 'Flatbed Towing Service', 'Wheel Lift Towing', 'Long Distance Transport'],
@@ -25,7 +38,7 @@ const ServicesPage = () => {
       accentColor: 'red'
     },
     {
-      icon: Wrench,
+      icon: MdOutlineSettings,
       title: 'Roadside Repairs',
       desc: 'Expert on-the-spot repairs to get you back on the road quickly',
       features: ['Battery Jump Start', 'Tire Changes & Repair', 'Minor Mechanical Fixes', 'Fluid Top-up Service'],
@@ -35,7 +48,7 @@ const ServicesPage = () => {
       accentColor: 'blue'
     },
     {
-      icon: Shield,
+      icon: SiFsecure,
       title: 'Vehicle Recovery',
       desc: 'Specialized recovery services for the most challenging situations',
       features: ['Off-Road Recovery', 'Accident Scene Recovery', 'Winch-Out Service', 'Heavy Equipment Recovery'],
@@ -45,7 +58,7 @@ const ServicesPage = () => {
       accentColor: 'purple'
     },
     {
-      icon: Zap,
+      icon: FiZap,
       title: 'Emergency Response',
       desc: 'Rapid 24/7 emergency assistance for critical roadside situations',
       features: ['Accident Assistance', 'Vehicle Lockout Service', 'Emergency Fuel Delivery', 'Priority Transport'],
@@ -58,7 +71,7 @@ const ServicesPage = () => {
 
   const quickServices = [
     { icon: Battery, label: 'Jump Start', color: 'from-yellow-500 to-orange-500' },
-    { icon: Wrench, label: 'Tire Change', color: 'from-blue-500 to-cyan-500' },
+    { icon: MdOutlineSettings, label: 'Tire Change', color: 'from-blue-500 to-cyan-500' },
     { icon: Key, label: 'Lockout', color: 'from-purple-500 to-pink-500' },
     { icon: Fuel, label: 'Fuel Delivery', color: 'from-green-500 to-emerald-500' },
   ];
@@ -247,7 +260,7 @@ const ServicesPage = () => {
                         transition={{ delay: i * 0.1 }}
                         className="flex items-center space-x-3"
                       >
-                        <CheckCircle className="w-6 h-6 text-white flex-shrink-0" />
+                        <IoCheckmarkDone className="w-6 h-6 text-white flex-shrink-0" />
                         <span className="text-white font-medium text-lg">{feature}</span>
                       </motion.div>
                     ))}
@@ -295,7 +308,7 @@ const ServicesPage = () => {
                   transition={{ delay: 0.5 }}
                   className="bg-white rounded-2xl p-6 text-center"
                 >
-                  <Clock className="w-12 h-12 text-black mx-auto mb-3" />
+                  <GiAlarmClock className="w-12 h-12 text-black mx-auto mb-3" />
                   <div className="font-bold text-black text-lg mb-2">Available Now</div>
                   <div className="text-gray-600 text-sm mb-4">24/7 Emergency Service</div>
                   <a
@@ -328,9 +341,9 @@ const ServicesPage = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { icon: Star, title: '4.8★ Rating', desc: '500+ satisfied customers', color: 'from-yellow-500 to-orange-500' },
-              { icon: Clock, title: 'Fast Response', desc: 'Average < 30 minutes', color: 'from-blue-500 to-cyan-500' },
-              { icon: Award, title: 'Certified Experts', desc: 'Trained professionals', color: 'from-purple-500 to-pink-500' },
+              { icon: MdStarPurple500, title: '4.8 Rating', desc: '500+ satisfied customers', color: 'from-yellow-500 to-orange-500' },
+              { icon: GiAlarmClock, title: 'Fast Response', desc: 'Average < 30 minutes', color: 'from-blue-500 to-cyan-500' },
+              { icon: LiaAwardSolid, title: 'Certified Experts', desc: 'Trained professionals', color: 'from-purple-500 to-pink-500' },
             ].map((item, i) => (
               <motion.div
                 key={i}

@@ -38,6 +38,13 @@ import {
 import { Toaster, toast } from "sonner";
 import { useLanguage } from "../lunguageContext";
 import HappyCustomers from "../components/happyCustomers";
+import { IoCarSportOutline } from "react-icons/io5";
+import { BsTruckFlatbed } from "react-icons/bs";
+import { GiAlarmClock } from "react-icons/gi";
+import { MdStarPurple500 } from "react-icons/md";
+import { FiZap } from "react-icons/fi";
+import { SiFsecure } from "react-icons/si";
+import { MdOutlineSettings } from "react-icons/md";
 
 const HomePage = () => {
   const { t } = useLanguage();
@@ -52,36 +59,40 @@ const HomePage = () => {
 
   const services = [
     {
-      icon: Truck,
+      icon: BsTruckFlatbed,
       title: t.services.towing,
       desc: "Fast & reliable towing across Zimbabwe",
       color: "from-red-500 to-red-600",
+      image: "19.jpg",
     },
     {
-      icon: Wrench,
+      icon: MdOutlineSettings,
       title: t.services.roadside,
       desc: "Immediate roadside assistance",
       color: "from-gray-700 to-gray-800",
+      image: "20.jpg",
     },
     {
-      icon: Shield,
+      icon: SiFsecure,
       title: t.services.recovery,
       desc: "Professional vehicle recovery",
       color: "from-red-600 to-red-700",
+      image: "21.jpg",
     },
     {
-      icon: Zap,
+      icon: FiZap,
       title: t.services.emergency,
       desc: "24/7 emergency response team",
       color: "from-gray-800 to-black",
+      image: "22.jpg",
     },
   ];
 
   const stats = [
-    { value: "5000+", label: "Vehicles Assisted", icon: Truck },
-    { value: "24/7", label: "Always Available", icon: Clock },
-    { value: "< 30min", label: "Average Response", icon: Zap },
-    { value: "4.8★", label: "Customer Rating", icon: Star },
+    { value: "5000+", label: "Vehicles Assisted", icon: IoCarSportOutline },
+    { value: "24/7", label: "Always Available", icon: GiAlarmClock },
+    { value: "<30min", label: "Average Response", icon: FiZap },
+    { value: "4.8", label: "Customer Rating", icon: MdStarPurple500 },
   ];
 
   return (
@@ -198,7 +209,7 @@ const HomePage = () => {
                   transition={{ delay: 1 }}
                   className="flex items-center space-x-6 pt-4"
                 >
-                    <HappyCustomers />
+                  <HappyCustomers />
                 </motion.div>
               </motion.div>
             </div>
@@ -243,22 +254,50 @@ const HomePage = () => {
 
           {/* Stats Bar - Integrated with Services */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
-            {stats.map((stat, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-gradient-to-br from-red-600 to-red-700 rounded-2xl p-6 shadow-2xl hover:shadow-red-500/50 transition-all border border-red-500/20"
-              >
-                <stat.icon className="w-8 h-8 text-white mb-3" />
-                <div className="text-3xl font-bold text-white mb-1">
-                  {stat.value}
-                </div>
-                <div className="text-gray-200 text-sm">{stat.label}</div>
-              </motion.div>
-            ))}
+            {stats.map((stat, i) => {
+              const cardStyles = [
+                {
+                  gradient:
+                    "bg-gradient-to-br from-red-500 via-orange-500 to-amber-600",
+                  shadow: "hover:shadow-orange-500/50",
+                  border: "border-orange-400/30",
+                },
+                {
+                  gradient:
+                    "bg-gradient-to-br from-rose-600 via-red-600 to-pink-700",
+                  shadow: "hover:shadow-pink-500/50",
+                  border: "border-pink-400/30",
+                },
+                {
+                  gradient:
+                    "bg-gradient-to-br from-red-600 via-red-700 to-purple-800",
+                  shadow: "hover:shadow-purple-500/50",
+                  border: "border-purple-400/30",
+                },
+                {
+                  gradient:
+                    "bg-gradient-to-br from-red-700 via-red-900 to-black",
+                  shadow: "hover:shadow-red-500/50",
+                  border: "border-red-400/30",
+                },
+              ];
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                  viewport={{ once: true }}
+                  className={`${cardStyles[i].gradient} rounded-2xl p-6 shadow-2xl ${cardStyles[i].shadow} transition-all border ${cardStyles[i].border}`}
+                >
+                  <stat.icon className="w-8 h-8 text-white mb-3" />
+                  <div className="text-3xl font-bold text-white mb-1">
+                    {stat.value}
+                  </div>
+                  <div className="text-gray-200 text-sm">{stat.label}</div>
+                </motion.div>
+              );
+            })}
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -270,30 +309,43 @@ const HomePage = () => {
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.05, y: -10 }}
-                className="group relative overflow-hidden rounded-3xl"
+                className="group relative overflow-hidden rounded-3xl h-80"
               >
+                {/* Background Image */}
                 <div
-                  className={`bg-gradient-to-br ${service.color} p-8 h-full`}
-                >
-                  <div className="relative z-10">
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                  style={{ backgroundImage: `url(/19.jpg)`, opacity: 0.8 }}
+                />
+
+                {/* Gradient Overlay */}
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${service.color}`}
+                />
+
+                {/* Content */}
+                <div className="relative z-10 p-8 h-full flex flex-col justify-between">
+                  <div>
                     <div className="w-16 h-16 bg-white/20 backdrop-blur-xl rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                       <service.icon className="w-8 h-8 text-white" />
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-3">
                       {service.title}
                     </h3>
-                    <p className="text-white/80">{service.desc}</p>
-                    <motion.div
-                      initial={{ x: -20, opacity: 0 }}
-                      whileHover={{ x: 0, opacity: 1 }}
-                      className="mt-6 flex items-center space-x-2 text-white font-semibold"
-                    >
-                      <span>Learn More</span>
-                      <ChevronRight className="w-5 h-5" />
-                    </motion.div>
+                    <p className="text-white/90">{service.desc}</p>
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+
+                  <motion.div
+                    initial={{ x: -20, opacity: 0 }}
+                    whileHover={{ x: 0, opacity: 1 }}
+                    className="flex items-center space-x-2 text-white font-semibold"
+                  >
+                    <span>Learn More</span>
+                    <ChevronRight className="w-5 h-5" />
+                  </motion.div>
                 </div>
+
+                {/* Hover Effect Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               </motion.div>
             ))}
           </div>

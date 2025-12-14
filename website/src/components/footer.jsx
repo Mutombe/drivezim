@@ -6,6 +6,7 @@ import { Menu, X, Phone, Mail, MapPin, Clock, Wrench, Truck, Shield, Users, Awar
 import { Toaster, toast } from 'sonner';
 import { useLanguage } from '../lunguageContext';
 import { FaXTwitter } from "react-icons/fa6";
+import { MdStarPurple500 } from "react-icons/md";
 
 const Footer = () => {
   const { t } = useLanguage();

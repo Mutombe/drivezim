@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
 import React from 'react';
+import { MdStarPurple500 } from "react-icons/md";
+
 // Happy Customers Component
 const HappyCustomers = () => {
   // Array of customer images - replace with your actual customer photos
@@ -35,7 +37,7 @@ const HappyCustomers = () => {
             {/* Optional: Add verified badge on first customer */}
             {i === 0 && (
               <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 rounded-full flex items-center justify-center border-2 border-black">
-                <Star className="w-3 h-3 text-white fill-white" />
+                <MdStarPurple500 className="w-3 h-3 text-white fill-white" />
               </div>
             )}
           </motion.div>
@@ -50,7 +52,7 @@ const HappyCustomers = () => {
           <span>5000+ Happy Customers</span>
           <div className="flex">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-3 h-3 text-yellow-400 fill-yellow-400" />
+              <MdStarPurple500 key={i} className="w-3 h-3 text-yellow-400 fill-yellow-400" />
             ))}
           </div>
         </div>
