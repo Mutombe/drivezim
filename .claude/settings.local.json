@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(del \"C:\\\\Users\\\\PC\\\\documents\\\\drivezim\\\\website\\\\src\\\\pages\\\\fleet.jsx\")"
+    ]
+  }
+}

@@ -32,7 +32,7 @@ const ServicesPage = () => {
       title: 'Emergency Towing',
       desc: 'Professional towing services for all vehicle types, anywhere, anytime',
       features: ['Light & Heavy Duty Towing', 'Flatbed Towing Service', 'Wheel Lift Towing', 'Long Distance Transport'],
-      stats: { response: '< 30min', availability: '24/7', fleet: '15+ Trucks' },
+      stats: { availability: '24/7', fleet: '15+ Trucks', coverage: 'Nationwide' },
       gradient: 'from-red-600 via-orange-600 to-yellow-500',
       bgImage: '/5.jpg',
       accentColor: 'red'
@@ -42,7 +42,7 @@ const ServicesPage = () => {
       title: 'Roadside Repairs',
       desc: 'Expert on-the-spot repairs to get you back on the road quickly',
       features: ['Battery Jump Start', 'Tire Changes & Repair', 'Minor Mechanical Fixes', 'Fluid Top-up Service'],
-      stats: { response: '< 25min', availability: '24/7', rate: '98% Success' },
+      stats: { availability: '24/7', rate: '98% Success', technicians: '50+ Experts' },
       gradient: 'from-blue-600 via-cyan-600 to-teal-500',
       bgImage: '/20.jpg',
       accentColor: 'blue'
@@ -52,7 +52,7 @@ const ServicesPage = () => {
       title: 'Vehicle Recovery',
       desc: 'Specialized recovery services for the most challenging situations',
       features: ['Off-Road Recovery', 'Accident Scene Recovery', 'Winch-Out Service', 'Heavy Equipment Recovery'],
-      stats: { response: '< 35min', availability: '24/7', equipment: 'Heavy Duty' },
+      stats: { availability: '24/7', equipment: 'Heavy Duty', capacity: '50+ Tons' },
       gradient: 'from-purple-600 via-pink-600 to-rose-500',
       bgImage: '/37.jpg',
       accentColor: 'purple'
@@ -62,7 +62,7 @@ const ServicesPage = () => {
       title: 'Emergency Response',
       desc: 'Rapid 24/7 emergency assistance for critical roadside situations',
       features: ['Accident Assistance', 'Vehicle Lockout Service', 'Emergency Fuel Delivery', 'Priority Transport'],
-      stats: { response: '< 20min', availability: '24/7', rating: '4.8★' },
+      stats: { availability: '24/7', rating: '4.8★', priority: 'VIP Service' },
       gradient: 'from-green-600 via-emerald-600 to-lime-500',
       bgImage: '/5.jpg',
       accentColor: 'green'
@@ -342,7 +342,7 @@ const ServicesPage = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { icon: MdStarPurple500, title: '4.8 Rating', desc: '500+ satisfied customers', color: 'from-yellow-500 to-orange-500' },
-              { icon: GiAlarmClock, title: 'Fast Response', desc: 'Average < 30 minutes', color: 'from-blue-500 to-cyan-500' },
+              { icon: GiAlarmClock, title: 'Always Ready', desc: 'Available around the clock', color: 'from-blue-500 to-cyan-500' },
               { icon: LiaAwardSolid, title: 'Certified Experts', desc: 'Trained professionals', color: 'from-purple-500 to-pink-500' },
             ].map((item, i) => (
               <motion.div
@@ -365,6 +365,52 @@ const ServicesPage = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 px-4 relative overflow-hidden">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-fixed"
+          style={{ backgroundImage: 'url(/26.jpg)' }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-red-900/90 to-black/95" />
+
+        <div className="max-w-4xl mx-auto relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-black/40 backdrop-blur-xl border border-white/20 rounded-3xl p-12"
+          >
+            <Phone className="w-16 h-16 text-white mx-auto mb-6" />
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Need Our Services?
+            </h2>
+            <p className="text-xl text-gray-300 mb-8">
+              Our professional team is ready to assist you 24/7, anywhere in Zimbabwe.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <motion.a
+                href="tel:0780579261"
+                whileHover={{ scale: 1.05 }}
+                className="bg-white text-red-600 px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center space-x-3 shadow-2xl hover:shadow-white/30 transition-all"
+              >
+                <Phone className="w-5 h-5" />
+                <span>Call 078 057 9261</span>
+              </motion.a>
+              <a href="/membership">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  className="bg-red-600/80 backdrop-blur-xl border border-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center space-x-3 hover:bg-red-600 transition-all"
+                >
+                  <Shield className="w-5 h-5" />
+                  <span>Join Membership</span>
+                </motion.button>
+              </a>
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>

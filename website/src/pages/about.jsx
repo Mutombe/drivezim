@@ -1,94 +1,149 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart, Zap, Shield, Target, Award, Users, Clock, TrendingUp, MapPin, CheckCircle } from 'lucide-react';
-import { MdStarPurple500 } from "react-icons/md";
-import { FiZap } from "react-icons/fi";
-import { SiFsecure } from "react-icons/si";
-import { LiaAwardSolid } from "react-icons/lia";
-import { LiaPeopleCarrySolid } from "react-icons/lia";
-import { CiFaceSmile } from "react-icons/ci";
+import { Link } from 'react-router-dom';
+import { Heart, Shield, Phone, MapPin, Quote, ChevronRight, Star } from 'lucide-react';
+import { LiaAwardSolid, LiaPeopleCarrySolid } from "react-icons/lia";
 import { HiArrowTrendingUp } from "react-icons/hi2";
-import { RiCustomerService2Line } from "react-icons/ri";
-import { GiSpearHook } from "react-icons/gi";
-import { GiAlarmClock } from "react-icons/gi";
+import { GiAlarmClock, GiRoad } from "react-icons/gi";
 import { IoCheckmarkDone } from "react-icons/io5";
-
-// Mock translation object
-const mockTranslations = {
-  about: {
-    subtitle: "Our Story",
-    title: "Driving Zimbabwe Forward"
-  }
-};
+import { FaHeart, FaEye, FaHandsHelping } from "react-icons/fa";
+import { BsTruck } from "react-icons/bs";
 
 const StoryPage = () => {
-  const t = mockTranslations; // Replace with: const { t } = useLanguage();
-
-  const values = [
-    { icon: RiCustomerService2Line, title: 'Customer First', desc: 'Your safety and satisfaction drive everything we do' },
-    { icon: FiZap, title: 'Speed & Efficiency', desc: 'Rapid response times when you need us most' },
-    { icon: SiFsecure, title: 'Trust & Reliability', desc: 'Building long-term relationships through consistency' },
-    { icon: GiSpearHook, title: 'Excellence', desc: 'Continuously improving our service standards' }
+  const coreValues = [
+    {
+      icon: FaHeart,
+      title: 'Care',
+      desc: 'We genuinely care about every motorist we assist. Your safety and well-being are our top priority.',
+      gradient: 'from-pink-500 to-red-600',
+      bgImage: '/5.jpg'
+    },
+    {
+      icon: FaHandsHelping,
+      title: 'Courtesy',
+      desc: 'Professional, respectful service that treats every customer with dignity and understanding.',
+      gradient: 'from-blue-500 to-cyan-600',
+      bgImage: '/20.jpg'
+    },
+    {
+      icon: FaEye,
+      title: 'Concentration',
+      desc: 'Focused dedication to road safety and providing attentive, precise assistance when you need it most.',
+      gradient: 'from-purple-500 to-indigo-600',
+      bgImage: '/26.jpg'
+    },
+    {
+      icon: LiaAwardSolid,
+      title: 'Excellence',
+      desc: 'Continuously improving our service standards to deliver the best roadside assistance in Zimbabwe.',
+      gradient: 'from-orange-500 to-amber-600',
+      bgImage: '/37.jpg'
+    }
   ];
 
   const stats = [
-    { value: '5000+', label: 'Vehicles Assisted', icon: HiArrowTrendingUp },
-    { value: '24/7', label: 'Always Available', icon: GiAlarmClock },
-    { value: '50+', label: 'Professional Staff', icon: LiaPeopleCarrySolid },
-    { value: '100%', label: 'Customer Satisfaction', icon: IoCheckmarkDone }
+    { value: '5000+', label: 'Vehicles Assisted', icon: HiArrowTrendingUp, color: 'from-red-500 to-orange-600' },
+    { value: '24/7', label: 'Always Available', icon: GiAlarmClock, color: 'from-blue-500 to-cyan-600' },
+    { value: '50+', label: 'Professional Staff', icon: LiaPeopleCarrySolid, color: 'from-green-500 to-emerald-600' },
+    { value: '6+', label: 'Years of Service', icon: LiaAwardSolid, color: 'from-purple-500 to-pink-600' }
   ];
 
   const milestones = [
-    { year: '2018', title: 'Founded', desc: 'Started with a vision to revolutionize roadside assistance in Zimbabwe' },
-    { year: '2020', title: 'Expansion', desc: 'Grew our fleet to 10 vehicles and expanded across major cities' },
-    { year: '2022', title: 'Recognition', desc: 'Awarded Best Roadside Service Provider by Zimbabwe Auto Association' },
-    { year: '2024', title: 'Innovation', desc: 'Launched 24/7 digital dispatch system for faster response times' }
+    { year: '2019', title: 'Founded', desc: 'Drive Zimbabwe was established with a clear mission: to promote care, courtesy, and concentration on our roads.', icon: '🚀' },
+    { year: '2020', title: 'Growth', desc: 'Expanded our fleet and team despite challenging times, committed to serving Zimbabweans when they needed us most.', icon: '📈' },
+    { year: '2022', title: 'Expansion', desc: 'Extended our coverage across major cities and highways, bringing reliable assistance to more communities.', icon: '🗺️' },
+    { year: '2024', title: 'Innovation', desc: 'Launched advanced dispatch systems and membership programs to better serve our growing customer base.', icon: '💡' }
   ];
 
   const teamRoles = [
-    'Certified Technicians', 
-    '24/7 Dispatchers', 
-    'Recovery Specialists', 
-    'Customer Support'
+    { title: 'Certified Technicians', desc: 'Expert mechanics ready to diagnose and fix' },
+    { title: '24/7 Dispatchers', desc: 'Always on call to coordinate your rescue' },
+    { title: 'Recovery Specialists', desc: 'Trained for the most challenging situations' },
+    { title: 'Customer Support', desc: 'Friendly voices guiding you through' }
+  ];
+
+  const whyChooseUs = [
+    { title: 'Rapid Response', desc: 'Our strategically positioned teams ensure quick arrival when you need help', icon: '⚡' },
+    { title: 'Transparent Pricing', desc: 'No hidden fees - you know exactly what you\'re paying before we start', icon: '💎' },
+    { title: 'Professional Staff', desc: 'Trained, certified technicians who handle your vehicle with care', icon: '👨‍🔧' },
+    { title: 'Nationwide Coverage', desc: 'Serving Harare, Bulawayo, Mutare, and all major routes', icon: '🗺️' },
+    { title: 'Modern Equipment', desc: 'State-of-the-art tow trucks and recovery vehicles', icon: '🚛' },
+    { title: 'Customer First', desc: 'Your satisfaction drives everything we do', icon: '❤️' }
   ];
 
   return (
-    <div className="min-h-screen bg-black">
-      {/* Hero Section with Background Image */}
-      <section className="relative min-h-screen h-screen overflow-hidden">
+    <div className="min-h-screen bg-black overflow-x-hidden">
+      {/* Hero Section */}
+      <section className="relative min-h-[80vh] md:min-h-screen overflow-hidden">
         {/* Background Image */}
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: 'url(/37.jpg)' }}
         />
-        
-        {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black" />
-        
-        {/* Geometric Patterns */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 md:top-20 left-5 md:left-20 w-32 h-32 md:w-64 md:h-64 border-2 md:border-4 border-white/20 rounded-full" />
-          <div className="absolute bottom-20 md:bottom-40 right-5 md:right-40 w-48 h-48 md:w-96 md:h-96 border-2 md:border-4 border-red-500/20 transform rotate-45" />
+
+        {/* Animated Circles - Desktop only */}
+        <div className="absolute inset-0 opacity-20 hidden lg:block overflow-hidden">
+          <motion.div
+            animate={{ rotate: 360, scale: [1, 1.1, 1] }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            className="absolute top-20 right-20 w-64 h-64 border-4 border-white/20 rounded-full"
+          />
+          <motion.div
+            animate={{ rotate: -360 }}
+            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+            className="absolute bottom-40 left-20 w-96 h-96 border-4 border-red-500/20 transform rotate-45"
+          />
         </div>
 
         {/* Content */}
-        <div className="relative h-full flex items-center pt-20 md:pt-0">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
+        <div className="relative h-full flex items-center min-h-[80vh] md:min-h-screen">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center py-20 md:py-0">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="py-8"
             >
-              <div className="inline-block bg-red-600/20 backdrop-blur-xl border border-red-500/30 px-4 md:px-6 py-2 rounded-full mb-4 md:mb-6">
-                <span className="text-red-400 font-semibold text-sm md:text-base">{t.about.subtitle}</span>
-              </div>
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ type: "spring", delay: 0.2 }}
+                className="inline-flex items-center space-x-2 bg-red-600/20 backdrop-blur-xl border border-red-500/30 px-4 py-2 md:px-6 md:py-3 rounded-full mb-4 md:mb-6"
+              >
+                <GiRoad className="w-4 h-4 md:w-5 md:h-5 text-red-400" />
+                <span className="text-red-400 font-semibold text-sm md:text-base">Since 2019</span>
+              </motion.div>
+
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 md:mb-6 px-2">
-                {t.about.title}
+                Driving Zimbabwe
+                <span className="block text-red-500">Forward</span>
               </h1>
-              <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4">
-                Established as Zimbabwe's premier roadside assistance provider, serving thousands of customers with dedication and expertise since day one.
+
+              <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4 mb-6 md:mb-8">
+                Founded in 2019 with a clear purpose: to promote care, courtesy, and concentration on Zimbabwe's roads—values that continue to shape everything we do today.
               </p>
+
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-4">
+                <motion.a
+                  href="tel:0780579261"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-flex items-center justify-center space-x-2 bg-red-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold shadow-2xl hover:shadow-red-500/50 transition-all"
+                >
+                  <Phone className="w-5 h-5" />
+                  <span>Call Us Now</span>
+                </motion.a>
+                <Link to="/membership">
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="inline-flex items-center justify-center space-x-2 bg-white/10 backdrop-blur-xl border border-white/20 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold hover:bg-white/20 transition-all w-full sm:w-auto"
+                  >
+                    <Shield className="w-5 h-5" />
+                    <span>Join Membership</span>
+                  </motion.div>
+                </Link>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -97,7 +152,7 @@ const StoryPage = () => {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-6 md:bottom-10 left-1/2 transform -translate-x-1/2"
         >
           <div className="w-5 h-8 md:w-6 md:h-10 border-2 border-white/40 rounded-full flex items-start justify-center p-1.5 md:p-2">
             <motion.div
@@ -110,9 +165,9 @@ const StoryPage = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-12 md:py-20 px-4 bg-gradient-to-b from-black to-gray-900">
+      <section className="py-10 md:py-16 px-4 bg-gradient-to-b from-black to-gray-900 -mt-10 md:-mt-0 relative z-10">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
             {stats.map((stat, i) => (
               <motion.div
                 key={i}
@@ -120,80 +175,209 @@ const StoryPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-red-600 to-red-700 rounded-xl md:rounded-2xl p-4 md:p-6 text-center shadow-2xl hover:shadow-red-500/50 transition-all"
+                whileHover={{ y: -5 }}
+                className={`bg-gradient-to-br ${stat.color} rounded-xl md:rounded-2xl p-4 md:p-6 text-center shadow-2xl transition-all`}
               >
-                <stat.icon className="w-6 h-6 md:w-8 md:h-8 text-white mx-auto mb-2 md:mb-3" />
-                <div className="text-2xl md:text-4xl font-bold text-white mb-1 md:mb-2">{stat.value}</div>
-                <div className="text-gray-200 text-xs md:text-sm">{stat.label}</div>
+                <stat.icon className="w-6 h-6 md:w-10 md:h-10 text-white mx-auto mb-2 md:mb-3" />
+                <div className="text-2xl md:text-4xl font-bold text-white mb-1">{stat.value}</div>
+                <div className="text-white/80 text-xs md:text-sm">{stat.label}</div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Story Grid with Images */}
+      {/* Our Journey Section */}
       <section className="py-12 md:py-20 px-4 bg-gray-900">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-8 md:mb-12">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Left - Text Content */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="flex flex-col justify-center order-2 md:order-1"
+              className="order-2 lg:order-1"
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6">Our Journey</h2>
-              <p className="text-base md:text-lg text-gray-300 leading-relaxed mb-4 md:mb-6">
-                Drive Zimbabwe was founded with a simple mission: to provide fast, reliable, and affordable roadside assistance to every Zimbabwean driver. We've grown from a small team with a single tow truck to a comprehensive fleet serving the entire nation.
-              </p>
-              <p className="text-base md:text-lg text-gray-300 leading-relaxed mb-4 md:mb-6">
-                Our commitment to excellence remains unchanged. Every day, we work tirelessly to ensure that when you're stranded on the road, help is just a phone call away.
-              </p>
-              <div className="flex items-center space-x-4">
-                <LiaAwardSolid className="w-10 h-10 md:w-12 md:h-12 text-red-500" />
-                <div>
-                  <div className="text-2xl md:text-3xl font-bold text-white">4.8★</div>
-                  <div className="text-sm md:text-base text-gray-400">Based on 500+ reviews</div>
-                </div>
+              <span className="text-red-500 font-semibold text-sm md:text-base mb-2 block">OUR STORY</span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6">
+                A Journey Built on Trust
+              </h2>
+
+              <div className="space-y-4 md:space-y-6 text-gray-300">
+                <p className="text-sm md:text-base lg:text-lg leading-relaxed">
+                  Drive Zimbabwe Roadside Assistance was founded in 2019 with a clear purpose: to promote <span className="text-red-400 font-semibold">care, courtesy, and concentration</span> on our roads—values that continue to shape everything we do today.
+                </p>
+                <p className="text-sm md:text-base lg:text-lg leading-relaxed">
+                  What started as a small operation with a dedicated team has grown into Zimbabwe's trusted roadside assistance provider. We've helped thousands of stranded motorists get back on the road safely, building our reputation one rescue at a time.
+                </p>
+                <p className="text-sm md:text-base lg:text-lg leading-relaxed">
+                  Our commitment to excellence remains unchanged. Every day, we work tirelessly to ensure that when you're stranded on the road, help is just a phone call away.
+                </p>
               </div>
+
+              {/* Rating */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="mt-6 md:mt-8 flex items-center space-x-4 bg-white/5 rounded-xl p-4"
+              >
+                <div className="flex -space-x-2">
+                  {['/5.jpg', '/20.jpg', '/26.jpg'].map((img, i) => (
+                    <img
+                      key={i}
+                      src={img}
+                      alt=""
+                      className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-gray-900 object-cover"
+                    />
+                  ))}
+                </div>
+                <div>
+                  <div className="flex items-center space-x-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 md:w-5 md:h-5 text-yellow-400 fill-yellow-400" />
+                    ))}
+                    <span className="text-white font-bold ml-2">4.8</span>
+                  </div>
+                  <div className="text-gray-400 text-xs md:text-sm">Based on 500+ reviews</div>
+                </div>
+              </motion.div>
             </motion.div>
 
-            {/* Right - Image */}
+            {/* Right - Image Grid */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative h-64 md:h-96 lg:h-[500px] rounded-2xl md:rounded-3xl overflow-hidden order-1 md:order-2"
+              className="order-1 lg:order-2 grid grid-cols-2 gap-3 md:gap-4"
             >
-              <img
-                src="/5.jpg"
-                alt="Our Fleet"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              <div className="absolute bottom-4 md:bottom-6 left-4 md:left-6 right-4 md:right-6">
-                <h3 className="text-white font-bold text-lg md:text-2xl mb-1 md:mb-2">Our Modern Fleet</h3>
-                <p className="text-gray-200 text-sm md:text-base">State-of-the-art equipment ready to serve you</p>
+              <div className="space-y-3 md:space-y-4">
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  className="relative rounded-xl md:rounded-2xl overflow-hidden h-32 md:h-48"
+                >
+                  <img src="/5.jpg" alt="Fleet" className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                </motion.div>
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  className="relative rounded-xl md:rounded-2xl overflow-hidden h-40 md:h-64"
+                >
+                  <img src="/20.jpg" alt="Team" className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                </motion.div>
+              </div>
+              <div className="space-y-3 md:space-y-4 pt-6 md:pt-8">
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  className="relative rounded-xl md:rounded-2xl overflow-hidden h-40 md:h-64"
+                >
+                  <img src="/26.jpg" alt="Service" className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                </motion.div>
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  className="relative rounded-xl md:rounded-2xl overflow-hidden h-32 md:h-48"
+                >
+                  <img src="/37.jpg" alt="Recovery" className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                </motion.div>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Timeline Section */}
+      {/* Core Values Section */}
       <section className="py-12 md:py-20 px-4 bg-black">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-8 md:mb-16"
+            className="text-center mb-8 md:mb-12"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">Our Milestones</h2>
-            <p className="text-base md:text-xl text-gray-400">Key moments in our journey</p>
+            <span className="text-red-500 font-semibold text-sm md:text-base mb-2 block">THE 3 C'S</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">Our Core Values</h2>
+            <p className="text-sm md:text-lg text-gray-400 max-w-2xl mx-auto px-4">
+              Care, Courtesy, and Concentration guide everything we do
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            {coreValues.map((value, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -10 }}
+                className="group relative overflow-hidden rounded-2xl md:rounded-3xl h-64 md:h-80"
+              >
+                {/* Background Image */}
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                  style={{ backgroundImage: `url(${value.bgImage})` }}
+                />
+                {/* Gradient Overlay */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${value.gradient} opacity-90`} />
+
+                {/* Content */}
+                <div className="relative z-10 p-5 md:p-6 h-full flex flex-col justify-between">
+                  <div className="w-12 h-12 md:w-14 md:h-14 bg-white/20 backdrop-blur-xl rounded-xl md:rounded-2xl flex items-center justify-center">
+                    <value.icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{value.title}</h3>
+                    <p className="text-white/90 text-sm md:text-base">{value.desc}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Timeline Section */}
+      <section className="py-12 md:py-20 px-4 bg-gradient-to-b from-gray-900 to-black">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-8 md:mb-12"
+          >
+            <span className="text-red-500 font-semibold text-sm md:text-base mb-2 block">OUR JOURNEY</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">Key Milestones</h2>
+            <p className="text-sm md:text-lg text-gray-400">Our journey of growth since 2019</p>
+          </motion.div>
+
+          {/* Mobile Timeline */}
+          <div className="md:hidden space-y-4">
+            {milestones.map((milestone, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-4 flex items-start space-x-4"
+              >
+                <div className="flex-shrink-0 w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center text-2xl">
+                  {milestone.icon}
+                </div>
+                <div>
+                  <div className="text-red-500 font-bold text-lg">{milestone.year}</div>
+                  <h3 className="text-white font-bold text-base mb-1">{milestone.title}</h3>
+                  <p className="text-gray-400 text-sm">{milestone.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Desktop Timeline */}
+          <div className="hidden md:grid grid-cols-4 gap-6">
             {milestones.map((milestone, i) => (
               <motion.div
                 key={i}
@@ -201,12 +385,14 @@ const StoryPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
+                whileHover={{ y: -5 }}
                 className="relative"
               >
-                <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl md:rounded-3xl p-6 md:p-8 hover:bg-white/10 transition-all h-full">
-                  <div className="text-4xl md:text-5xl font-bold text-red-500 mb-3 md:mb-4">{milestone.year}</div>
-                  <h3 className="text-xl md:text-2xl font-bold text-white mb-2 md:mb-3">{milestone.title}</h3>
-                  <p className="text-sm md:text-base text-gray-400">{milestone.desc}</p>
+                <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all h-full">
+                  <div className="text-4xl mb-3">{milestone.icon}</div>
+                  <div className="text-4xl font-bold text-red-500 mb-2">{milestone.year}</div>
+                  <h3 className="text-xl font-bold text-white mb-2">{milestone.title}</h3>
+                  <p className="text-gray-400 text-sm">{milestone.desc}</p>
                 </div>
                 {i < milestones.length - 1 && (
                   <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-red-500/30" />
@@ -217,49 +403,58 @@ const StoryPage = () => {
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-gray-900 to-black">
+      {/* Why Choose Us Section */}
+      <section className="py-12 md:py-20 px-4 bg-black">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-8 md:mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Our Core Values</h2>
-            <p className="text-xl text-gray-400">The principles that guide everything we do</p>
+            <span className="text-red-500 font-semibold text-sm md:text-base mb-2 block">WHY US</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">Why Choose Drive Zimbabwe?</h2>
+            <p className="text-sm md:text-lg text-gray-400 max-w-2xl mx-auto px-4">
+              We're not just a towing company—we're your roadside partner
+            </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((value, i) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+            {whyChooseUs.map((item, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
+                transition={{ delay: i * 0.05 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.05, y: -10 }}
-                className="bg-gradient-to-br from-red-600 to-red-700 rounded-3xl p-8 shadow-xl hover:shadow-red-500/50 transition-all"
+                whileHover={{ scale: 1.02 }}
+                className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl md:rounded-2xl p-4 md:p-6 hover:bg-white/10 hover:border-red-500/30 transition-all"
               >
-                <value.icon className="w-12 h-12 text-white mb-4" />
-                <h3 className="text-xl font-bold text-white mb-3">{value.title}</h3>
-                <p className="text-white/90">{value.desc}</p>
+                <div className="flex items-start space-x-3 md:space-x-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-red-600/20 rounded-xl flex items-center justify-center flex-shrink-0 text-xl md:text-2xl">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-base md:text-lg font-bold text-white mb-1">{item.title}</h3>
+                    <p className="text-gray-400 text-xs md:text-sm">{item.desc}</p>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Team Section with Image */}
-      <section className="py-12 md:py-20 px-4 bg-black">
+      {/* Team Section */}
+      <section className="py-12 md:py-20 px-4 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Left - Image */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative h-96 md:h-[500px] lg:h-[600px] rounded-2xl md:rounded-3xl overflow-hidden"
+              className="relative rounded-2xl md:rounded-3xl overflow-hidden h-64 md:h-[500px]"
             >
               <img
                 src="/20.jpg"
@@ -268,8 +463,8 @@ const StoryPage = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
               <div className="absolute bottom-4 md:bottom-8 left-4 md:left-8 right-4 md:right-8">
-                <LiaPeopleCarrySolid className="w-10 h-10 md:w-12 md:h-12 text-red-500 mb-3 md:mb-4" />
-                <h3 className="text-white font-bold text-2xl md:text-3xl mb-1 md:mb-2">Professional Team</h3>
+                <LiaPeopleCarrySolid className="w-8 h-8 md:w-12 md:h-12 text-red-500 mb-2 md:mb-4" />
+                <h3 className="text-white font-bold text-xl md:text-3xl mb-1">Professional Team</h3>
                 <p className="text-gray-200 text-sm md:text-base">50+ certified experts at your service</p>
               </div>
             </motion.div>
@@ -280,12 +475,15 @@ const StoryPage = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6">Meet Our Team</h2>
-              <p className="text-base md:text-xl text-gray-300 mb-6 md:mb-8 leading-relaxed">
-                Our experienced professionals are trained, certified, and ready to assist you 24/7. Every team member is committed to providing exceptional service with a smile.
+              <span className="text-red-500 font-semibold text-sm md:text-base mb-2 block">OUR TEAM</span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6">
+                Meet Our Experts
+              </h2>
+              <p className="text-sm md:text-lg text-gray-300 mb-6 md:mb-8 leading-relaxed">
+                Our experienced professionals are trained, certified, and ready to assist you 24/7. Every team member embodies our values of care, courtesy, and concentration.
               </p>
-              
-              <div className="space-y-3 md:space-y-4 mb-6 md:mb-8">
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 mb-6 md:mb-8">
                 {teamRoles.map((role, i) => (
                   <motion.div
                     key={i}
@@ -293,54 +491,94 @@ const StoryPage = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.1 }}
                     viewport={{ once: true }}
-                    className="flex items-center space-x-3"
+                    className="flex items-start space-x-3 bg-white/5 rounded-xl p-3 md:p-4"
                   >
-                    <IoCheckmarkDone className="w-5 h-5 md:w-6 md:h-6 text-red-500 flex-shrink-0" />
-                    <span className="text-white font-semibold text-base md:text-lg">{role}</span>
+                    <IoCheckmarkDone className="w-5 h-5 md:w-6 md:h-6 text-red-500 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <span className="text-white font-semibold text-sm md:text-base block">{role.title}</span>
+                      <span className="text-gray-400 text-xs md:text-sm">{role.desc}</span>
+                    </div>
                   </motion.div>
                 ))}
               </div>
 
-              <motion.a
-                href="/contact"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-block bg-red-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold text-base md:text-lg shadow-2xl hover:shadow-red-500/50 transition-all"
-              >
-                Join Our Team
-              </motion.a>
+              <Link to="/contact">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-red-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold text-sm md:text-lg shadow-2xl hover:shadow-red-500/50 transition-all flex items-center space-x-2"
+                >
+                  <span>Get In Touch</span>
+                  <ChevronRight className="w-5 h-5" />
+                </motion.button>
+              </Link>
             </motion.div>
           </div>
         </div>
       </section>
 
+      {/* Quote Section */}
+      <section className="py-12 md:py-20 px-4 bg-black relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-red-900/20 to-transparent" />
+        <div className="max-w-4xl mx-auto relative z-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <Quote className="w-12 h-12 md:w-16 md:h-16 text-red-500 mx-auto mb-4 md:mb-6" />
+            <p className="text-xl md:text-3xl lg:text-4xl text-white font-medium mb-4 md:mb-6 leading-relaxed px-4">
+              "We don't just tow vehicles—we rescue people from stressful situations and get them safely back on the road."
+            </p>
+            <div className="text-red-400 font-semibold text-sm md:text-base">— Drive Zimbabwe Team</div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA Section */}
-      <section className="py-16 md:py-24 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-black opacity-90" />
-        <div className="absolute inset-0 backdrop-blur-3xl" />
-        
+      <section className="py-12 md:py-20 px-4 relative overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: 'url(/26.jpg)' }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-red-900/95 via-red-800/90 to-black/95" />
+
         <div className="max-w-4xl mx-auto relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-white/10 backdrop-blur-2xl border border-white/20 rounded-2xl md:rounded-3xl p-8 md:p-12"
+            className="bg-black/30 backdrop-blur-xl border border-white/20 rounded-2xl md:rounded-3xl p-6 md:p-12"
           >
-            <MapPin className="w-12 h-12 md:w-16 md:h-16 text-white mx-auto mb-4 md:mb-6" />
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">
+            <BsTruck className="w-12 h-12 md:w-16 md:h-16 text-white mx-auto mb-4 md:mb-6" />
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">
               Ready to Experience the Difference?
             </h2>
-            <p className="text-base md:text-xl text-gray-300 mb-6 md:mb-8 px-2">
-              Join thousands of satisfied customers across Zimbabwe
+            <p className="text-sm md:text-xl text-gray-300 mb-6 md:mb-8 px-2">
+              Join thousands of satisfied customers who trust Drive Zimbabwe for their roadside needs
             </p>
-            <motion.a
-              href="tel:0780579261"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-block bg-white text-red-600 px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold text-base md:text-lg shadow-2xl"
-            >
-              Call 078 057 9261
-            </motion.a>
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
+              <motion.a
+                href="tel:0780579261"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center justify-center space-x-2 bg-white text-red-600 px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold shadow-2xl"
+              >
+                <Phone className="w-5 h-5" />
+                <span>Call 078 057 9261</span>
+              </motion.a>
+              <Link to="/membership">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-red-600/80 backdrop-blur-xl border border-white/20 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold hover:bg-red-600 transition-all"
+                >
+                  <Shield className="w-5 h-5" />
+                  <span>Join Membership</span>
+                </motion.button>
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>

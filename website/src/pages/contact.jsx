@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, Clock, ChevronRight, AlertCircle, Send, Facebook, Instagram, Linkedin, MessageSquare, CheckCircle, User, AtSign } from 'lucide-react';
-import { MdStarPurple500 } from "react-icons/md";
+import { Phone, Mail, MapPin, Clock, AlertCircle, Send, Facebook, Instagram, Linkedin, MessageSquare, CheckCircle, User, AtSign } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
+import { toast } from 'sonner';
 
 // Mock translation object
 const mockTranslations = {
@@ -13,9 +14,9 @@ const mockTranslations = {
 
 const ContactPage = () => {
   const t = mockTranslations;
-  const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
   const [mapLoaded, setMapLoaded] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const [sendMethod, setSendMethod] = useState('whatsapp');
 
   // Initialize Leaflet map
   useEffect(() => {
@@ -42,8 +43,8 @@ const ContactPage = () => {
 
   const initMap = () => {
     if (window.L && document.getElementById('map')) {
-      // Coordinates for Avondale, Harare
-      const map = window.L.map('map').setView([-17.7869, 31.0471], 15);
+      // Coordinates for Harare, Zimbabwe
+      const map = window.L.map('map').setView([-17.7903311, 31.0365882], 17);
 
       window.L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors'
@@ -57,51 +58,85 @@ const ContactPage = () => {
         iconAnchor: [20, 40],
       });
 
-      window.L.marker([-17.7869, 31.0471], { icon: redIcon })
+      window.L.marker([-17.7903311, 31.0365882], { icon: redIcon })
         .addTo(map)
         .bindPopup('<b>Drive Zimbabwe</b><br>15 Harrow Ave, Avondale<br>Harare, Zimbabwe')
         .openPopup();
     }
   };
 
+  const generateMessage = () => {
+    return `CONTACT INQUIRY - DRIVE ZIMBABWE
+=====================================
+
+CONTACT INFORMATION
+-------------------
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+
+INQUIRY DETAILS
+---------------
+Subject: ${formData.subject || 'General Inquiry'}
+
+Message:
+${formData.message}
+
+=====================================
+Sent via Drive Zimbabwe Contact Form`;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setFormData({ name: '', email: '', phone: '', message: '' });
-      setTimeout(() => setSubmitted(false), 2000);
-    }, 1500);
+
+    if (!formData.name || !formData.message) {
+      toast.error('Please fill in your name and message');
+      return;
+    }
+
+    const message = generateMessage();
+    const encodedMessage = encodeURIComponent(message);
+
+    if (sendMethod === 'whatsapp') {
+      const whatsappNumber = '263780579261';
+      window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+      toast.success('Opening WhatsApp...');
+    } else {
+      const subject = encodeURIComponent(formData.subject || 'Contact Inquiry - Drive Zimbabwe');
+      window.open(`mailto:info@drivezim.co.zw?subject=${subject}&body=${encodedMessage}`, '_blank');
+      toast.success('Opening email client...');
+    }
   };
 
   const contactInfo = [
-    { 
-      icon: Phone, 
-      label: 'Call Us', 
-      value: '078 057 9261', 
+    {
+      icon: Phone,
+      label: 'Call Us',
+      value: '078 057 9261',
       subtext: 'Available 24/7',
       href: 'tel:0780579261',
       gradient: 'from-green-500 to-emerald-600'
     },
-    { 
-      icon: Mail, 
-      label: 'Email Us', 
-      value: 'info@drivezim.co.zw', 
-      subtext: 'Response within 2 hours',
+    {
+      icon: Mail,
+      label: 'Email Us',
+      value: 'info@drivezim.co.zw',
+      subtext: 'Quick response',
       href: 'mailto:info@drivezim.co.zw',
       gradient: 'from-blue-500 to-cyan-600'
     },
-    { 
-      icon: MapPin, 
-      label: 'Visit Us', 
-      value: '15 Harrow Ave, Avondale', 
+    {
+      icon: MapPin,
+      label: 'Visit Us',
+      value: '15 Harrow Ave, Avondale',
       subtext: 'Harare, Zimbabwe',
       href: 'https://maps.google.com/?q=15+Harrow+Ave+Avondale+Harare',
       gradient: 'from-red-500 to-orange-600'
     },
-    { 
-      icon: Clock, 
-      label: 'Business Hours', 
-      value: 'Open 24/7', 
+    {
+      icon: Clock,
+      label: 'Business Hours',
+      value: 'Open 24/7',
       subtext: 'Every day of the year',
       href: '#',
       gradient: 'from-purple-500 to-pink-600'
@@ -118,15 +153,15 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen bg-black">
       {/* Hero Section */}
-      <section className="relative h-[60vh] overflow-hidden">
-        <div 
+      <section className="relative h-[50vh] md:h-[60vh] overflow-hidden">
+        <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: 'url(/20.jpg)' }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/70 to-black" />
-        
-        {/* Geometric Patterns */}
-        <div className="absolute inset-0 opacity-10">
+
+        {/* Geometric Patterns - Hidden on mobile */}
+        <div className="absolute inset-0 opacity-10 hidden md:block">
           <motion.div
             animate={{ rotate: 360, scale: [1, 1.2, 1] }}
             transition={{ duration: 20, repeat: Infinity }}
@@ -150,15 +185,15 @@ const ContactPage = () => {
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.2, type: "spring" }}
-                className="inline-block bg-red-600/20 backdrop-blur-xl border border-red-500/30 px-6 py-2 rounded-full mb-6"
+                className="inline-block bg-red-600/20 backdrop-blur-xl border border-red-500/30 px-4 py-2 md:px-6 md:py-2 rounded-full mb-4 md:mb-6"
               >
-                <span className="text-red-400 font-semibold">24/7 Support Available</span>
+                <span className="text-red-400 font-semibold text-sm md:text-base">24/7 Support Available</span>
               </motion.div>
-              
-              <h1 className="text-6xl md:text-8xl font-bold text-white mb-6">
+
+              <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold text-white mb-4 md:mb-6">
                 {t.contact.title}
               </h1>
-              <p className="text-2xl text-gray-300 max-w-3xl mx-auto">
+              <p className="text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto px-4">
                 {t.contact.subtitle}
               </p>
             </motion.div>
@@ -167,9 +202,9 @@ const ContactPage = () => {
       </section>
 
       {/* Contact Cards Grid */}
-      <section className="py-16 px-4 bg-gradient-to-b from-black to-gray-900 -mt-20">
+      <section className="py-8 md:py-16 px-4 bg-gradient-to-b from-black to-gray-900 -mt-10 md:-mt-20">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
             {contactInfo.map((info, i) => (
               <motion.a
                 key={i}
@@ -183,15 +218,15 @@ const ContactPage = () => {
                 whileHover={{ y: -10, scale: 1.02 }}
                 className="group relative"
               >
-                <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 hover:border-white/30 transition-all h-full">
-                  <div className={`w-14 h-14 bg-gradient-to-br ${info.gradient} rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                    <info.icon className="w-7 h-7 text-white" />
+                <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl md:rounded-3xl p-4 md:p-6 hover:border-white/30 transition-all h-full">
+                  <div className={`w-10 h-10 md:w-14 md:h-14 bg-gradient-to-br ${info.gradient} rounded-xl md:rounded-2xl flex items-center justify-center mb-3 md:mb-4 group-hover:scale-110 transition-transform`}>
+                    <info.icon className="w-5 h-5 md:w-7 md:h-7 text-white" />
                   </div>
-                  <div className="text-gray-400 text-sm font-semibold mb-2">{info.label}</div>
-                  <div className="text-white text-lg font-bold mb-1">{info.value}</div>
-                  <div className="text-gray-500 text-sm">{info.subtext}</div>
+                  <div className="text-gray-400 text-xs md:text-sm font-semibold mb-1 md:mb-2">{info.label}</div>
+                  <div className="text-white text-sm md:text-lg font-bold mb-1 break-words">{info.value}</div>
+                  <div className="text-gray-500 text-xs md:text-sm hidden md:block">{info.subtext}</div>
                 </div>
-                <div className={`absolute inset-0 bg-gradient-to-br ${info.gradient} opacity-0 group-hover:opacity-10 rounded-3xl transition-opacity blur-xl`} />
+                <div className={`absolute inset-0 bg-gradient-to-br ${info.gradient} opacity-0 group-hover:opacity-10 rounded-2xl md:rounded-3xl transition-opacity blur-xl`} />
               </motion.a>
             ))}
           </div>
@@ -199,109 +234,161 @@ const ContactPage = () => {
       </section>
 
       {/* Main Content */}
-      <section className="py-24 px-4 bg-gradient-to-b from-gray-900 via-black to-gray-900">
+      <section className="py-12 md:py-24 px-4 bg-gradient-to-b from-gray-900 via-black to-gray-900">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-5 gap-12">
+          <div className="grid lg:grid-cols-5 gap-6 md:gap-12">
             {/* Contact Form - 3 columns */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="lg:col-span-3"
+              className="lg:col-span-3 order-2 lg:order-1"
             >
-              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8 md:p-12">
-                <div className="flex items-center space-x-3 mb-8">
-                  <div className="w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center">
-                    <Send className="w-6 h-6 text-white" />
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-12">
+                <div className="flex items-center space-x-3 mb-6 md:mb-8">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-red-600 rounded-xl flex items-center justify-center">
+                    <Send className="w-5 h-5 md:w-6 md:h-6 text-white" />
                   </div>
                   <div>
-                    <h2 className="text-3xl font-bold text-white">Send Message</h2>
-                    <p className="text-gray-400">We'll respond within 2 hours</p>
+                    <h2 className="text-2xl md:text-3xl font-bold text-white">Send Message</h2>
+                    <p className="text-gray-400 text-sm md:text-base">We'll get back to you shortly</p>
                   </div>
                 </div>
 
-                {submitted ? (
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    className="flex flex-col items-center justify-center py-16"
-                  >
-                    <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mb-6">
-                      <CheckCircle className="w-10 h-10 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-white mb-2">Message Sent!</h3>
-                    <p className="text-gray-400">We'll get back to you shortly</p>
-                  </motion.div>
-                ) : (
-                  <div className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <label className="block text-white mb-2 font-semibold flex items-center space-x-2">
-                          <User className="w-4 h-4" />
-                          <span>Full Name</span>
-                        </label>
-                        <input
-                          type="text"
-                          value={formData.name}
-                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                          className="w-full bg-black/30 border border-white/20 rounded-xl px-4 py-4 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all"
-                          placeholder="John Doe"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-white mb-2 font-semibold flex items-center space-x-2">
-                          <Phone className="w-4 h-4" />
-                          <span>Phone Number</span>
-                        </label>
-                        <input
-                          type="tel"
-                          value={formData.phone}
-                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          className="w-full bg-black/30 border border-white/20 rounded-xl px-4 py-4 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all"
-                          placeholder="+263 77 123 4567"
-                        />
-                      </div>
-                    </div>
-
+                <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     <div>
-                      <label className="block text-white mb-2 font-semibold flex items-center space-x-2">
-                        <AtSign className="w-4 h-4" />
-                        <span>Email Address</span>
+                      <label className="block text-white mb-2 font-semibold flex items-center space-x-2 text-sm md:text-base">
+                        <User className="w-4 h-4" />
+                        <span>Full Name *</span>
                       </label>
                       <input
-                        type="email"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full bg-black/30 border border-white/20 rounded-xl px-4 py-4 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all"
-                        placeholder="john@example.com"
+                        type="text"
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        className="w-full bg-black/30 border border-white/20 rounded-xl px-4 py-3 md:py-4 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all text-sm md:text-base"
+                        placeholder="John Doe"
+                        required
                       />
                     </div>
-
                     <div>
-                      <label className="block text-white mb-2 font-semibold flex items-center space-x-2">
-                        <MessageSquare className="w-4 h-4" />
-                        <span>Your Message</span>
+                      <label className="block text-white mb-2 font-semibold flex items-center space-x-2 text-sm md:text-base">
+                        <Phone className="w-4 h-4" />
+                        <span>Phone Number</span>
                       </label>
-                      <textarea
-                        rows={6}
-                        value={formData.message}
-                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        className="w-full bg-black/30 border border-white/20 rounded-xl px-4 py-4 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all resize-none"
-                        placeholder="Tell us how we can help you..."
+                      <input
+                        type="tel"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        className="w-full bg-black/30 border border-white/20 rounded-xl px-4 py-3 md:py-4 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all text-sm md:text-base"
+                        placeholder="+263 77 123 4567"
                       />
                     </div>
-
-                    <motion.button
-                      onClick={handleSubmit}
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="w-full bg-gradient-to-r from-red-600 to-red-700 text-white px-8 py-5 rounded-xl font-bold text-lg shadow-2xl hover:shadow-red-500/50 transition-all flex items-center justify-center space-x-3"
-                    >
-                      <Send className="w-5 h-5" />
-                      <span>Send Message</span>
-                    </motion.button>
                   </div>
-                )}
+
+                  <div>
+                    <label className="block text-white mb-2 font-semibold flex items-center space-x-2 text-sm md:text-base">
+                      <AtSign className="w-4 h-4" />
+                      <span>Email Address</span>
+                    </label>
+                    <input
+                      type="email"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full bg-black/30 border border-white/20 rounded-xl px-4 py-3 md:py-4 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all text-sm md:text-base"
+                      placeholder="john@example.com"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-white mb-2 font-semibold flex items-center space-x-2 text-sm md:text-base">
+                      <MessageSquare className="w-4 h-4" />
+                      <span>Subject</span>
+                    </label>
+                    <input
+                      type="text"
+                      value={formData.subject}
+                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                      className="w-full bg-black/30 border border-white/20 rounded-xl px-4 py-3 md:py-4 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all text-sm md:text-base"
+                      placeholder="e.g., Membership Inquiry, Service Question"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-white mb-2 font-semibold flex items-center space-x-2 text-sm md:text-base">
+                      <MessageSquare className="w-4 h-4" />
+                      <span>Your Message *</span>
+                    </label>
+                    <textarea
+                      rows={5}
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      className="w-full bg-black/30 border border-white/20 rounded-xl px-4 py-3 md:py-4 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all resize-none text-sm md:text-base"
+                      placeholder="Tell us how we can help you..."
+                      required
+                    />
+                  </div>
+
+                  {/* Send Method Selection */}
+                  <div>
+                    <label className="block text-white mb-3 font-semibold text-sm md:text-base">
+                      Choose how to send your message:
+                    </label>
+                    <div className="grid grid-cols-2 gap-3 md:gap-4">
+                      <motion.button
+                        type="button"
+                        onClick={() => setSendMethod('whatsapp')}
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className={`p-3 md:p-4 rounded-xl border-2 transition-all flex items-center justify-center space-x-2 ${
+                          sendMethod === 'whatsapp'
+                            ? 'border-green-500 bg-green-500/20 text-white'
+                            : 'border-white/20 bg-white/5 text-gray-400 hover:border-white/40'
+                        }`}
+                      >
+                        <FaWhatsapp className="w-5 h-5 md:w-6 md:h-6" />
+                        <span className="font-semibold text-sm md:text-base">WhatsApp</span>
+                      </motion.button>
+                      <motion.button
+                        type="button"
+                        onClick={() => setSendMethod('email')}
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className={`p-3 md:p-4 rounded-xl border-2 transition-all flex items-center justify-center space-x-2 ${
+                          sendMethod === 'email'
+                            ? 'border-blue-500 bg-blue-500/20 text-white'
+                            : 'border-white/20 bg-white/5 text-gray-400 hover:border-white/40'
+                        }`}
+                      >
+                        <Mail className="w-5 h-5 md:w-6 md:h-6" />
+                        <span className="font-semibold text-sm md:text-base">Email</span>
+                      </motion.button>
+                    </div>
+                  </div>
+
+                  <motion.button
+                    type="submit"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className={`w-full px-6 md:px-8 py-4 md:py-5 rounded-xl font-bold text-base md:text-lg shadow-2xl transition-all flex items-center justify-center space-x-3 ${
+                      sendMethod === 'whatsapp'
+                        ? 'bg-gradient-to-r from-green-600 to-green-700 hover:shadow-green-500/50'
+                        : 'bg-gradient-to-r from-blue-600 to-blue-700 hover:shadow-blue-500/50'
+                    } text-white`}
+                  >
+                    {sendMethod === 'whatsapp' ? (
+                      <>
+                        <FaWhatsapp className="w-5 h-5 md:w-6 md:h-6" />
+                        <span>Send via WhatsApp</span>
+                      </>
+                    ) : (
+                      <>
+                        <Mail className="w-5 h-5 md:w-6 md:h-6" />
+                        <span>Send via Email</span>
+                      </>
+                    )}
+                  </motion.button>
+                </form>
               </div>
             </motion.div>
 
@@ -310,30 +397,42 @@ const ContactPage = () => {
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="lg:col-span-2 space-y-6"
+              className="lg:col-span-2 space-y-4 md:space-y-6 order-1 lg:order-2"
             >
               {/* Emergency Card */}
-              <div className="bg-gradient-to-br from-red-600 to-red-700 rounded-3xl p-8 text-center shadow-2xl">
+              <div className="bg-gradient-to-br from-red-600 to-red-700 rounded-2xl md:rounded-3xl p-6 md:p-8 text-center shadow-2xl">
                 <motion.div
                   animate={{ scale: [1, 1.1, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 >
-                  <AlertCircle className="w-16 h-16 text-white mx-auto mb-4" />
+                  <AlertCircle className="w-12 h-12 md:w-16 md:h-16 text-white mx-auto mb-3 md:mb-4" />
                 </motion.div>
-                <h3 className="text-2xl font-bold text-white mb-2">Emergency?</h3>
-                <p className="text-white/90 mb-6">Call us immediately for 24/7 roadside assistance</p>
-                <a
-                  href="tel:0780579261"
-                  className="inline-block bg-white text-red-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-colors shadow-xl"
-                >
-                  078 057 9261
-                </a>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">Emergency?</h3>
+                <p className="text-white/90 mb-4 md:mb-6 text-sm md:text-base">Call us immediately for 24/7 roadside assistance</p>
+                <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                  <a
+                    href="tel:0780579261"
+                    className="inline-flex items-center justify-center space-x-2 bg-white text-red-600 px-6 py-3 md:py-4 rounded-xl font-bold text-base md:text-lg hover:bg-gray-100 transition-colors shadow-xl"
+                  >
+                    <Phone className="w-5 h-5" />
+                    <span>078 057 9261</span>
+                  </a>
+                  <a
+                    href="https://wa.me/263780579261?text=Hi%2C%20I%20need%20emergency%20roadside%20assistance!"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center space-x-2 bg-green-500 text-white px-6 py-3 md:py-4 rounded-xl font-bold text-base md:text-lg hover:bg-green-600 transition-colors shadow-xl"
+                  >
+                    <FaWhatsapp className="w-5 h-5" />
+                    <span>WhatsApp</span>
+                  </a>
+                </div>
               </div>
 
               {/* Social Media */}
-              <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8">
-                <h3 className="text-white font-bold text-xl mb-6">Connect With Us</h3>
-                <div className="grid grid-cols-2 gap-4">
+              <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl md:rounded-3xl p-6 md:p-8">
+                <h3 className="text-white font-bold text-lg md:text-xl mb-4 md:mb-6">Connect With Us</h3>
+                <div className="grid grid-cols-4 lg:grid-cols-2 gap-3 md:gap-4">
                   {socials.map((social, i) => (
                     <motion.a
                       key={i}
@@ -341,24 +440,24 @@ const ContactPage = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.05, y: -5 }}
-                      className={`bg-white/10 hover:bg-white/20 rounded-2xl p-6 flex flex-col items-center justify-center space-y-3 transition-all ${social.color}`}
+                      className={`bg-white/10 hover:bg-white/20 rounded-xl md:rounded-2xl p-3 md:p-6 flex flex-col items-center justify-center space-y-1 md:space-y-3 transition-all ${social.color}`}
                     >
-                      <social.icon className="w-8 h-8 text-white" />
-                      <span className="text-white font-semibold text-sm">{social.label}</span>
+                      <social.icon className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                      <span className="text-white font-semibold text-xs md:text-sm hidden lg:block">{social.label}</span>
                     </motion.a>
                   ))}
                 </div>
               </div>
 
               {/* Working Hours */}
-              <div className="bg-gradient-to-br from-gray-800 to-black border border-white/10 rounded-3xl p-8">
-                <Clock className="w-12 h-12 text-red-500 mb-4" />
-                <h3 className="text-white font-bold text-xl mb-4">Working Hours</h3>
-                <div className="space-y-3">
+              <div className="bg-gradient-to-br from-gray-800 to-black border border-white/10 rounded-2xl md:rounded-3xl p-6 md:p-8">
+                <Clock className="w-10 h-10 md:w-12 md:h-12 text-red-500 mb-3 md:mb-4" />
+                <h3 className="text-white font-bold text-lg md:text-xl mb-3 md:mb-4">Working Hours</h3>
+                <div className="space-y-2 md:space-y-3">
                   {['Monday - Sunday', 'Public Holidays', 'Emergency Services'].map((day, i) => (
-                    <div key={i} className="flex justify-between items-center text-white border-b border-white/10 pb-3">
-                      <span className="text-gray-300">{day}</span>
-                      <span className="font-bold text-green-500">24/7</span>
+                    <div key={i} className="flex justify-between items-center text-white border-b border-white/10 pb-2 md:pb-3">
+                      <span className="text-gray-300 text-sm md:text-base">{day}</span>
+                      <span className="font-bold text-green-500 text-sm md:text-base">24/7</span>
                     </div>
                   ))}
                 </div>
@@ -369,46 +468,46 @@ const ContactPage = () => {
       </section>
 
       {/* Map Section */}
-      <section className="py-24 px-4 bg-black">
+      <section className="py-12 md:py-24 px-4 bg-black">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-8 md:mb-12"
           >
-            <h2 className="text-5xl font-bold text-white mb-4">Find Our Location</h2>
-            <p className="text-xl text-gray-400">Visit us at our office in Avondale, Harare</p>
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-3 md:mb-4">Find Our Location</h2>
+            <p className="text-lg md:text-xl text-gray-400">Visit us at our office in Avondale, Harare</p>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden"
+            className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl md:rounded-3xl overflow-hidden"
           >
-            <div id="map" className="w-full h-[500px] bg-gray-900 relative">
+            <div id="map" className="w-full h-[300px] md:h-[500px] bg-gray-900 relative">
               {!mapLoaded && (
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center">
-                    <MapPin className="w-16 h-16 text-red-500 mx-auto mb-4 animate-bounce" />
-                    <p className="text-white text-lg">Loading map...</p>
+                    <MapPin className="w-12 h-12 md:w-16 md:h-16 text-red-500 mx-auto mb-4 animate-bounce" />
+                    <p className="text-white text-base md:text-lg">Loading map...</p>
                   </div>
                 </div>
               )}
             </div>
-            
-            <div className="p-8 bg-gradient-to-br from-gray-900 to-black">
+
+            <div className="p-6 md:p-8 bg-gradient-to-br from-gray-900 to-black">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div>
-                  <h3 className="text-white font-bold text-xl mb-2">Drive Zimbabwe Headquarters</h3>
-                  <p className="text-gray-400">15 Harrow Ave, Avondale, Harare, Zimbabwe</p>
+                  <h3 className="text-white font-bold text-lg md:text-xl mb-1 md:mb-2">Drive Zimbabwe Headquarters</h3>
+                  <p className="text-gray-400 text-sm md:text-base">15 Harrow Ave, Avondale, Harare, Zimbabwe</p>
                 </div>
                 <a
                   href="https://maps.google.com/?q=15+Harrow+Ave+Avondale+Harare"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-red-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-red-700 transition-colors flex items-center space-x-2 justify-center"
+                  className="bg-red-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-red-700 transition-colors flex items-center space-x-2 justify-center text-sm md:text-base"
                 >
                   <MapPin className="w-5 h-5" />
                   <span>Open in Google Maps</span>

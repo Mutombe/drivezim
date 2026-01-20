@@ -1,41 +1,15 @@
 // Home Page
-import React, { createContext, useContext, useState, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link,
-  useLocation,
-} from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Menu,
-  X,
   Phone,
   Mail,
-  MapPin,
-  Clock,
-  Wrench,
-  Truck,
-  Shield,
-  Users,
-  Award,
   ChevronRight,
-  Star,
-  Facebook,
-  Twitter,
-  Linkedin,
-  Instagram,
-  Globe,
-  MessageSquare,
-  Zap,
-  Target,
-  Heart,
-  CheckCircle,
-  AlertCircle,
+  Shield,
   ArrowRight,
+  AlertCircle,
 } from "lucide-react";
-import { Toaster, toast } from "sonner";
 import { useLanguage } from "../lunguageContext";
 import HappyCustomers from "../components/happyCustomers";
 import { IoCarSportOutline } from "react-icons/io5";
@@ -62,42 +36,49 @@ const HomePage = () => {
       icon: BsTruckFlatbed,
       title: t.services.towing,
       desc: "Fast & reliable towing across Zimbabwe",
-      color: "from-red-500 to-red-600",
-      image: "19.jpg",
+      gradient: "from-red-600/90 via-red-500/80 to-orange-500/70",
+      overlay: "bg-red-600/60",
+      image: "/5.jpg",
+      hoverGlow: "group-hover:shadow-red-500/50",
     },
     {
       icon: MdOutlineSettings,
       title: t.services.roadside,
       desc: "Immediate roadside assistance",
-      color: "from-gray-700 to-gray-800",
-      image: "20.jpg",
+      gradient: "from-blue-600/90 via-cyan-500/80 to-teal-500/70",
+      overlay: "bg-blue-600/60",
+      image: "/20.jpg",
+      hoverGlow: "group-hover:shadow-blue-500/50",
     },
     {
       icon: SiFsecure,
       title: t.services.recovery,
       desc: "Professional vehicle recovery",
-      color: "from-red-600 to-red-700",
-      image: "21.jpg",
+      gradient: "from-purple-600/90 via-pink-500/80 to-rose-500/70",
+      overlay: "bg-purple-600/60",
+      image: "/37.jpg",
+      hoverGlow: "group-hover:shadow-purple-500/50",
     },
     {
       icon: FiZap,
       title: t.services.emergency,
       desc: "24/7 emergency response team",
-      color: "from-gray-800 to-black",
-      image: "22.jpg",
+      gradient: "from-emerald-600/90 via-green-500/80 to-lime-500/70",
+      overlay: "bg-emerald-600/60",
+      image: "/26.jpg",
+      hoverGlow: "group-hover:shadow-emerald-500/50",
     },
   ];
 
   const stats = [
     { value: "5000+", label: "Vehicles Assisted", icon: IoCarSportOutline },
     { value: "24/7", label: "Always Available", icon: GiAlarmClock },
-    { value: "<30min", label: "Average Response", icon: FiZap },
     { value: "4.8", label: "Customer Rating", icon: MdStarPurple500 },
   ];
 
   return (
     <div className="min-h-screen bg-black">
-      {/* Hero Section - Inspired by bicycle design */}
+      {/* Hero Section */}
       <section className="relative h-screen overflow-hidden">
         {/* Image Carousel Background */}
         <div className="absolute inset-0">
@@ -127,9 +108,9 @@ const HomePage = () => {
           className="absolute inset-0"
           animate={{
             background: [
-              "linear-gradient(135deg, rgba(255,0,0,0.7) 0%, rgba(44,47,54,0.8) 50%, rgba(0,0,0,0.9) 100%)",
-              "linear-gradient(135deg, rgba(44,47,54,0.8) 0%, rgba(255,0,0,0.7) 50%, rgba(0,0,0,0.9) 100%)",
-              "linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(255,0,0,0.7) 50%, rgba(44,47,54,0.8) 100%)",
+              "linear-gradient(135deg, rgba(198, 137, 137, 0.7) 0%, rgba(44,47,54,0.8) 50%, rgba(0,0,0,0.9) 100%)",
+              "linear-gradient(135deg, rgba(44,47,54,0.8) 0%, rgba(73, 62, 62, 0.7) 50%, rgba(0,0,0,0.9) 100%)",
+              "linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(228, 148, 148, 0.7) 50%, rgba(44,47,54,0.8) 100%)",
             ],
           }}
           transition={{ duration: 10, repeat: Infinity, repeatType: "reverse" }}
@@ -157,7 +138,7 @@ const HomePage = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
-                  className="inline-block  px-6 py-2 rounded-full"
+                  className="inline-block px-6 py-2 rounded-full"
                 ></motion.div>
 
                 <motion.h1
@@ -194,14 +175,15 @@ const HomePage = () => {
                     <Phone className="w-5 h-5" />
                     <span>{t.hero.cta}</span>
                   </motion.a>
-                  <motion.a
-                    href="#services"
-                    whileHover={{ scale: 1.05 }}
-                    className="bg-white/10 backdrop-blur-xl border border-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center space-x-3 hover:bg-white/20 transition-all"
-                  >
-                    <span>Explore Services</span>
-                    <ArrowRight className="w-5 h-5" />
-                  </motion.a>
+                  <Link to="/services">
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      className="bg-white/10 backdrop-blur-xl border border-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center space-x-3 hover:bg-white/20 transition-all"
+                    >
+                      <span>Explore Services</span>
+                      <ArrowRight className="w-5 h-5" />
+                    </motion.div>
+                  </Link>
                 </motion.div>
                 <motion.div
                   initial={{ opacity: 0 }}
@@ -232,7 +214,7 @@ const HomePage = () => {
         </motion.div>
       </section>
 
-      {/* Services Grid - Mixed Design Styles */}
+      {/* Services Grid */}
       <section
         id="services"
         className="py-24 px-4 bg-gradient-to-b from-black to-gray-900"
@@ -252,8 +234,8 @@ const HomePage = () => {
             </p>
           </motion.div>
 
-          {/* Stats Bar - Integrated with Services */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+          {/* Stats Bar */}
+          <div className="grid grid-cols-3 gap-4 mb-16">
             {stats.map((stat, i) => {
               const cardStyles = [
                 {
@@ -273,12 +255,6 @@ const HomePage = () => {
                     "bg-gradient-to-br from-red-600 via-red-700 to-purple-800",
                   shadow: "hover:shadow-purple-500/50",
                   border: "border-purple-400/30",
-                },
-                {
-                  gradient:
-                    "bg-gradient-to-br from-red-700 via-red-900 to-black",
-                  shadow: "hover:shadow-red-500/50",
-                  border: "border-red-400/30",
                 },
               ];
               return (
@@ -300,6 +276,7 @@ const HomePage = () => {
             })}
           </div>
 
+          {/* Service Cards with Unique Colors and BG Images */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, i) => (
               <motion.div
@@ -309,23 +286,24 @@ const HomePage = () => {
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.05, y: -10 }}
-                className="group relative overflow-hidden rounded-3xl h-80"
+                className={`group relative overflow-hidden rounded-3xl h-80 shadow-2xl ${service.hoverGlow} transition-all`}
               >
                 {/* Background Image */}
                 <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                  style={{ backgroundImage: `url(/19.jpg)`, opacity: 0.8 }}
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                  style={{ backgroundImage: `url(${service.image})` }}
                 />
 
+                {/* Unique Color Overlay */}
+                <div className={`absolute inset-0 ${service.overlay} transition-opacity duration-300`} />
+
                 {/* Gradient Overlay */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${service.color}`}
-                />
+                <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-90 group-hover:opacity-95 transition-opacity`} />
 
                 {/* Content */}
                 <div className="relative z-10 p-8 h-full flex flex-col justify-between">
                   <div>
-                    <div className="w-16 h-16 bg-white/20 backdrop-blur-xl rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <div className="w-16 h-16 bg-white/20 backdrop-blur-xl rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-white/30 transition-all">
                       <service.icon className="w-8 h-8 text-white" />
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-3">
@@ -334,35 +312,56 @@ const HomePage = () => {
                     <p className="text-white/90">{service.desc}</p>
                   </div>
 
-                  <motion.div
-                    initial={{ x: -20, opacity: 0 }}
-                    whileHover={{ x: 0, opacity: 1 }}
-                    className="flex items-center space-x-2 text-white font-semibold"
-                  >
-                    <span>Learn More</span>
-                    <ChevronRight className="w-5 h-5" />
-                  </motion.div>
+                  <Link to="/services">
+                    <motion.div
+                      whileHover={{ x: 5 }}
+                      className="flex items-center space-x-2 text-white font-semibold opacity-0 group-hover:opacity-100 transition-opacity"
+                    >
+                      <span>Learn More</span>
+                      <ChevronRight className="w-5 h-5" />
+                    </motion.div>
+                  </Link>
                 </div>
 
-                {/* Hover Effect Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                {/* Bottom Highlight */}
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/30 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section - Glassmorphism */}
+      {/* CTA Section with Background Image */}
       <section className="py-24 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-black opacity-90" />
-        <div className="absolute inset-0 backdrop-blur-3xl" />
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-fixed"
+          style={{ backgroundImage: 'url(/2.jpg)' }}
+        />
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-red-900/95 via-red-800/90 to-black/95" />
+
+        {/* Animated Shapes */}
+        <div className="absolute inset-0 overflow-hidden opacity-20">
+          <motion.div
+            animate={{ rotate: [0, 360] }}
+            transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+            className="absolute -top-20 -right-20 w-96 h-96 border-4 border-white/20 rounded-full"
+          />
+          <motion.div
+            animate={{ rotate: [360, 0] }}
+            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+            className="absolute -bottom-20 -left-20 w-72 h-72 border-4 border-white/20 rounded-full"
+          />
+        </div>
 
         <div className="max-w-4xl mx-auto relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl p-12"
+            className="bg-black/30 backdrop-blur-xl border border-white/20 rounded-3xl p-12"
           >
             <AlertCircle className="w-16 h-16 text-white mx-auto mb-6" />
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
@@ -376,18 +375,18 @@ const HomePage = () => {
               <motion.a
                 href="tel:0780579261"
                 whileHover={{ scale: 1.05 }}
-                className="bg-white text-red-600 px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center space-x-3 shadow-2xl"
+                className="bg-white text-red-600 px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center space-x-3 shadow-2xl hover:shadow-white/30 transition-all"
               >
                 <Phone className="w-5 h-5" />
                 <span>Call {t.hero.phone}</span>
               </motion.a>
-              <Link to="/contact">
+              <Link to="/membership">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
-                  className="bg-black/40 backdrop-blur-xl border border-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center space-x-3"
+                  className="bg-red-600/80 backdrop-blur-xl border border-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center space-x-3 hover:bg-red-600 transition-all"
                 >
-                  <Mail className="w-5 h-5" />
-                  <span>Send Message</span>
+                  <Shield className="w-5 h-5" />
+                  <span>Join Membership</span>
                 </motion.button>
               </Link>
             </div>
