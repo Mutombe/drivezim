@@ -550,14 +550,14 @@ const StoryPage = () => {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: 'url(/26.jpg)' }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-red-900/95 via-red-800/90 to-black/95" />
+        <div className="absolute inset-0 bg-gradient-to-r from-red-900/60 via-red-800/50 to-black/60" />
 
         <div className="max-w-4xl mx-auto relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-black/30 backdrop-blur-xl border border-white/20 rounded-2xl md:rounded-3xl p-6 md:p-12"
+            className="bg-black/20 backdrop-blur-sm border border-white/20 rounded-2xl md:rounded-3xl p-6 md:p-12"
           >
             <BsTruck className="w-12 h-12 md:w-16 md:h-16 text-white mx-auto mb-4 md:mb-6" />
             <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">

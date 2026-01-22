@@ -469,14 +469,14 @@ const ReviewsPage = () => {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: 'url(/19.jpg)' }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-red-900/90 to-black/95" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-red-900/50 to-black/60" />
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-black/40 backdrop-blur-xl border border-white/20 rounded-3xl p-12"
+            className="bg-black/20 backdrop-blur-sm border border-white/20 rounded-3xl p-12"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Ready to Experience Our Service?

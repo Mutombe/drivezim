@@ -347,7 +347,7 @@ const HomePage = () => {
         />
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-red-900/95 via-red-800/90 to-black/95" />
+        <div className="absolute inset-0 bg-gradient-to-r from-red-900/60 via-red-800/50 to-black/60" />
 
         {/* Animated Shapes */}
         <div className="absolute inset-0 overflow-hidden opacity-20">
@@ -368,7 +368,7 @@ const HomePage = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-black/30 backdrop-blur-xl border border-white/20 rounded-3xl p-12"
+            className="bg-black/20 backdrop-blur-sm border border-white/20 rounded-3xl p-12"
           >
             <AlertCircle className="w-16 h-16 text-white mx-auto mb-6" />
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
