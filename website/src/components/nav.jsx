@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin, Shield, User, Car, CreditCard, MessageSquare } from 'lucide-react';
+import { Menu, X, Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin, Shield, User, Car, CreditCard, MessageSquare, Twitter } from 'lucide-react';
 import { useLanguage } from '../lunguageContext';
 import { TiThMenuOutline } from "react-icons/ti";
 import { FaWhatsapp } from 'react-icons/fa';
@@ -125,16 +125,16 @@ Sent via Drive Zimbabwe Website`;
                 </div>
                 <div className="hidden md:block w-px h-4 bg-white/30" />
                 <div className="flex items-center space-x-3">
-                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200 transition-colors">
+                  <a href="https://www.facebook.com/DriveZimRoadsideAssistance/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200 transition-colors">
                     <Facebook className="w-4 h-4" />
                   </a>
-                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200 transition-colors">
+                  <a href="https://x.com/drivezimbabwe" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200 transition-colors">
                     <Twitter className="w-4 h-4" />
                   </a>
-                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200 transition-colors">
+                  <a href="https://www.instagram.com/drivezim2019/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200 transition-colors">
                     <Instagram className="w-4 h-4" />
                   </a>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200 transition-colors">
+                  <a href="https://www.linkedin.com/posts/drive-zim-0aa0a3251_drive-zimbabwe-roadside-assistance-activity-7206968705946157056--40y" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200 transition-colors">
                     <Linkedin className="w-4 h-4" />
                   </a>
                 </div>

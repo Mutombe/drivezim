@@ -32,10 +32,10 @@ const Footer = () => {
   };
 
   const socials = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: FaXTwitter, href: 'https://twitter.com/DriveZimbabwe', label: 'Twitter' },
-    { icon: Linkedin, href: 'https://www.linkedin.com/in/drive-zim-drive-zimbabwe-roadside-assistance-0aa0a3251', label: 'LinkedIn' },
-    { icon: Instagram, href: '#', label: 'Instagram' }
+    { icon: Facebook, href: 'https://www.facebook.com/DriveZimRoadsideAssistance/', label: 'Facebook' },
+    { icon: FaXTwitter, href: 'https://x.com/drivezimbabwe', label: 'X' },
+    { icon: Instagram, href: 'https://www.instagram.com/drivezim2019/', label: 'Instagram' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/posts/drive-zim-0aa0a3251_drive-zimbabwe-roadside-assistance-activity-7206968705946157056--40y', label: 'LinkedIn' }
   ];
 
   const privacyPolicyContent = {

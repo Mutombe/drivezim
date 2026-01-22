@@ -160,10 +160,10 @@ Sent via Drive Zimbabwe Contact Form`;
   ];
 
   const socials = [
-    { icon: Facebook, href: '#', color: 'hover:bg-blue-600', label: 'Facebook' },
-    { icon: MessageSquare, href: 'https://twitter.com/DriveZimbabwe', color: 'hover:bg-sky-500', label: 'Twitter' },
-    { icon: Linkedin, href: 'https://www.linkedin.com/in/drive-zim-drive-zimbabwe-roadside-assistance-0aa0a3251', color: 'hover:bg-blue-700', label: 'LinkedIn' },
-    { icon: Instagram, href: '#', color: 'hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500', label: 'Instagram' }
+    { icon: Facebook, href: 'https://www.facebook.com/DriveZimRoadsideAssistance/', color: 'hover:bg-blue-600', label: 'Facebook' },
+    { icon: MessageSquare, href: 'https://x.com/drivezimbabwe', color: 'hover:bg-black', label: 'X' },
+    { icon: Instagram, href: 'https://www.instagram.com/drivezim2019/', color: 'hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500', label: 'Instagram' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/posts/drive-zim-0aa0a3251_drive-zimbabwe-roadside-assistance-activity-7206968705946157056--40y', color: 'hover:bg-blue-700', label: 'LinkedIn' }
   ];
 
   return (

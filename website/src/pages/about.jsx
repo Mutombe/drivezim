@@ -6,38 +6,46 @@ import { LiaAwardSolid, LiaPeopleCarrySolid } from "react-icons/lia";
 import { HiArrowTrendingUp } from "react-icons/hi2";
 import { GiAlarmClock, GiRoad } from "react-icons/gi";
 import { IoCheckmarkDone } from "react-icons/io5";
-import { FaHeart, FaEye, FaHandsHelping } from "react-icons/fa";
-import { BsTruck } from "react-icons/bs";
+import { FaHeart, FaHandshake, FaUsers } from "react-icons/fa";
+import { MdVerified } from "react-icons/md";
+import { BsLightningCharge } from "react-icons/bs";
 
 const StoryPage = () => {
   const coreValues = [
     {
       icon: FaHeart,
-      title: 'Care',
-      desc: 'We genuinely care about every motorist we assist. Your safety and well-being are our top priority.',
+      title: 'Care First, Always',
+      desc: 'We understand that a breakdown is more than a mechanical issue—it\'s a stressful and sometimes frightening moment. We treat every motorist with compassion, patience, and respect, ensuring no one feels alone on the roadside.',
       gradient: 'from-pink-300 to-red-400',
       bgImage: '/5.jpg'
     },
     {
-      icon: FaHandsHelping,
-      title: 'Courtesy',
-      desc: 'Professional, respectful service that treats every customer with dignity and understanding.',
+      icon: FaHandshake,
+      title: 'Integrity & Trust',
+      desc: 'We operate with honesty, transparency, and accountability in every call we answer. Motorists trust us with their safety, their vehicles, and their families—and we honour that trust without compromise.',
       gradient: 'from-blue-300 to-cyan-400',
       bgImage: '/20.jpg'
     },
     {
-      icon: FaEye,
-      title: 'Concentration',
-      desc: 'Focused dedication to road safety and providing attentive, precise assistance when you need it most.',
-      gradient: 'from-purple-300 to-indigo-400',
+      icon: BsLightningCharge,
+      title: 'Reliability When It Matters Most',
+      desc: 'When you call, we respond. Day or night, rain or shine, we are committed to being there when Zimbabwean motorists need us most, delivering dependable assistance without excuses.',
+      gradient: 'from-yellow-300 to-orange-400',
       bgImage: '/26.jpg'
     },
     {
-      icon: LiaAwardSolid,
-      title: 'Excellence',
-      desc: 'Continuously improving our service standards to deliver the best roadside assistance in Zimbabwe.',
-      gradient: 'from-orange-300 to-amber-400',
+      icon: MdVerified,
+      title: 'Professional Excellence',
+      desc: 'Our trained operator, modern equipment, and strict safety standards ensure every recovery, tow, and assist is carried out with precision and care. We don\'t cut corners—because lives and livelihoods matter.',
+      gradient: 'from-purple-300 to-indigo-400',
       bgImage: '/37.jpg'
+    },
+    {
+      icon: FaUsers,
+      title: 'Community & Responsibility',
+      desc: 'We are more than a roadside assistance service; we are part of the Zimbabwean community. We take pride in keeping our roads safer and supporting fellow citizens when they need it most.',
+      gradient: 'from-green-300 to-emerald-400',
+      bgImage: '/2.jpg'
     }
   ];
 
