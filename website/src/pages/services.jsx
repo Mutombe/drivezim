@@ -41,7 +41,7 @@ const ServicesPage = () => {
       icon: MdOutlineSettings,
       title: 'Roadside Repairs',
       desc: 'Expert on-the-spot repairs to get you back on the road quickly',
-      features: ['Battery Jump Start', 'Tyre Changes & Repair', 'Minor Mechanical Fixes', 'Fluid Top-up Service'],
+      features: ['Battery Jump Start', 'Tyre Changes & Repair', 'Minor Mechanical Fixes',],
       stats: { availability: '24/7', rate: '98% Success', service: 'Professional' },
       gradient: 'from-blue-600 via-cyan-600 to-teal-500',
       bgImage: '/20.jpg',
@@ -136,7 +136,7 @@ const ServicesPage = () => {
               animate={{ opacity: 1, y: 0 }}
               className="text-center mb-12"
             >
-              <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 leading-tight">
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
                 Premium Roadside
                 <span className={`block bg-gradient-to-r ${allServices[activeService].gradient} bg-clip-text text-transparent`}>
                   Services

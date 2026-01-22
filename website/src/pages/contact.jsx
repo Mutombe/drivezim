@@ -206,7 +206,7 @@ Sent via Drive Zimbabwe Contact Form`;
                 <span className="text-red-400 font-semibold text-sm md:text-base">24/7 Support Available</span>
               </motion.div>
 
-              <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold text-white mb-4 md:mb-6">
+              <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold text-white mb-4 md:mb-6">
                 {t.contact.title}
               </h1>
               <p className="text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto px-4">
