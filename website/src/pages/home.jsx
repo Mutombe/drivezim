@@ -82,13 +82,20 @@ const HomePage = () => {
       <section className="relative h-screen overflow-hidden">
         {/* Image Carousel Background */}
         <div className="absolute inset-0">
-          <AnimatePresence mode="wait">
+          {/* Base layer to prevent black flash */}
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: `url(/26.jpg)`,
+            }}
+          />
+          <AnimatePresence>
             <motion.div
               key={activeSlide}
-              initial={{ opacity: 0, scale: 1.1 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 1.5 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.2, ease: "easeInOut" }}
               className="absolute inset-0 bg-cover bg-center"
               style={{
                 backgroundImage: `url(/${
