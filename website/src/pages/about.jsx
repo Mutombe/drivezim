@@ -8,7 +8,7 @@ import { GiAlarmClock, GiRoad } from "react-icons/gi";
 import { IoCheckmarkDone } from "react-icons/io5";
 import { FaHeart, FaHandshake, FaUsers } from "react-icons/fa";
 import { MdVerified } from "react-icons/md";
-import { BsLightningCharge } from "react-icons/bs";
+import { BsLightningCharge, BsTruck } from "react-icons/bs";
 
 const StoryPage = () => {
   const coreValues = [
