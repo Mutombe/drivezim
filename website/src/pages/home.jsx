@@ -145,7 +145,7 @@ const HomePage = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="text-5xl md:text-7xl font-bold leading-tight"
+                  className="text-4xl md:text-5xl font-bold leading-tight"
                 >
                   {t.hero.title}
                 </motion.h1>
