@@ -36,37 +36,33 @@ const HomePage = () => {
       icon: BsTruckFlatbed,
       title: t.services.towing,
       desc: "Quality & reliable towing across Zimbabwe",
-      gradient: "from-red-600/90 via-red-500/80 to-orange-500/70",
-      overlay: "bg-red-600/60",
       image: "/5.jpg",
       hoverGlow: "group-hover:shadow-red-500/50",
+      accentColor: "bg-red-600",
     },
     {
       icon: MdOutlineSettings,
       title: t.services.roadside,
       desc: "Reliable roadside assistance",
-      gradient: "from-blue-600/90 via-cyan-500/80 to-teal-500/70",
-      overlay: "bg-blue-600/60",
       image: "/20.jpg",
       hoverGlow: "group-hover:shadow-blue-500/50",
+      accentColor: "bg-blue-600",
     },
     {
       icon: SiFsecure,
       title: t.services.recovery,
       desc: "Quality vehicle recovery services",
-      gradient: "from-purple-600/90 via-pink-500/80 to-rose-500/70",
-      overlay: "bg-purple-600/60",
       image: "/37.jpg",
       hoverGlow: "group-hover:shadow-purple-500/50",
+      accentColor: "bg-purple-600",
     },
     {
       icon: FiZap,
       title: t.services.emergency,
       desc: "24/7 emergency response team",
-      gradient: "from-emerald-600/90 via-green-500/80 to-lime-500/70",
-      overlay: "bg-emerald-600/60",
       image: "/26.jpg",
       hoverGlow: "group-hover:shadow-emerald-500/50",
+      accentColor: "bg-emerald-600",
     },
   ];
 
@@ -283,7 +279,7 @@ const HomePage = () => {
             })}
           </div>
 
-          {/* Service Cards with Unique Colors and BG Images */}
+          {/* Service Cards with Vivid BG Images */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, i) => (
               <motion.div
@@ -295,43 +291,43 @@ const HomePage = () => {
                 whileHover={{ scale: 1.05, y: -10 }}
                 className={`group relative overflow-hidden rounded-3xl h-80 shadow-2xl ${service.hoverGlow} transition-all`}
               >
-                {/* Background Image */}
+                {/* Background Image - Full visibility */}
                 <div
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                   style={{ backgroundImage: `url(${service.image})` }}
                 />
 
-                {/* Unique Color Overlay */}
-                <div className={`absolute inset-0 ${service.overlay} transition-opacity duration-300`} />
-
-                {/* Gradient Overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-90 group-hover:opacity-95 transition-opacity`} />
+                {/* Subtle gradient only at bottom for text readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
                 {/* Content */}
                 <div className="relative z-10 p-8 h-full flex flex-col justify-between">
                   <div>
-                    <div className="w-16 h-16 bg-white/20 backdrop-blur-xl rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-white/30 transition-all">
+                    <div className={`w-16 h-16 ${service.accentColor}/80 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all`}>
                       <service.icon className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-3">
-                      {service.title}
-                    </h3>
-                    <p className="text-white/90">{service.desc}</p>
                   </div>
 
-                  <Link to="/services">
-                    <motion.div
-                      whileHover={{ x: 5 }}
-                      className="flex items-center space-x-2 text-white font-semibold opacity-0 group-hover:opacity-100 transition-opacity"
-                    >
-                      <span>Learn More</span>
-                      <ChevronRight className="w-5 h-5" />
-                    </motion.div>
-                  </Link>
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-2 drop-shadow-lg">
+                      {service.title}
+                    </h3>
+                    <p className="text-white/90 drop-shadow-md mb-4">{service.desc}</p>
+
+                    <Link to="/services">
+                      <motion.div
+                        whileHover={{ x: 5 }}
+                        className="flex items-center space-x-2 text-white font-semibold opacity-0 group-hover:opacity-100 transition-opacity"
+                      >
+                        <span>Learn More</span>
+                        <ChevronRight className="w-5 h-5" />
+                      </motion.div>
+                    </Link>
+                  </div>
                 </div>
 
                 {/* Bottom Highlight */}
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/30 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                <div className={`absolute bottom-0 left-0 right-0 h-1 ${service.accentColor} transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left`} />
               </motion.div>
             ))}
           </div>
