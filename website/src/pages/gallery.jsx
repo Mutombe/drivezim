@@ -11,53 +11,53 @@ const GalleryPage = () => {
 
   // Gallery images using available images
   const galleryImages = [
-    { id: 1, src: '/1.jpg', category: 'towing', title: 'Heavy Duty Towing', description: 'Professional heavy vehicle towing services' },
-    { id: 2, src: '/2.jpg', category: 'fleet', title: 'Modern Fleet', description: 'Our state-of-the-art tow trucks' },
+    { id: 1, src: '/1.jpg', category: 'towing', title: 'Heavy Duty Towing', description: 'Professional towing services' },
+    { id: 2, src: '/2.jpg', category: 'equipment', title: 'Our Tow Truck', description: 'Our well-maintained tow truck' },
     { id: 3, src: '/3.jpg', category: 'recovery', title: 'Vehicle Recovery', description: 'Expert recovery operations' },
     { id: 4, src: '/4.jpg', category: 'towing', title: 'Emergency Response', description: 'Quick emergency towing service' },
-    { id: 5, src: '/5.jpg', category: 'fleet', title: 'Flatbed Towing', description: 'Safe flatbed transport' },
-    { id: 6, src: '/6.jpg', category: 'team', title: 'Our Team', description: 'Dedicated professionals at work' },
+    { id: 5, src: '/5.jpg', category: 'equipment', title: 'Flatbed Towing', description: 'Safe flatbed transport' },
+    { id: 6, src: '/6.jpg', category: 'service', title: 'In Action', description: 'Dedicated service at work' },
     { id: 7, src: '/7.jpg', category: 'recovery', title: 'Roadside Rescue', description: 'Roadside assistance in action' },
     { id: 8, src: '/8.jpg', category: 'towing', title: 'Night Operations', description: '24/7 towing services' },
-    { id: 9, src: '/9.jpg', category: 'fleet', title: 'Service Vehicles', description: 'Well-maintained service fleet' },
-    { id: 10, src: '/10.jpg', category: 'team', title: 'Customer Care', description: 'Always ready to help' },
+    { id: 9, src: '/9.jpg', category: 'equipment', title: 'Service Vehicle', description: 'Well-maintained service vehicle' },
+    { id: 10, src: '/10.jpg', category: 'service', title: 'Customer Care', description: 'Always ready to help' },
     { id: 11, src: '/11.jpg', category: 'recovery', title: 'Off-Road Recovery', description: 'All-terrain vehicle recovery' },
-    { id: 12, src: '/12.jpg', category: 'towing', title: 'Long Distance Towing', description: 'Nationwide towing service' },
-    { id: 13, src: '/13.jpg', category: 'fleet', title: 'Equipment Check', description: 'Regular maintenance routines' },
-    { id: 14, src: '/14.jpg', category: 'team', title: 'Team Training', description: 'Continuous skill development' },
+    { id: 12, src: '/12.jpg', category: 'towing', title: 'Long Distance Towing', description: 'Long-distance towing service' },
+    { id: 13, src: '/13.jpg', category: 'equipment', title: 'Equipment Check', description: 'Regular maintenance routines' },
+    { id: 14, src: '/14.jpg', category: 'service', title: 'Skill Development', description: 'Continuous improvement' },
     { id: 15, src: '/15.jpg', category: 'recovery', title: 'Accident Recovery', description: 'Professional accident scene recovery' },
     { id: 16, src: '/16.jpg', category: 'towing', title: 'Urban Towing', description: 'City towing solutions' },
-    { id: 17, src: '/17.jpg', category: 'fleet', title: 'Tow Truck Fleet', description: 'Multiple vehicle capacity' },
+    { id: 17, src: '/17.jpg', category: 'equipment', title: 'Tow Truck', description: 'Ready to assist' },
     { id: 18, src: '/18.jpg', category: 'recovery', title: 'Winch Operations', description: 'Heavy-duty winching service' },
-    { id: 19, src: '/19.jpg', category: 'team', title: 'Support Staff', description: 'Our support team' },
-    { id: 20, src: '/20.jpg', category: 'fleet', title: 'Main Fleet', description: 'Primary service vehicles' },
+    { id: 19, src: '/19.jpg', category: 'service', title: 'Support', description: 'Customer support' },
+    { id: 20, src: '/20.jpg', category: 'equipment', title: 'Main Vehicle', description: 'Primary service vehicle' },
     { id: 21, src: '/21.jpg', category: 'towing', title: 'Highway Assistance', description: 'Highway roadside help' },
     { id: 22, src: '/22.jpg', category: 'recovery', title: 'Stuck Vehicle Recovery', description: 'Getting you unstuck' },
-    { id: 23, src: '/23.jpg', category: 'fleet', title: 'Heavy Equipment', description: 'Specialized recovery gear' },
+    { id: 23, src: '/23.jpg', category: 'equipment', title: 'Recovery Gear', description: 'Specialised recovery gear' },
     { id: 24, src: '/24.jpg', category: 'towing', title: 'Quick Response', description: 'Fast towing arrival' },
-    { id: 25, src: '/25.jpg', category: 'team', title: 'Field Operations', description: 'Team in the field' },
+    { id: 25, src: '/25.jpg', category: 'service', title: 'Field Operations', description: 'Service in the field' },
     { id: 26, src: '/26.jpg', category: 'recovery', title: 'Emergency Recovery', description: 'Emergency vehicle recovery' },
-    { id: 27, src: '/27.jpg', category: 'fleet', title: 'Service Range', description: 'Diverse vehicle fleet' },
+    { id: 27, src: '/27.jpg', category: 'equipment', title: 'Service Range', description: 'Wide service coverage' },
     { id: 28, src: '/28.jpg', category: 'towing', title: 'Safe Transport', description: 'Secure vehicle transport' },
-    { id: 29, src: '/29.jpg', category: 'team', title: 'Dispatch Center', description: 'Coordinating responses' },
+    { id: 29, src: '/29.jpg', category: 'service', title: 'Coordination', description: 'Coordinating responses' },
     { id: 30, src: '/30.jpg', category: 'recovery', title: 'Difficult Terrain', description: 'Challenging recoveries' },
-    { id: 31, src: '/31.jpg', category: 'fleet', title: 'Night Fleet', description: '24/7 operational fleet' },
+    { id: 31, src: '/31.jpg', category: 'equipment', title: 'Night Operations', description: '24/7 operational readiness' },
     { id: 32, src: '/32.jpg', category: 'towing', title: 'Commercial Towing', description: 'Business vehicle services' },
     { id: 33, src: '/33.jpg', category: 'recovery', title: 'Precision Recovery', description: 'Careful vehicle handling' },
-    { id: 34, src: '/34.jpg', category: 'fleet', title: 'Fleet Maintenance', description: 'Keeping vehicles ready' },
+    { id: 34, src: '/34.jpg', category: 'equipment', title: 'Maintenance', description: 'Keeping equipment ready' },
     { id: 35, src: '/35.jpg', category: 'towing', title: 'Breakdown Service', description: 'Breakdown assistance' },
-    { id: 36, src: '/36.jpg', category: 'team', title: 'Expert Technicians', description: 'Skilled professionals' },
+    { id: 36, src: '/36.jpg', category: 'service', title: 'Expertise', description: 'Skilled and experienced' },
     { id: 37, src: '/37.jpg', category: 'recovery', title: 'Complete Recovery', description: 'Full recovery solutions' },
-    { id: 38, src: '/38.jpg', category: 'fleet', title: 'Advanced Equipment', description: 'Latest technology' },
+    { id: 38, src: '/38.jpg', category: 'equipment', title: 'Quality Equipment', description: 'Well-maintained gear' },
     { id: 39, src: '/39.jpg', category: 'towing', title: 'Reliable Service', description: 'Dependable assistance' },
   ];
 
   const categories = [
     { id: 'all', label: 'All Photos', icon: Camera, count: galleryImages.length },
     { id: 'towing', label: 'Towing', icon: Truck, count: galleryImages.filter(img => img.category === 'towing').length },
-    { id: 'fleet', label: 'Our Fleet', icon: Wrench, count: galleryImages.filter(img => img.category === 'fleet').length },
+    { id: 'equipment', label: 'Equipment', icon: Wrench, count: galleryImages.filter(img => img.category === 'equipment').length },
     { id: 'recovery', label: 'Recovery', icon: Shield, count: galleryImages.filter(img => img.category === 'recovery').length },
-    { id: 'team', label: 'Our Team', icon: Users, count: galleryImages.filter(img => img.category === 'team').length },
+    { id: 'service', label: 'Service', icon: Users, count: galleryImages.filter(img => img.category === 'service').length },
   ];
 
   const filteredImages = filter === 'all'
@@ -137,7 +137,7 @@ const GalleryPage = () => {
                 Our Gallery
               </h1>
               <p className="text-base md:text-xl text-gray-300 max-w-2xl mx-auto px-4">
-                See our fleet, team, and services in action across Zimbabwe
+                See our equipment and services in action across Zimbabwe
               </p>
             </motion.div>
           </div>
@@ -428,8 +428,11 @@ const GalleryPage = () => {
             <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">
               Need Roadside Assistance?
             </h2>
-            <p className="text-sm md:text-xl text-gray-300 mb-6 md:mb-8 max-w-2xl mx-auto">
+            <p className="text-sm md:text-xl text-gray-300 mb-4 max-w-2xl mx-auto">
               Our professional team is ready to help you 24/7. Don't get stranded - call us now!
+            </p>
+            <p className="text-sm md:text-lg text-gray-400 mb-6 md:mb-8">
+              078 057 9261 | 071 808 4297 | 073 652 3424
             </p>
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
               <motion.a

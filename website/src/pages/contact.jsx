@@ -118,6 +118,22 @@ Sent via Drive Zimbabwe Contact Form`;
       gradient: 'from-green-500 to-emerald-600'
     },
     {
+      icon: Phone,
+      label: 'Alternative Line',
+      value: '071 808 4297',
+      subtext: 'Available 24/7',
+      href: 'tel:0718084297',
+      gradient: 'from-green-500 to-emerald-600'
+    },
+    {
+      icon: Phone,
+      label: 'Alternative Line',
+      value: '073 652 3424',
+      subtext: 'Available 24/7',
+      href: 'tel:0736523424',
+      gradient: 'from-green-500 to-emerald-600'
+    },
+    {
       icon: Mail,
       label: 'Email Us',
       value: 'info@drivezim.co.zw',

@@ -19,17 +19,17 @@ const FAQPage = () => {
     {
       category: 'services',
       question: 'What types of vehicles do you tow?',
-      answer: 'We tow all types of vehicles including sedans, SUVs, trucks, motorcycles, and commercial vehicles. Our fleet includes light-duty tow trucks for standard vehicles, medium-duty for larger SUVs and vans, and heavy-duty trucks capable of handling commercial vehicles up to 50 tons.'
+      answer: 'We tow all types of vehicles including sedans, SUVs, bakkies, motorcycles, and light commercial vehicles. Our tow truck is equipped to handle most standard vehicles safely and efficiently.'
     },
     {
       category: 'services',
       question: 'Do you offer roadside assistance besides towing?',
-      answer: 'Yes! Our roadside assistance services include battery jump-starts, tire changes, fuel delivery, lockout assistance, and minor mechanical repairs. Our trained technicians carry essential tools and parts to get you back on the road quickly.'
+      answer: 'Yes! Our roadside assistance services include battery jump-starts, tyre changes, fuel delivery, lockout assistance, and minor mechanical repairs. We carry essential tools and parts to get you back on the road quickly.'
     },
     {
       category: 'services',
       question: 'Can you recover vehicles from off-road locations?',
-      answer: 'Absolutely. We have specialized recovery vehicles equipped with winches and off-road capabilities. Whether your vehicle is stuck in mud, sand, a ditch, or has gone off an embankment, our recovery specialists can safely retrieve it.'
+      answer: 'Absolutely. Our tow truck is equipped with a winch and recovery capabilities. Whether your vehicle is stuck in mud, sand, a ditch, or has gone off an embankment, we can safely retrieve it.'
     },
     {
       category: 'emergency',
@@ -39,7 +39,7 @@ const FAQPage = () => {
     {
       category: 'emergency',
       question: 'Are your services available 24/7?',
-      answer: 'Yes, Drive Zimbabwe operates 24 hours a day, 7 days a week, 365 days a year. Whether it\'s 3 AM on a holiday or rush hour on a Monday, our team is ready to assist you. Our dispatch center never closes.'
+      answer: 'Yes, Drive Zimbabwe operates 24 hours a day, 7 days a week, 365 days a year. Whether it\'s 3 AM on a holiday or rush hour on a Monday, we are ready to assist you.'
     },
     {
       category: 'emergency',
@@ -69,7 +69,7 @@ const FAQPage = () => {
     {
       category: 'coverage',
       question: 'Do you offer services outside Harare?',
-      answer: 'Yes! While our headquarters is in Harare, we provide services throughout Zimbabwe. For locations outside our immediate service area, we coordinate with our network of partners or dispatch our long-distance fleet. Contact us for availability in your specific area.'
+      answer: 'Yes! While we are based in Harare, we provide services throughout Zimbabwe. For locations outside our immediate service area, we can arrange assistance. Contact us for availability in your specific area.'
     },
     {
       category: 'services',
@@ -79,12 +79,12 @@ const FAQPage = () => {
     {
       category: 'emergency',
       question: 'What if I\'m involved in an accident?',
-      answer: 'First, ensure everyone\'s safety and call emergency services if needed. Then call us at 078 057 9261. We\'ll dispatch a truck immediately and can help coordinate with police if required. Our drivers are trained to handle accident scenes professionally and can assist with documentation for insurance purposes.'
+      answer: 'First, ensure everyone\'s safety and call emergency services if needed. Then call us at 078 057 9261. We\'ll come to you as quickly as possible and can help coordinate with police if required. We handle accident scenes professionally and can assist with documentation for insurance purposes.'
     },
     {
       category: 'services',
-      question: 'Do you offer corporate or fleet services?',
-      answer: 'Yes, we offer corporate accounts with preferential rates for businesses managing vehicle fleets. Benefits include priority dispatch, monthly billing, detailed reporting, and dedicated account management. Contact us to discuss a customized solution for your business.'
+      question: 'Do you offer corporate accounts?',
+      answer: 'Yes, we offer corporate accounts with preferential rates for businesses. Benefits include priority service, monthly billing, and detailed reporting. Contact us to discuss a customized solution for your business.'
     },
     {
       category: 'pricing',
@@ -256,6 +256,9 @@ const FAQPage = () => {
             </h2>
             <p className="text-xl text-gray-300 mb-8">
               Our team is here to help. Reach out and we'll get back to you as soon as possible.
+            </p>
+            <p className="text-lg text-gray-400 mb-8">
+              Call us: 078 057 9261 | 071 808 4297 | 073 652 3424
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

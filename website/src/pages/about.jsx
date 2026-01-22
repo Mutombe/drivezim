@@ -42,32 +42,32 @@ const StoryPage = () => {
   ];
 
   const stats = [
-    { value: '5000+', label: 'Vehicles Assisted', icon: HiArrowTrendingUp, color: 'from-red-500 to-orange-600' },
+    { value: '1000+', label: 'Vehicles Assisted', icon: HiArrowTrendingUp, color: 'from-red-500 to-orange-600' },
     { value: '24/7', label: 'Always Available', icon: GiAlarmClock, color: 'from-blue-500 to-cyan-600' },
-    { value: '50+', label: 'Professional Staff', icon: LiaPeopleCarrySolid, color: 'from-green-500 to-emerald-600' },
+    { value: '100%', label: 'Dedicated Service', icon: LiaPeopleCarrySolid, color: 'from-green-500 to-emerald-600' },
     { value: '6+', label: 'Years of Service', icon: LiaAwardSolid, color: 'from-purple-500 to-pink-600' }
   ];
 
   const milestones = [
     { year: '2019', title: 'Founded', desc: 'Drive Zimbabwe was established with a clear mission: to promote care, courtesy, and concentration on our roads.', icon: '🚀' },
-    { year: '2020', title: 'Growth', desc: 'Expanded our fleet and team despite challenging times, committed to serving Zimbabweans when they needed us most.', icon: '📈' },
+    { year: '2020', title: 'Perseverance', desc: 'Continued serving Zimbabweans through challenging times, committed to being there when needed most.', icon: '📈' },
     { year: '2022', title: 'Expansion', desc: 'Extended our coverage across major cities and highways, bringing reliable assistance to more communities.', icon: '🗺️' },
-    { year: '2024', title: 'Innovation', desc: 'Launched advanced dispatch systems and membership programs to better serve our growing customer base.', icon: '💡' }
+    { year: '2024', title: 'Innovation', desc: 'Launched membership programs to better serve our growing customer base.', icon: '💡' }
   ];
 
   const teamRoles = [
-    { title: 'Certified Technicians', desc: 'Expert mechanics ready to diagnose and fix' },
-    { title: '24/7 Dispatchers', desc: 'Always on call to coordinate your rescue' },
-    { title: 'Recovery Specialists', desc: 'Trained for the most challenging situations' },
-    { title: 'Customer Support', desc: 'Friendly voices guiding you through' }
+    { title: 'Experienced Operator', desc: 'Expert ready to diagnose and fix' },
+    { title: '24/7 Availability', desc: 'Always on call to coordinate your rescue' },
+    { title: 'Recovery Expertise', desc: 'Trained for the most challenging situations' },
+    { title: 'Customer Focus', desc: 'Friendly service guiding you through' }
   ];
 
   const whyChooseUs = [
-    { title: 'Rapid Response', desc: 'Our strategically positioned teams ensure quick arrival when you need help', icon: '⚡' },
+    { title: 'Rapid Response', desc: 'Quick arrival when you need help most', icon: '⚡' },
     { title: 'Transparent Pricing', desc: 'No hidden fees - you know exactly what you\'re paying before we start', icon: '💎' },
-    { title: 'Professional Staff', desc: 'Trained, certified technicians who handle your vehicle with care', icon: '👨‍🔧' },
-    { title: 'Nationwide Coverage', desc: 'Serving Harare, Bulawayo, Mutare, and all major routes', icon: '🗺️' },
-    { title: 'Modern Equipment', desc: 'State-of-the-art tow trucks and recovery vehicles', icon: '🚛' },
+    { title: 'Professional Service', desc: 'Trained and experienced to handle your vehicle with care', icon: '👨‍🔧' },
+    { title: 'Wide Coverage', desc: 'Serving Harare and surrounding areas, plus long-distance assistance', icon: '🗺️' },
+    { title: 'Quality Equipment', desc: 'Well-maintained tow truck with recovery capabilities', icon: '🚛' },
     { title: 'Customer First', desc: 'Your satisfaction drives everything we do', icon: '❤️' }
   ];
 
@@ -208,7 +208,7 @@ const StoryPage = () => {
                   Drive Zimbabwe Roadside Assistance was founded in 2019 with a clear purpose: to promote <span className="text-red-400 font-semibold">care, courtesy, and concentration</span> on our roads—values that continue to shape everything we do today.
                 </p>
                 <p className="text-sm md:text-base lg:text-lg leading-relaxed">
-                  What started as a small operation with a dedicated team has grown into Zimbabwe's trusted roadside assistance provider. We've helped thousands of stranded motorists get back on the road safely, building our reputation one rescue at a time.
+                  What started as a small operation with a dedicated team has grown into Zimbabwe's trusted roadside assistance provider. We deliver <span className="text-red-400 font-semibold">quality, reliable, and cost-effective</span> services, helping thousands of stranded motorists get back on the road safely.
                 </p>
                 <p className="text-sm md:text-base lg:text-lg leading-relaxed">
                   Our commitment to excellence remains unchanged. Every day, we work tirelessly to ensure that when you're stranded on the road, help is just a phone call away.
@@ -464,8 +464,8 @@ const StoryPage = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
               <div className="absolute bottom-4 md:bottom-8 left-4 md:left-8 right-4 md:right-8">
                 <LiaPeopleCarrySolid className="w-8 h-8 md:w-12 md:h-12 text-red-500 mb-2 md:mb-4" />
-                <h3 className="text-white font-bold text-xl md:text-3xl mb-1">Professional Team</h3>
-                <p className="text-gray-200 text-sm md:text-base">50+ certified experts at your service</p>
+                <h3 className="text-white font-bold text-xl md:text-3xl mb-1">Professional Service</h3>
+                <p className="text-gray-200 text-sm md:text-base">Experienced and dedicated to helping you</p>
               </div>
             </motion.div>
 
@@ -475,12 +475,12 @@ const StoryPage = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <span className="text-red-500 font-semibold text-sm md:text-base mb-2 block">OUR TEAM</span>
+              <span className="text-red-500 font-semibold text-sm md:text-base mb-2 block">OUR SERVICE</span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6">
-                Meet Our Experts
+                What We Offer
               </h2>
               <p className="text-sm md:text-lg text-gray-300 mb-6 md:mb-8 leading-relaxed">
-                Our experienced professionals are trained, certified, and ready to assist you 24/7. Every team member embodies our values of care, courtesy, and concentration.
+                Experienced, trained, and ready to assist you 24/7. We embody our values of care, courtesy, and concentration in everything we do.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 mb-6 md:mb-8">
@@ -555,8 +555,11 @@ const StoryPage = () => {
             <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">
               Ready to Experience the Difference?
             </h2>
-            <p className="text-sm md:text-xl text-gray-300 mb-6 md:mb-8 px-2">
+            <p className="text-sm md:text-xl text-gray-300 mb-4 px-2">
               Join thousands of satisfied customers who trust Drive Zimbabwe for their roadside needs
+            </p>
+            <p className="text-sm md:text-lg text-gray-400 mb-6 md:mb-8">
+              Call us: 078 057 9261 | 071 808 4297 | 073 652 3424
             </p>
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
               <motion.a

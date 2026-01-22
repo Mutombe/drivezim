@@ -110,7 +110,7 @@ const Footer = () => {
       },
       {
         heading: 'Services Provided',
-        content: 'Drive Zimbabwe provides roadside assistance services including but not limited to towing, battery jump-starts, flat tire assistance, fuel delivery, and vehicle recovery. Services are subject to availability and coverage area.'
+        content: 'Drive Zimbabwe provides roadside assistance services including but not limited to towing, battery jump-starts, flat tyre assistance, fuel delivery, and vehicle recovery. Services are subject to availability and coverage area.'
       },
       {
         heading: 'Membership',
@@ -179,21 +179,22 @@ const Footer = () => {
                 </div>
               </Link>
               <p className="text-gray-300 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
-                Zimbabwe's most trusted roadside assistance provider. Fast, reliable, and cost-effective service available 24/7.
+                Zimbabwe's most trusted roadside assistance provider. Quality, reliable, and cost-effective service available 24/7.
               </p>
 
               {/* Emergency Contact */}
               <div className="bg-red-600/20 backdrop-blur-xl border border-red-500/30 rounded-xl p-3 md:p-4 mb-4 md:mb-6">
-                <div className="flex items-center space-x-3">
-                  <div className="w-9 h-9 md:w-10 md:h-10 bg-red-600 rounded-lg flex items-center justify-center">
-                    <Phone className="w-4 h-4 md:w-5 md:h-5 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-gray-300 text-xs">Emergency Hotline</div>
-                    <a href="tel:0780579261" className="text-white font-bold text-base md:text-lg hover:text-red-500 transition-colors">
-                      078 057 9261
-                    </a>
-                  </div>
+                <div className="flex flex-col space-y-2">
+                  <div className="text-gray-300 text-xs font-semibold">Emergency Hotlines</div>
+                  <a href="tel:0780579261" className="text-white font-bold text-sm md:text-base hover:text-red-500 transition-colors">
+                    078 057 9261
+                  </a>
+                  <a href="tel:0718084297" className="text-white font-bold text-sm md:text-base hover:text-red-500 transition-colors">
+                    071 808 4297
+                  </a>
+                  <a href="tel:0736523424" className="text-white font-bold text-sm md:text-base hover:text-red-500 transition-colors">
+                    073 652 3424
+                  </a>
                 </div>
               </div>
 
@@ -385,7 +386,7 @@ const Footer = () => {
                   <p className="text-gray-400 text-sm mb-4">
                     If you have any questions about this policy, please contact us:
                   </p>
-                  <div className="flex flex-col sm:flex-row gap-3">
+                  <div className="flex flex-col sm:flex-row gap-3 flex-wrap">
                     <a
                       href="mailto:info@drivezim.co.zw"
                       className="flex items-center gap-2 text-red-400 hover:text-red-300 transition-colors text-sm"
@@ -399,6 +400,20 @@ const Footer = () => {
                     >
                       <Phone className="w-4 h-4" />
                       078 057 9261
+                    </a>
+                    <a
+                      href="tel:0718084297"
+                      className="flex items-center gap-2 text-red-400 hover:text-red-300 transition-colors text-sm"
+                    >
+                      <Phone className="w-4 h-4" />
+                      071 808 4297
+                    </a>
+                    <a
+                      href="tel:0736523424"
+                      className="flex items-center gap-2 text-red-400 hover:text-red-300 transition-colors text-sm"
+                    >
+                      <Phone className="w-4 h-4" />
+                      073 652 3424
                     </a>
                   </div>
                 </div>

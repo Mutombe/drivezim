@@ -26,7 +26,7 @@ const ReviewsPage = () => {
       avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face',
       rating: 5,
       date: '1 month ago',
-      text: 'Best towing service in Harare! They helped me when I had a flat tire in Avondale. The team was quick, friendly, and very affordable. Will definitely use them again.',
+      text: 'Best towing service in Harare! They helped me when I had a flat tyre in Avondale. The team was quick, friendly, and very affordable. Will definitely use them again.',
       helpful: 18,
       verified: true
     },
@@ -37,7 +37,7 @@ const ReviewsPage = () => {
       avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face',
       rating: 5,
       date: '3 weeks ago',
-      text: 'Professional vehicle recovery service. My truck got stuck in mud near Chitungwiza and their heavy-duty recovery team handled it expertly. Great equipment and skilled operators!',
+      text: 'Professional vehicle recovery service. My bakkie got stuck in mud near Chitungwiza and they handled it expertly. Great equipment and skilled service!',
       helpful: 31,
       verified: true
     },
@@ -59,7 +59,7 @@ const ReviewsPage = () => {
       avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face',
       rating: 5,
       date: '2 months ago',
-      text: 'I\'ve used Drive Zimbabwe three times now for my fleet vehicles. Consistent, reliable, and professional every single time. Their dispatch team is excellent at coordinating. Highly recommended for business use!',
+      text: 'I\'ve used Drive Zimbabwe three times now for my vehicles. Consistent, reliable, and professional every single time. Excellent at coordinating. Highly recommended for business use!',
       helpful: 45,
       verified: true
     },
@@ -136,7 +136,7 @@ const ReviewsPage = () => {
       avatar: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&h=100&fit=crop&crop=face',
       rating: 5,
       date: '1 month ago',
-      text: 'The team went above and beyond when my delivery truck broke down with perishable goods. They prioritized my call and even helped transfer some items. True professionals!',
+      text: 'They went above and beyond when my delivery vehicle broke down with perishable goods. They prioritised my call and even helped transfer some items. True professional!',
       helpful: 33,
       verified: true
     }
@@ -481,8 +481,11 @@ const ReviewsPage = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Ready to Experience Our Service?
             </h2>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-xl text-gray-300 mb-4">
               Join thousands of satisfied customers who trust Drive Zimbabwe for their roadside assistance needs.
+            </p>
+            <p className="text-lg text-gray-400 mb-8">
+              Call us: 078 057 9261 | 071 808 4297 | 073 652 3424
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

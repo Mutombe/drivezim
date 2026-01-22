@@ -60,8 +60,8 @@ const BlogPage = () => {
         <h3>Battery Health</h3>
         <p>Car batteries typically last 3-5 years. Look for signs of corrosion on terminals, slow engine cranking, or dim headlights. Have your battery tested annually, especially before the rainy season when electrical systems work harder.</p>
 
-        <h3>Tire Maintenance</h3>
-        <p>Check tire pressure monthly and before long trips. Properly inflated tires improve fuel efficiency and handling. Inspect tread depth using the coin test—if you can see the top of the coin, it's time for new tires. Don't forget to check your spare tire too!</p>
+        <h3>Tyre Maintenance</h3>
+        <p>Check tyre pressure monthly and before long trips. Properly inflated tyres improve fuel efficiency and handling. Inspect tread depth using the coin test—if you can see the top of the coin, it's time for new tyres. Don't forget to check your spare tyre too!</p>
 
         <h3>Cooling System</h3>
         <p>Overheating is a common cause of breakdowns, especially in Zimbabwe's hot climate. Check coolant levels regularly and inspect hoses for cracks or leaks. Have your radiator flushed every 40,000 kilometers.</p>
@@ -100,8 +100,8 @@ const BlogPage = () => {
     {
       id: 4,
       category: 'guides',
-      title: 'How to Change a Flat Tire: Step-by-Step Guide',
-      excerpt: 'A flat tire doesn\'t have to ruin your day. Learn how to safely change a tire yourself, or know when to call for professional help.',
+      title: 'How to Change a Flat Tyre: Step-by-Step Guide',
+      excerpt: 'A flat tyre doesn\'t have to ruin your day. Learn how to safely change a tyre yourself, or know when to call for professional help.',
       image: '/37.jpg',
       author: 'Drive Zimbabwe Team',
       date: 'December 28, 2025',
@@ -109,22 +109,22 @@ const BlogPage = () => {
       featured: false,
       content: `
         <h3>Before You Start</h3>
-        <p>Find a safe, flat location away from traffic. Turn on your hazard lights and apply the parking brake. If you have them, place warning triangles behind your vehicle. Locate your spare tire, jack, and lug wrench in your trunk.</p>
+        <p>Find a safe, flat location away from traffic. Turn on your hazard lights and apply the parking brake. If you have them, place warning triangles behind your vehicle. Locate your spare tyre, jack, and lug wrench in your boot.</p>
 
         <h3>Loosen the Lug Nuts</h3>
         <p>Before raising the vehicle, use the lug wrench to loosen each nut by turning counterclockwise. Don't remove them completely—just break the resistance. If they're too tight, try standing on the wrench for extra leverage.</p>
 
         <h3>Position and Raise the Jack</h3>
-        <p>Place the jack under the vehicle frame near the flat tire. Consult your owner's manual for the correct jacking point. Raise the vehicle until the flat tire is about 15cm off the ground.</p>
+        <p>Place the jack under the vehicle frame near the flat tyre. Consult your owner's manual for the correct jacking point. Raise the vehicle until the flat tyre is about 15cm off the ground.</p>
 
-        <h3>Change the Tire</h3>
-        <p>Remove the lug nuts completely and pull off the flat tire. Mount the spare tire, ensuring the valve stem faces outward. Hand-tighten the lug nuts in a star pattern to ensure even seating.</p>
+        <h3>Change the Tyre</h3>
+        <p>Remove the lug nuts completely and pull off the flat tyre. Mount the spare tyre, ensuring the valve stem faces outward. Hand-tighten the lug nuts in a star pattern to ensure even seating.</p>
 
         <h3>Lower and Finish</h3>
-        <p>Lower the vehicle until the tire touches the ground but doesn't bear full weight. Tighten the lug nuts firmly in a star pattern. Lower completely and remove the jack. Check tire pressure as soon as possible—spare tires often need inflation.</p>
+        <p>Lower the vehicle until the tyre touches the ground but doesn't bear full weight. Tighten the lug nuts firmly in a star pattern. Lower completely and remove the jack. Check tyre pressure as soon as possible—spare tyres often need inflation.</p>
 
         <h3>When to Call for Help</h3>
-        <p>If you're on a busy highway, don't have a spare, or feel unsafe, call Drive Zimbabwe at 078 057 9261. Our technicians will change your tire safely and quickly.</p>
+        <p>If you're on a busy highway, don't have a spare, or feel unsafe, call Drive Zimbabwe at 078 057 9261. We will change your tyre safely and quickly.</p>
       `
     },
     {
@@ -169,7 +169,7 @@ const BlogPage = () => {
         <p>Warning triangles or flares, a reflective vest, and a flashlight with extra batteries are essential. These help keep you visible if you're stranded, especially at night.</p>
 
         <h3>Basic Tools</h3>
-        <p>Carry a tire jack, lug wrench, and properly inflated spare tire. Add jumper cables, a multi-tool or basic toolkit, duct tape, and zip ties for quick fixes.</p>
+        <p>Carry a tyre jack, lug wrench, and properly inflated spare tyre. Add jumper cables, a multi-tool or basic toolkit, duct tape, and zip ties for quick fixes.</p>
 
         <h3>First Aid Kit</h3>
         <p>Include bandages, antiseptic wipes, pain relievers, scissors, and any personal medications you may need. Check and restock your kit every six months.</p>
@@ -181,7 +181,7 @@ const BlogPage = () => {
         <p>Keep copies of your driver's license, vehicle registration, and insurance documents. Store Drive Zimbabwe's number (078 057 9261) on speed dial and written down in case your phone dies.</p>
 
         <h3>Regional Considerations</h3>
-        <p>If you travel to remote areas, consider adding extra fuel in an approved container, a tow rope, and a tire repair kit. Let someone know your travel plans and expected arrival time.</p>
+        <p>If you travel to remote areas, consider adding extra fuel in an approved container, a tow rope, and a tyre repair kit. Let someone know your travel plans and expected arrival time.</p>
       `
     },
     {
@@ -196,16 +196,16 @@ const BlogPage = () => {
       featured: false,
       content: `
         <h3>The Dispatch Process</h3>
-        <p>When you call 078 057 9261, our dispatchers collect key information: your location, vehicle type, and nature of the problem. We use GPS to identify the nearest available truck and estimate arrival time.</p>
+        <p>When you call 078 057 9261, we collect key information: your location, vehicle type, and nature of the problem. We then estimate arrival time and head to your location.</p>
 
-        <h3>Matching the Right Equipment</h3>
-        <p>Different situations require different solutions. A car stuck in mud needs our winch-equipped recovery vehicle. A sedan with engine trouble needs a flatbed. An overturned truck requires our heavy-duty rotator. We match the right equipment to your situation.</p>
+        <h3>Matching the Right Approach</h3>
+        <p>Different situations require different solutions. A car stuck in mud needs winching. A sedan with engine trouble needs flatbed towing. We assess the situation and use the right approach for your needs.</p>
 
         <h3>On-Scene Assessment</h3>
-        <p>Our operators assess the situation upon arrival. They check for hazards, plan the safest recovery approach, and communicate with you throughout. Safety is our top priority—both for your vehicle and our team.</p>
+        <p>We assess the situation upon arrival, check for hazards, plan the safest recovery approach, and communicate with you throughout. Safety is our top priority—both for your vehicle and for everyone involved.</p>
 
         <h3>Recovery Techniques</h3>
-        <p>Depending on the situation, we may use winching, lifting, or towing. Our operators are trained in various techniques and use specialized equipment like snatch blocks and rigging to maximize pulling power while minimizing vehicle damage.</p>
+        <p>Depending on the situation, we may use winching, lifting, or towing. We are trained in various techniques and use specialised equipment to maximise pulling power while minimising vehicle damage.</p>
 
         <h3>Safe Transport</h3>
         <p>Once recovered, your vehicle is secured for transport. Flatbed towing is gentlest on your vehicle. We use wheel straps, chains, and soft ties to prevent any movement during transit to your chosen destination.</p>
@@ -223,16 +223,16 @@ const BlogPage = () => {
       featured: false,
       content: `
         <h3>Prepare Your Vehicle</h3>
-        <p>Before the rains, check your wipers—they should clear the windscreen in one sweep without streaking. Ensure all lights work, as visibility drops significantly during storms. Check tire tread depth and condition.</p>
+        <p>Before the rains, check your wipers—they should clear the windscreen in one sweep without streaking. Ensure all lights work, as visibility drops significantly during storms. Check tyre tread depth and condition.</p>
 
         <h3>Slow Down</h3>
-        <p>Wet roads reduce tire grip significantly. Reduce your speed by at least 10-20 km/h from normal. It takes much longer to stop on wet surfaces, so increase your following distance to at least 4 seconds behind the vehicle ahead.</p>
+        <p>Wet roads reduce tyre grip significantly. Reduce your speed by at least 10-20 km/h from normal. It takes much longer to stop on wet surfaces, so increase your following distance to at least 4 seconds behind the vehicle ahead.</p>
 
         <h3>Avoid Flooded Areas</h3>
         <p>Never drive through standing water if you can't see the road surface. Water as shallow as 30cm can float a car. If you must cross, go slowly, stay in low gear, and keep the engine revving to prevent water entering the exhaust.</p>
 
         <h3>Handle Aquaplaning</h3>
-        <p>If you feel the steering go light, you're aquaplaning—your tires have lost contact with the road. Don't brake or steer sharply. Ease off the accelerator and keep the wheel straight until you feel grip return.</p>
+        <p>If you feel the steering go light, you're aquaplaning—your tyres have lost contact with the road. Don't brake or steer sharply. Ease off the accelerator and keep the wheel straight until you feel grip return.</p>
 
         <h3>Plan Your Journey</h3>
         <p>Check weather forecasts before traveling. Avoid traveling during severe storms if possible. If caught in a heavy downpour with zero visibility, pull over safely with hazards on until it passes.</p>

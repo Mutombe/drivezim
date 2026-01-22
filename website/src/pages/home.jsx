@@ -35,7 +35,7 @@ const HomePage = () => {
     {
       icon: BsTruckFlatbed,
       title: t.services.towing,
-      desc: "Fast & reliable towing across Zimbabwe",
+      desc: "Quality & reliable towing across Zimbabwe",
       gradient: "from-red-600/90 via-red-500/80 to-orange-500/70",
       overlay: "bg-red-600/60",
       image: "/5.jpg",
@@ -44,7 +44,7 @@ const HomePage = () => {
     {
       icon: MdOutlineSettings,
       title: t.services.roadside,
-      desc: "Immediate roadside assistance",
+      desc: "Reliable roadside assistance",
       gradient: "from-blue-600/90 via-cyan-500/80 to-teal-500/70",
       overlay: "bg-blue-600/60",
       image: "/20.jpg",
@@ -53,7 +53,7 @@ const HomePage = () => {
     {
       icon: SiFsecure,
       title: t.services.recovery,
-      desc: "Professional vehicle recovery",
+      desc: "Quality vehicle recovery services",
       gradient: "from-purple-600/90 via-pink-500/80 to-rose-500/70",
       overlay: "bg-purple-600/60",
       image: "/37.jpg",
@@ -71,7 +71,7 @@ const HomePage = () => {
   ];
 
   const stats = [
-    { value: "5000+", label: "Vehicles Assisted", icon: IoCarSportOutline },
+    { value: "1000+", label: "Vehicles Assisted", icon: IoCarSportOutline },
     { value: "24/7", label: "Always Available", icon: GiAlarmClock },
     { value: "4.8", label: "Customer Rating", icon: MdStarPurple500 },
   ];
@@ -156,7 +156,7 @@ const HomePage = () => {
                   transition={{ delay: 0.6 }}
                   className="text-xl text-gray-300"
                 >
-                  Fast, reliable, cost-effective service you can count on,
+                  Quality, reliable, and cost-effective service you can count on,
                   without breaking the bank.
                 </motion.p>
 
@@ -367,9 +367,12 @@ const HomePage = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Need Immediate Assistance?
             </h2>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-xl text-gray-300 mb-4">
               Our team is standing by 24/7 to help you get back on the road
               safely
+            </p>
+            <p className="text-lg text-gray-400 mb-8">
+              Call us: 078 057 9261 | 071 808 4297 | 073 652 3424
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.a

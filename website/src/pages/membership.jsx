@@ -27,91 +27,113 @@ const MembershipPage = () => {
 
   const plans = [
     {
-      id: 'basic',
-      name: 'Basic',
-      description: 'Essential coverage for occasional drivers',
+      id: 'standard',
+      name: 'Drive Standard',
+      description: 'Includes roadside + home rescue. No extra charge for assistance at home.',
       icon: Shield,
       color: 'from-gray-600 to-gray-700',
       features: [
-        'Emergency towing (up to 50km)',
-        'Battery jump-start',
-        'Flat tire assistance',
-        'Fuel delivery service',
-        '24/7 helpline access',
-        'Single vehicle coverage',
+        'On-the-spot repairs where possible',
+        'Vehicle jumpstart',
+        'Flat tyre change (must have a spare)',
+        'Retrieval of locked-in keys',
+        '4 call-outs a year',
+        '50 km radius',
       ],
-      notIncluded: [
-        'Lockout assistance',
-        'Long-distance towing',
-        'Family coverage',
-      ]
+      notIncluded: []
     },
     {
-      id: 'standard',
-      name: 'Standard',
-      description: 'Comprehensive coverage for daily drivers',
+      id: 'advance',
+      name: 'Drive Advance',
+      description: 'Enhanced garage support. If your car needs towing, we handle it all.',
       icon: Star,
       color: 'from-red-600 to-red-700',
       popular: true,
       features: [
-        'Emergency towing (up to 100km)',
-        'Battery jump-start',
-        'Flat tire assistance',
-        'Fuel delivery service',
-        '24/7 helpline access',
-        'Lockout assistance',
-        'Minor roadside repairs',
-        'Accident scene support',
-        'Single vehicle coverage',
+        'Call up to 4 garages to find the quickest option',
+        'Obtain a repair estimate',
+        'Clearly explain your choices',
+        'Ensure no work starts without your approval',
+        '5 call-outs a year',
+        '120 km radius tow',
+        'Towing, roadside assistance & home rescue',
+        'Vehicle jumpstart',
+        'Flat tyre change (must have a spare)',
       ],
-      notIncluded: [
-        'Long-distance towing',
-        'Family coverage',
-      ]
+      notIncluded: []
     },
     {
-      id: 'premium',
-      name: 'Premium',
-      description: 'Ultimate protection for peace of mind',
+      id: 'ultimate',
+      name: 'Drive Ultimate',
+      description: 'Full-service garage support. From breakdown scene to workshop, we handle everything.',
       icon: Award,
       color: 'from-amber-500 to-orange-600',
       features: [
-        'Unlimited emergency towing',
-        'Battery jump-start',
-        'Flat tire assistance',
-        'Fuel delivery service',
-        '24/7 priority helpline',
-        'Lockout assistance',
-        'Comprehensive roadside repairs',
-        'Accident scene support',
-        'Vehicle recovery (any terrain)',
-        'Alternative transport arrangement',
-        'Accommodation assistance',
-        'Single vehicle coverage',
+        'Stay with your vehicle until it\'s loaded',
+        'Tow to your preferred garage',
+        'Brief the garage and ensure they contact you with a quote',
+        'Guarantee no repairs proceed without your consent',
+        '6 call-outs a year',
+        '160 km radius',
+        'Long-distance recovery',
+        'Vehicle jumpstart',
+        'Flat tyre change (must have a spare)',
       ],
       notIncluded: []
     },
     {
       id: 'family',
-      name: 'Family',
-      description: 'Complete coverage for the whole family',
+      name: 'Drive Family Breakdown Cover',
+      description: 'Protect up to 5 people at the same address. Cover applies whether driving or passengers.',
       icon: Users,
       color: 'from-purple-600 to-pink-600',
       features: [
-        'Unlimited emergency towing',
-        'Battery jump-start',
-        'Flat tire assistance',
-        'Fuel delivery service',
-        '24/7 priority helpline',
-        'Lockout assistance',
-        'Comprehensive roadside repairs',
-        'Accident scene support',
-        'Vehicle recovery (any terrain)',
-        'Alternative transport arrangement',
-        'Accommodation assistance',
-        'Coverage for up to 4 vehicles',
-        'Spouse & children covered',
-        'Home lockout assistance',
+        'Towing, roadside assistance & home rescue',
+        'Vehicle jumpstart',
+        '2 call-outs a year',
+        'Retrieval of locked-in keys',
+        '30 km radius tow',
+        'Cover for temporary absences (e.g., students)',
+      ],
+      notIncluded: []
+    },
+    {
+      id: 'business',
+      name: 'Drive Business Breakdown Cover',
+      description: 'Protect your business vehicle with comprehensive cover.',
+      icon: Truck,
+      color: 'from-blue-600 to-blue-700',
+      features: [
+        'Any driver using your company vehicle is safeguarded',
+        'Minimise downtime',
+        'Protect your brand',
+        'Vehicle-level cover for business',
+      ],
+      notIncluded: []
+    },
+    {
+      id: 'accident',
+      name: 'Drive Accident Assist Cover',
+      description: 'Complimentary 24/7 accident claims support for all members.',
+      icon: Phone,
+      color: 'from-green-600 to-green-700',
+      features: [
+        '24/7 accident claims support',
+        'Dedicated assistance for all members',
+      ],
+      notIncluded: []
+    },
+    {
+      id: 'senior',
+      name: 'Drive Senior Plus',
+      description: 'For members aged 65+. 24/7 roadside and claims support tailored to your golden years.',
+      icon: Clock,
+      color: 'from-teal-600 to-cyan-600',
+      features: [
+        'Free basic car inspection',
+        'Towing, roadside & home rescue',
+        'Flat battery and tyre change',
+        'Application required',
       ],
       notIncluded: []
     },
@@ -119,10 +141,10 @@ const MembershipPage = () => {
 
   const benefits = [
     { icon: Clock, title: '24/7 Availability', desc: 'Round-the-clock assistance' },
-    { icon: Truck, title: 'Nationwide Coverage', desc: 'Help across Zimbabwe' },
-    { icon: Phone, title: 'Priority Response', desc: 'Faster dispatch times' },
+    { icon: Truck, title: 'Wide Coverage', desc: 'Help across Zimbabwe' },
+    { icon: Phone, title: 'Priority Response', desc: 'Fast response times' },
     { icon: Shield, title: 'No Hidden Fees', desc: 'All services included' },
-    { icon: Wrench, title: 'Expert Technicians', desc: 'Certified professionals' },
+    { icon: Wrench, title: 'Experienced Service', desc: 'Professional assistance' },
     { icon: Award, title: 'Member Discounts', desc: 'Exclusive deals' },
   ];
 
@@ -633,8 +655,11 @@ I would like to apply for the ${planName} membership plan. Please contact me to 
             <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">
               Have Questions?
             </h2>
-            <p className="text-base md:text-xl text-gray-300 mb-6 md:mb-8">
+            <p className="text-base md:text-xl text-gray-300 mb-4">
               Our team is ready to help you choose the right membership plan.
+            </p>
+            <p className="text-sm md:text-lg text-gray-400 mb-6 md:mb-8">
+              Call us: 078 057 9261 | 071 808 4297 | 073 652 3424
             </p>
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
               <motion.a

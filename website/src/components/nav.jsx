@@ -26,10 +26,13 @@ const Navigation = () => {
   const location = useLocation();
 
   const membershipPlans = {
-    basic: { name: 'Basic Plan', price: '$50/year' },
-    standard: { name: 'Standard Plan', price: '$100/year' },
-    premium: { name: 'Premium Plan', price: '$200/year' },
-    family: { name: 'Family Plan', price: '$300/year' }
+    standard: { name: 'Drive Standard' },
+    advance: { name: 'Drive Advance' },
+    ultimate: { name: 'Drive Ultimate' },
+    family: { name: 'Drive Family Breakdown Cover' },
+    business: { name: 'Drive Business Breakdown Cover' },
+    accident: { name: 'Drive Accident Assist Cover' },
+    senior: { name: 'Drive Senior Plus' }
   };
 
   const generateMembershipMessage = () => {
@@ -37,7 +40,7 @@ const Navigation = () => {
     return `MEMBERSHIP REGISTRATION - DRIVE ZIMBABWE
 =====================================
 
-SELECTED PLAN: ${plan.name} (${plan.price})
+SELECTED PLAN: ${plan.name}
 
 PERSONAL INFORMATION
 -------------------
@@ -98,18 +101,14 @@ Sent via Drive Zimbabwe Website`;
             <div className="flex justify-between items-center h-10 text-sm">
               {/* Left - Contact Info */}
               <div className="hidden md:flex items-center space-x-6">
-                <a href="tel:0780579261" className="flex items-center space-x-2 hover:text-gray-200 transition-colors">
+                <div className="flex items-center space-x-2 hover:text-gray-200 transition-colors">
                   <Phone className="w-3.5 h-3.5" />
-                  <span>078 057 9261</span>
-                </a>
+                  <span>078 057 9261 | 071 808 4297 | 073 652 3424</span>
+                </div>
                 <a href="mailto:info@drivezim.co.zw" className="flex items-center space-x-2 hover:text-gray-200 transition-colors">
                   <Mail className="w-3.5 h-3.5" />
                   <span>info@drivezim.co.zw</span>
                 </a>
-                <div className="flex items-center space-x-2 text-gray-200">
-                  <MapPin className="w-3.5 h-3.5" />
-                  <span>Harare, Zimbabwe</span>
-                </div>
               </div>
 
               {/* Center - 24/7 Badge (Mobile) */}
@@ -222,6 +221,14 @@ Sent via Drive Zimbabwe Website`;
                     <Phone className="w-4 h-4" />
                     <span>078 057 9261</span>
                   </a>
+                  <a href="tel:0718084297" className="flex items-center space-x-2 text-gray-300 px-4 py-2">
+                    <Phone className="w-4 h-4" />
+                    <span>071 808 4297</span>
+                  </a>
+                  <a href="tel:0736523424" className="flex items-center space-x-2 text-gray-300 px-4 py-2">
+                    <Phone className="w-4 h-4" />
+                    <span>073 652 3424</span>
+                  </a>
                   <a href="mailto:info@drivezim.co.zw" className="flex items-center space-x-2 text-gray-300 px-4 py-2">
                     <Mail className="w-4 h-4" />
                     <span>info@drivezim.co.zw</span>
@@ -306,7 +313,6 @@ Sent via Drive Zimbabwe Website`;
                         }`}
                       >
                         <div className="text-white font-semibold text-sm md:text-base">{plan.name}</div>
-                        <div className="text-red-400 text-xs md:text-sm">{plan.price}</div>
                       </button>
                     ))}
                   </div>
