@@ -15,28 +15,28 @@ const StoryPage = () => {
       icon: FaHeart,
       title: 'Care',
       desc: 'We genuinely care about every motorist we assist. Your safety and well-being are our top priority.',
-      gradient: 'from-pink-500 to-red-600',
+      gradient: 'from-pink-300 to-red-400',
       bgImage: '/5.jpg'
     },
     {
       icon: FaHandsHelping,
       title: 'Courtesy',
       desc: 'Professional, respectful service that treats every customer with dignity and understanding.',
-      gradient: 'from-blue-500 to-cyan-600',
+      gradient: 'from-blue-300 to-cyan-400',
       bgImage: '/20.jpg'
     },
     {
       icon: FaEye,
       title: 'Concentration',
       desc: 'Focused dedication to road safety and providing attentive, precise assistance when you need it most.',
-      gradient: 'from-purple-500 to-indigo-600',
+      gradient: 'from-purple-300 to-indigo-400',
       bgImage: '/26.jpg'
     },
     {
       icon: LiaAwardSolid,
       title: 'Excellence',
       desc: 'Continuously improving our service standards to deliver the best roadside assistance in Zimbabwe.',
-      gradient: 'from-orange-500 to-amber-600',
+      gradient: 'from-orange-300 to-amber-400',
       bgImage: '/37.jpg'
     }
   ];
