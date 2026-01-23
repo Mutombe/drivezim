@@ -175,7 +175,7 @@ const ReviewsPage = () => {
         />
 
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/95 via-black/80 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/55 via-black/60 to-black/50" />
 
         {/* Floating Elements */}
         <div className="absolute inset-0 overflow-hidden opacity-20">

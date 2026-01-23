@@ -1,15 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin, Shield, User, Car, CreditCard, MessageSquare, Twitter } from 'lucide-react';
+import { Menu, X, Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin, Shield, User, Car, CreditCard, MessageSquare, Twitter, ChevronDown, Download } from 'lucide-react';
 import { useLanguage } from '../lunguageContext';
 import { TiThMenuOutline } from "react-icons/ti";
 import { FaWhatsapp } from 'react-icons/fa';
+import { FaXTwitter } from "react-icons/fa6";
+
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [showMembershipModal, setShowMembershipModal] = useState(false);
+  const [mediaDropdownOpen, setMediaDropdownOpen] = useState(false);
+  const [mobileMediaOpen, setMobileMediaOpen] = useState(false);
   const [sendMethod, setSendMethod] = useState('whatsapp');
   const [formData, setFormData] = useState({
     fullName: '',
@@ -24,6 +28,7 @@ const Navigation = () => {
   });
   const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
+  const dropdownRef = useRef(null);
 
   const membershipPlans = {
     standard: { name: 'Drive Standard' },
@@ -74,17 +79,39 @@ Sent via Drive Zimbabwe Website`;
     setShowMembershipModal(false);
   };
 
+  const handleNewsletterDownload = () => {
+    // Create a link to download the newsletter PDF
+    const link = document.createElement('a');
+    link.href = '/newsletter.pdf'; // Update this path to your actual newsletter PDF location
+    link.download = 'NEWLETTERS VOLUME 3.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setMediaDropdownOpen(false);
+    setMobileMediaOpen(false);
+  };
+
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setMediaDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   const navLinks = [
     { path: '/', label: t.nav.home },
     { path: '/story', label: t.nav.about },
     { path: '/services', label: t.nav.services },
-    { path: '/blog', label: t.nav.blog || 'Blog' },
     { path: '/faq', label: t.nav.faq || 'FAQ' },
     { path: '/gallery', label: "Gallery" },
     { path: '/reviews', label: t.nav.reviews || "Reviews" },
@@ -129,7 +156,7 @@ Sent via Drive Zimbabwe Website`;
                     <Facebook className="w-4 h-4" />
                   </a>
                   <a href="https://x.com/drivezimbabwe" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200 transition-colors">
-                    <Twitter className="w-4 h-4" />
+                    <FaXTwitter className="w-4 h-4" />
                   </a>
                   <a href="https://www.instagram.com/drivezim2019/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200 transition-colors">
                     <Instagram className="w-4 h-4" />
@@ -159,7 +186,60 @@ Sent via Drive Zimbabwe Website`;
 
             {/* Desktop Nav */}
             <div className="hidden lg:flex items-center space-x-1">
-              {navLinks.map((link) => (
+              {navLinks.slice(0, 3).map((link) => (
+                <Link key={link.path} to={link.path}>
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    className={`px-4 py-2 rounded-lg transition-all text-sm ${location.pathname === link.path ? 'bg-red-600 text-white' : 'text-gray-300 hover:text-white hover:bg-white/10'}`}
+                  >
+                    {link.label}
+                  </motion.div>
+                </Link>
+              ))}
+
+              {/* Media Dropdown */}
+              <div className="relative" ref={dropdownRef}>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  onClick={() => setMediaDropdownOpen(!mediaDropdownOpen)}
+                  className={`px-4 py-2 rounded-lg transition-all text-sm flex items-center space-x-1 ${
+                    location.pathname === '/blog' ? 'bg-red-600 text-white' : 'text-gray-300 hover:text-white hover:bg-white/10'
+                  }`}
+                >
+                  <span>Media</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mediaDropdownOpen ? 'rotate-180' : ''}`} />
+                </motion.button>
+
+                <AnimatePresence>
+                  {mediaDropdownOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-0 mt-2 w-56 bg-black/95 backdrop-blur-xl border border-white/20 rounded-xl shadow-2xl overflow-hidden"
+                    >
+                      <Link
+                        to="/blog"
+                        onClick={() => setMediaDropdownOpen(false)}
+                        className="flex items-center space-x-3 px-4 py-3 text-gray-300 hover:text-white hover:bg-white/10 transition-all"
+                      >
+                        <MessageSquare className="w-4 h-4" />
+                        <span>Blogs</span>
+                      </Link>
+                      <button
+                        onClick={handleNewsletterDownload}
+                        className="w-full flex items-center space-x-3 px-4 py-3 text-gray-300 hover:text-white hover:bg-white/10 transition-all"
+                      >
+                        <Download className="w-4 h-4" />
+                        <span>Download Newsletter</span>
+                      </button>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {navLinks.slice(3).map((link) => (
                 <Link key={link.path} to={link.path}>
                   <motion.div
                     whileHover={{ scale: 1.05 }}
@@ -209,7 +289,60 @@ Sent via Drive Zimbabwe Website`;
               className="lg:hidden bg-black/98 backdrop-blur-xl border-t border-white/10"
             >
               <div className="px-4 py-6 space-y-3">
-                {navLinks.map((link) => (
+                {navLinks.slice(0, 3).map((link) => (
+                  <Link key={link.path} to={link.path} onClick={() => setIsOpen(false)}>
+                    <div className={`block px-4 py-3 rounded-lg ${location.pathname === link.path ? 'bg-red-600 text-white' : 'text-gray-300 hover:bg-white/10'}`}>
+                      {link.label}
+                    </div>
+                  </Link>
+                ))}
+
+                {/* Mobile Media Dropdown */}
+                <div>
+                  <button
+                    onClick={() => setMobileMediaOpen(!mobileMediaOpen)}
+                    className={`w-full flex items-center justify-between px-4 py-3 rounded-lg ${
+                      location.pathname === '/blog' ? 'bg-red-600 text-white' : 'text-gray-300 hover:bg-white/10'
+                    }`}
+                  >
+                    <span>Media</span>
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileMediaOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                  <AnimatePresence>
+                    {mobileMediaOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="mt-2 ml-4 space-y-2 overflow-hidden"
+                      >
+                        <Link
+                          to="/blog"
+                          onClick={() => {
+                            setIsOpen(false);
+                            setMobileMediaOpen(false);
+                          }}
+                          className="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-white/10 transition-all"
+                        >
+                          <MessageSquare className="w-4 h-4" />
+                          <span>Blogs</span>
+                        </Link>
+                        <button
+                          onClick={() => {
+                            handleNewsletterDownload();
+                            setIsOpen(false);
+                          }}
+                          className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-white/10 transition-all"
+                        >
+                          <Download className="w-4 h-4" />
+                          <span>Download Newsletter</span>
+                        </button>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                {navLinks.slice(3).map((link) => (
                   <Link key={link.path} to={link.path} onClick={() => setIsOpen(false)}>
                     <div className={`block px-4 py-3 rounded-lg ${location.pathname === link.path ? 'bg-red-600 text-white' : 'text-gray-300 hover:bg-white/10'}`}>
                       {link.label}

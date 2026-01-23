@@ -87,7 +87,7 @@ const stats = [
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: 'url(/37.jpg)' }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black" />
+        <div className="absolute inset-0" />
 
         {/* Animated Circles - Desktop only */}
         <div className="absolute inset-0 opacity-20 hidden lg:block overflow-hidden">

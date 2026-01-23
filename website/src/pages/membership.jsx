@@ -6,6 +6,13 @@ import {
 } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 import { toast } from 'sonner';
+import { SiFsecure } from "react-icons/si";
+import { MdStarBorderPurple500 } from "react-icons/md";
+import { SiCssdesignawards } from "react-icons/si";
+import { LiaPeopleCarrySolid } from "react-icons/lia";
+import { BsTruckFlatbed } from "react-icons/bs";
+import { GiMassDriver } from "react-icons/gi";
+
 
 const MembershipPage = () => {
   const [selectedPlan, setSelectedPlan] = useState('standard');
@@ -30,7 +37,7 @@ const MembershipPage = () => {
       id: 'standard',
       name: 'Drive Standard',
       description: 'Includes roadside + home rescue. No extra charge for assistance at home.',
-      icon: Shield,
+      icon: SiFsecure,
       color: 'from-gray-600 to-gray-700',
       features: [
         'On-the-spot repairs where possible',
@@ -46,7 +53,7 @@ const MembershipPage = () => {
       id: 'advance',
       name: 'Drive Advance',
       description: 'Enhanced garage support. If your car needs towing, we handle it all.',
-      icon: Star,
+      icon: MdStarBorderPurple500,
       color: 'from-red-600 to-red-700',
       popular: true,
       features: [
@@ -66,7 +73,7 @@ const MembershipPage = () => {
       id: 'ultimate',
       name: 'Drive Ultimate',
       description: 'Full-service garage support. From breakdown scene to workshop, we handle everything.',
-      icon: Award,
+      icon: SiCssdesignawards,
       color: 'from-amber-500 to-orange-600',
       features: [
         'Stay with your vehicle until it\'s loaded',
@@ -85,7 +92,7 @@ const MembershipPage = () => {
       id: 'family',
       name: 'Drive Family Breakdown Cover',
       description: 'Protect up to 5 people at the same address. Cover applies whether driving or passengers.',
-      icon: Users,
+      icon: LiaPeopleCarrySolid,
       color: 'from-purple-600 to-pink-600',
       features: [
         'Towing, roadside assistance & home rescue',
@@ -101,7 +108,7 @@ const MembershipPage = () => {
       id: 'business',
       name: 'Drive Business Breakdown Cover',
       description: 'Protect your business vehicle with comprehensive cover.',
-      icon: Truck,
+      icon: BsTruckFlatbed,
       color: 'from-blue-600 to-blue-700',
       features: [
         'Any driver using your company vehicle is safeguarded',
@@ -127,7 +134,7 @@ const MembershipPage = () => {
       id: 'senior',
       name: 'Drive Senior Plus',
       description: 'For members aged 65+. 24/7 roadside and claims support tailored to your golden years.',
-      icon: Clock,
+      icon: GiMassDriver,
       color: 'from-teal-600 to-cyan-600',
       features: [
         'Free basic car inspection',
@@ -143,7 +150,7 @@ const MembershipPage = () => {
     { icon: Clock, title: '24/7 Availability', desc: 'Round-the-clock assistance' },
     { icon: Truck, title: 'Wide Coverage', desc: 'Help across Zimbabwe' },
     { icon: Phone, title: 'Priority Response', desc: 'Fast response times' },
-    { icon: Shield, title: 'No Hidden Fees', desc: 'All services included' },
+    { icon: SiFsecure, title: 'No Hidden Fees', desc: 'All services included' },
     { icon: Wrench, title: 'Experienced Service', desc: 'Professional assistance' },
     { icon: Award, title: 'Member Discounts', desc: 'Exclusive deals' },
   ];
@@ -218,7 +225,7 @@ I would like to apply for the ${planName} membership plan. Please contact me to 
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: 'url(/mem.jpg)' }}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-black/95 via-black/80 to-red-900/50" />
+        <div className="absolute inset-0" />
 
         <div className="absolute inset-0 overflow-hidden opacity-20 hidden md:block">
           <motion.div
