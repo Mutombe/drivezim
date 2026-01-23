@@ -349,7 +349,7 @@ const HomePage = () => {
                   className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all group"
                 >
                   <stat.icon className="w-8 h-8 text-white mb-3 group-hover:scale-110 transition-transform" />
-                  <div className="text-3xl font-bold text-white mb-1">
+                  <div className="text-3xl font-bold text-red-600 mb-1">
                     {stat.value}
                   </div>
                   <div className="text-gray-300 text-sm">{stat.label}</div>

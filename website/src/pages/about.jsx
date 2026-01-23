@@ -54,7 +54,7 @@ const StoryPage = () => {
       title: "Community & Responsibility",
       desc: "We are more than a roadside assistance service; we are part of the Zimbabwean community. We take pride in keeping our roads safer and supporting fellow citizens when they need it most.",
       gradient: "from-green-300 to-emerald-400",
-      bgImage: "/2.jpg",
+      bgImage: "/19.jpg",
     },
   ];
 
@@ -421,65 +421,74 @@ const StoryPage = () => {
       </section>
 
       {/* Core Values Section */}
-      <section className="py-12 md:py-20 px-4 bg-black">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-8 md:mb-12"
-          >
-            <span className="text-red-500 font-semibold text-sm md:text-base mb-2 block">
-              THE 3 C'S
-            </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">
-              Our Core Values
-            </h2>
-            <p className="text-sm md:text-lg text-gray-400 max-w-2xl mx-auto px-4">
-              Care, Courtesy, and Concentration guide everything we do
-            </p>
-          </motion.div>
+      {/* Why Choose Us Section */}
+<section className="py-12 md:py-20 px-4 relative overflow-hidden">
+  {/* Background Image - Blended */}
+  <div 
+    className="absolute inset-0 bg-cover bg-center opacity-20"
+    style={{ backgroundImage: `url(/37.jpg)` }}
+  />
+  {/* Gradient Overlay for Blend Effect */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black" />
+  
+  <div className="max-w-7xl mx-auto relative z-10">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-center mb-8 md:mb-12"
+    >
+      <span className="text-red-500 font-semibold text-sm md:text-base mb-2 block">
+        WHY US
+      </span>
+      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">
+        Why Choose Drive Zimbabwe?
+      </h2>
+      <p className="text-sm md:text-lg text-gray-400 max-w-2xl mx-auto px-4">
+        We're not just a towing company—we're your roadside partner
+      </p>
+    </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-            {coreValues.map((value, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10 }}
-                className="group relative overflow-hidden rounded-2xl md:rounded-3xl h-64 md:h-80"
-              >
-                {/* Background Image */}
-                <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                  style={{ backgroundImage: `url(${value.bgImage})` }}
-                />
-                {/* Gradient Overlay */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${value.gradient} opacity-90`}
-                />
-
-                {/* Content */}
-                <div className="relative z-10 p-5 md:p-6 h-full flex flex-col justify-between">
-                  <div className="w-12 h-12 md:w-14 md:h-14 bg-white/20 backdrop-blur-xl rounded-xl md:rounded-2xl flex items-center justify-center">
-                    <value.icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
-                      {value.title}
-                    </h3>
-                    <p className="text-white/90 text-sm md:text-base">
-                      {value.desc}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+      {coreValues.map((item, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: i * 0.05 }}
+          viewport={{ once: true }}
+          whileHover={{ scale: 1.02 }}
+          className="relative overflow-hidden rounded-xl md:rounded-2xl group"
+        >
+          {/* Background Image */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+            style={{ backgroundImage: `url(${item.bgImage})` }}
+          />
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition-all" />
+          
+          {/* Content */}
+          <div className="relative z-10 p-4 md:p-6">
+            <div className="flex items-start space-x-3 md:space-x-4">
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                <item.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
+              </div>
+              <div>
+                <h3 className="text-base md:text-lg font-bold text-white mb-1">
+                  {item.title}
+                </h3>
+                <p className="text-gray-300 text-xs md:text-sm">
+                  {item.desc}
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Timeline Section */}
       <section className="py-12 md:py-20 px-4 bg-gradient-to-b from-gray-900 to-black">
@@ -559,63 +568,63 @@ const StoryPage = () => {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="py-12 md:py-20 px-4 relative overflow-hidden">
-        {/* Background Image - Blended */}
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{ backgroundImage: `url(/37.jpg)` }}
-        />
-        {/* Gradient Overlay for Blend Effect */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black" />
+{/* Why Choose Us Section */}
+<section className="py-12 md:py-20 px-4 relative overflow-hidden">
+  {/* Background Image - Blended */}
+  <div 
+    className="absolute inset-0 bg-cover bg-center opacity-20"
+    style={{ backgroundImage: `url(/d9.jpeg)` }}
+  />
+  {/* Gradient Overlay for Blend Effect */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/10 to-black/10" />
+  
+  <div className="max-w-7xl mx-auto relative z-10">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-center mb-8 md:mb-12"
+    >
+      <span className="text-red-500 font-semibold text-sm md:text-base mb-2 block">
+        WHY US
+      </span>
+      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">
+        Why Choose Drive Zimbabwe?
+      </h2>
+      <p className="text-sm md:text-lg text-gray-400 max-w-2xl mx-auto px-4">
+        We're not just a towing company—we're your roadside partner
+      </p>
+    </motion.div>
 
-        <div className="max-w-7xl mx-auto relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-8 md:mb-12"
-          >
-            <span className="text-red-500 font-semibold text-sm md:text-base mb-2 block">
-              WHY US
-            </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">
-              Why Choose Drive Zimbabwe?
-            </h2>
-            <p className="text-sm md:text-lg text-gray-400 max-w-2xl mx-auto px-4">
-              We're not just a towing company—we're your roadside partner
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
-            {whyChooseUs.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.05 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.02 }}
-                className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl md:rounded-2xl p-4 md:p-6 hover:bg-white/10 hover:border-red-500/30 transition-all"
-              >
-                <div className="flex items-start space-x-3 md:space-x-4">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-red-600/20 rounded-xl flex items-center justify-center flex-shrink-0 text-xl md:text-2xl">
-                    {item.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-base md:text-lg font-bold text-white mb-1">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-400 text-xs md:text-sm">
-                      {item.desc}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+      {whyChooseUs.map((item, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: i * 0.05 }}
+          viewport={{ once: true }}
+          whileHover={{ scale: 1.02 }}
+          className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl md:rounded-2xl p-4 md:p-6 hover:bg-white/10 hover:border-red-500/30 transition-all"
+        >
+          <div className="flex items-start space-x-3 md:space-x-4">
+            <div className="w-10 h-10 md:w-12 md:h-12 bg-red-600/20 rounded-xl flex items-center justify-center flex-shrink-0 text-xl md:text-2xl">
+              {item.icon}
+            </div>
+            <div>
+              <h3 className="text-base md:text-lg font-bold text-white mb-1">
+                {item.title}
+              </h3>
+              <p className="text-gray-400 text-xs md:text-sm">
+                {item.desc}
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
       {/* Team Section */}
       <section className="py-12 md:py-20 px-4 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-7xl mx-auto">
