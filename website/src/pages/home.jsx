@@ -76,7 +76,7 @@ const HomePage = () => {
     <div className="min-h-screen bg-black">
       {/* Hero Section */}
 {/* Hero Section */}
-<section className="relative h-screen overflow-hidden">
+<section className="relative h-screen overflow-hidden pt-16">
   {/* Image Carousel Background */}
   <div className="absolute inset-0">
     {/* Base layer to prevent black flash */}
@@ -176,15 +176,6 @@ const HomePage = () => {
                 <ArrowRight className="w-5 h-5" />
               </motion.div>
             </Link>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1 }}
-            className="flex items-center space-x-6 pt-4"
-          >
-            <HappyCustomers />
           </motion.div>
         </motion.div>
       </div>
