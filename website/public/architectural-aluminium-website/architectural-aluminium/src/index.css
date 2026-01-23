@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'Outfit', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  
+  --color-arch-black: #0A0A0A;
+  --color-arch-charcoal: #1A1A1A;
+  --color-arch-graphite: #2D2D2D;
+  
+  --color-arch-silver: #C0C0C0;
+  --color-arch-silver-light: #E8E8E8;
+  --color-arch-silver-dark: #8A8A8A;
+  --color-arch-platinum: #E5E4E2;
+  
+  --color-arch-gold: #D4AF37;
+  --color-arch-yellow: #FFD700;
+  --color-arch-amber: #F5B800;
+  
+  --color-arch-white: #FFFFFF;
+}
+
+/* Essential base styles only */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-arch-black);
+  color: var(--color-arch-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Font classes */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Gradient text - Can't be done with Tailwind alone */
+.gradient-text {
+  background: linear-gradient(135deg, #D4AF37 0%, #F5B800 50%, #FFD700 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass morphism effects */
+.glass {
+  background: rgba(26, 26, 26, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Background grid pattern */
+.bg-grid {
+  background-image: 
+    linear-gradient(rgba(192, 192, 192, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(192, 192, 192, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Diagonal stripes pattern */
+.diagonal-stripes {
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(212, 175, 55, 0.03) 10px,
+    rgba(212, 175, 55, 0.03) 20px
+  );
+}
+
+/* Selection color */
+::selection {
+  background: #D4AF37;
+  color: #0A0A0A;
+}
+
+/* Focus states */
+:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 4px;
+}
+
+/* Hide scrollbar utility */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1A1A1A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #F5B800;
+}

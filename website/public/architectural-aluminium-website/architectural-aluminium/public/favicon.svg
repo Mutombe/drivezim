@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4AF37"/>
+      <stop offset="100%" style="stop-color:#F5B800"/>
+    </linearGradient>
+  </defs>
+  <!-- Two stylised A shapes representing the Architectural Aluminium logo -->
+  <path d="M8 40 L18 8 L22 8 L12 40 Z" fill="url(#goldGrad)"/>
+  <path d="M16 40 L26 8 L30 8 L20 40 Z" fill="url(#goldGrad)"/>
+  <rect x="10" y="28" width="12" height="3" fill="url(#goldGrad)"/>
+  <path d="M26 40 L36 8 L40 8 L30 40 Z" fill="#C0C0C0"/>
+  <rect x="28" y="28" width="10" height="3" fill="#C0C0C0"/>
+</svg>
