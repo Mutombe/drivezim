@@ -626,7 +626,7 @@ const StoryPage = () => {
                   >
                     <IoCheckmarkDone className="w-5 h-5 md:w-6 md:h-6 text-red-500 flex-shrink-0 mt-0.5" />
                     <div>
-                      <span className="text-white font-semibold text-sm md:text-base block">
+                      <span className="text-red-500 font-semibold text-sm md:text-base block">
                         {role.title}
                       </span>
                       <span className="text-gray-400 text-xs md:text-sm">
