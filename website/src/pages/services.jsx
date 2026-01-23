@@ -218,111 +218,120 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      {/* Detailed Services Section - Bento Grid Style */}
-      <section className="py-24 px-4 bg-gradient-to-b from-black via-gray-900 to-black">
-        <div className="max-w-7xl mx-auto">
-          <AnimatePresence mode="wait">
+{/* Detailed Services Section - Bento Grid Style */}
+<section className="py-24 px-4 bg-gradient-to-b from-black via-gray-900 to-black">
+  <div className="max-w-7xl mx-auto">
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={activeService}
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -50 }}
+        transition={{ duration: 0.5 }}
+        className="grid md:grid-cols-3 gap-6"
+      >
+        {/* Main Service Card - Spans 2 columns */}
+        <div className="md:col-span-2 relative overflow-hidden rounded-3xl">
+          {/* Background Image */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${allServices[activeService].bgImage})` }}
+          />
+          {/* Dark Overlay for readability */}
+          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
+          
+          {/* Content */}
+          <div className="relative z-10 p-12 h-full">
             <motion.div
-              key={activeService}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -50 }}
-              transition={{ duration: 0.5 }}
-              className="grid md:grid-cols-3 gap-6"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ type: "spring", duration: 0.6 }}
             >
-              {/* Main Service Card - Spans 2 columns */}
-              <div className="md:col-span-2 relative overflow-hidden rounded-3xl">
-                <div className={`bg-gradient-to-br ${allServices[activeService].gradient} p-12 h-full`}>
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ type: "spring", duration: 0.6 }}
-                  >
-                    {React.createElement(allServices[activeService].icon, {
-                      className: "w-20 h-20 text-white mb-6"
-                    })}
-                  </motion.div>
-                  
-                  <h2 className="text-5xl font-bold text-white mb-4">
-                    {allServices[activeService].title}
-                  </h2>
-                  <p className="text-white/90 text-xl mb-8 leading-relaxed">
-                    {allServices[activeService].desc}
-                  </p>
+              {React.createElement(allServices[activeService].icon, {
+                className: "w-20 h-20 text-white mb-6"
+              })}
+            </motion.div>
+            
+            <h2 className="text-5xl font-bold text-white mb-4">
+              {allServices[activeService].title}
+            </h2>
+            <p className="text-white/80 text-xl mb-8 leading-relaxed">
+              {allServices[activeService].desc}
+            </p>
 
-                  {/* Features List */}
-                  <div className="space-y-4 mb-8">
-                    {allServices[activeService].features.map((feature, i) => (
-                      <motion.div
-                        key={i}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: i * 0.1 }}
-                        className="flex items-center space-x-3"
-                      >
-                        <IoCheckmarkDone className="w-6 h-6 text-white flex-shrink-0" />
-                        <span className="text-white font-medium text-lg">{feature}</span>
-                      </motion.div>
-                    ))}
-                  </div>
-
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-white text-black px-8 py-4 rounded-xl font-bold text-lg flex items-center space-x-2 hover:shadow-2xl transition-shadow"
-                  >
-                    <Phone className="w-5 h-5" />
-                    <span>Request This Service</span>
-                    <ArrowRight className="w-5 h-5" />
-                  </motion.button>
-                </div>
-
-                {/* Decorative Elements */}
-                <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
-                <div className="absolute bottom-0 left-0 w-48 h-48 bg-black/20 rounded-full blur-3xl" />
-              </div>
-
-              {/* Stats Cards */}
-              <div className="space-y-6">
-                {Object.entries(allServices[activeService].stats).map(([key, value], i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.2 + i * 0.1 }}
-                    className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6"
-                  >
-                    <div className="text-gray-400 text-sm uppercase tracking-wider mb-2">
-                      {key.replace(/([A-Z])/g, ' $1').trim()}
-                    </div>
-                    <div className={`text-4xl font-bold bg-gradient-to-r ${allServices[activeService].gradient} bg-clip-text text-transparent`}>
-                      {value}
-                    </div>
-                  </motion.div>
-                ))}
-
-                {/* CTA Card */}
+            {/* Features List */}
+            <div className="space-y-4 mb-8">
+              {allServices[activeService].features.map((feature, i) => (
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.5 }}
-                  className="bg-white rounded-2xl p-6 text-center"
+                  key={i}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                  className="flex items-center space-x-3"
                 >
-                  <GiAlarmClock className="w-12 h-12 text-black mx-auto mb-3" />
-                  <div className="font-bold text-black text-lg mb-2">Available Now</div>
-                  <div className="text-gray-600 text-sm mb-4">24/7 Emergency Service</div>
-                  <a
-                    href="tel:0780579261"
-                    className={`block bg-gradient-to-r ${allServices[activeService].gradient} text-white px-6 py-3 rounded-xl font-bold hover:shadow-lg transition-shadow`}
-                  >
-                    Call 078 057 9261
-                  </a>
+                  <IoCheckmarkDone className="w-6 h-6 text-white flex-shrink-0" />
+                  <span className="text-white font-medium text-lg">{feature}</span>
                 </motion.div>
+              ))}
+            </div>
+
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-white text-black px-8 py-4 rounded-xl font-bold text-lg flex items-center space-x-2 hover:shadow-2xl transition-shadow"
+            >
+              <Phone className="w-5 h-5" />
+              <span>Request This Service</span>
+              <ArrowRight className="w-5 h-5" />
+            </motion.button>
+          </div>
+
+          {/* Decorative Elements */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-48 h-48 bg-black/30 rounded-full blur-3xl" />
+        </div>
+
+        {/* Stats Cards */}
+        <div className="space-y-6">
+          {Object.entries(allServices[activeService].stats).map(([key, value], i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 + i * 0.1 }}
+              className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6"
+            >
+              <div className="text-gray-400 text-sm uppercase tracking-wider mb-2">
+                {key.replace(/([A-Z])/g, ' $1').trim()}
+              </div>
+              <div className="text-4xl font-bold text-white">
+                {value}
               </div>
             </motion.div>
-          </AnimatePresence>
+          ))}
+
+          {/* CTA Card */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.5 }}
+            className="bg-white rounded-2xl p-6 text-center"
+          >
+            <GiAlarmClock className="w-12 h-12 text-black mx-auto mb-3" />
+            <div className="font-bold text-black text-lg mb-2">Available Now</div>
+            <div className="text-gray-600 text-sm mb-4">24/7 Emergency Service</div>
+            <a
+              href="tel:0780579261"
+              className="block bg-black text-white px-6 py-3 rounded-xl font-bold hover:bg-zinc-800 transition-colors"
+            >
+              Call 078 057 9261
+            </a>
+          </motion.div>
         </div>
-      </section>
+      </motion.div>
+    </AnimatePresence>
+  </div>
+</section>
 
       {/* Why Choose Us Section */}
       <section className="py-24 px-4 bg-gradient-to-b from-black to-gray-900">

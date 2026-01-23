@@ -49,13 +49,12 @@ const StoryPage = () => {
     }
   ];
 
-  const stats = [
-    { value: '1000+', label: 'Vehicles Assisted', icon: HiArrowTrendingUp, color: 'from-red-500 to-orange-600' },
-    { value: '24/7', label: 'Always Available', icon: GiAlarmClock, color: 'from-blue-500 to-cyan-600' },
-    { value: '100%', label: 'Dedicated Service', icon: LiaPeopleCarrySolid, color: 'from-green-500 to-emerald-600' },
-    { value: '6+', label: 'Years of Service', icon: LiaAwardSolid, color: 'from-purple-500 to-pink-600' }
-  ];
-
+const stats = [
+  { value: '1000+', label: 'Vehicles Assisted', icon: HiArrowTrendingUp },
+  { value: '24/7', label: 'Always Available', icon: GiAlarmClock },
+  { value: '100%', label: 'Dedicated Service', icon: LiaPeopleCarrySolid },
+  { value: '6+', label: 'Years of Service', icon: LiaAwardSolid }
+];
   const milestones = [
     { year: '2019', title: 'Founded', desc: 'Drive Zimbabwe was established with a clear mission: to promote care, courtesy, and concentration on our roads.', icon: '🚀' },
     { year: '2020', title: 'Perseverance', desc: 'Continued serving Zimbabweans through challenging times, committed to being there when needed most.', icon: '📈' },
@@ -172,28 +171,28 @@ const StoryPage = () => {
         </motion.div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-10 md:py-16 px-4 bg-gradient-to-b from-black to-gray-900 -mt-10 md:-mt-0 relative z-10">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-            {stats.map((stat, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-                className={`bg-gradient-to-br ${stat.color} rounded-xl md:rounded-2xl p-4 md:p-6 text-center shadow-2xl transition-all`}
-              >
-                <stat.icon className="w-6 h-6 md:w-10 md:h-10 text-white mx-auto mb-2 md:mb-3" />
-                <div className="text-2xl md:text-4xl font-bold text-white mb-1">{stat.value}</div>
-                <div className="text-white/80 text-xs md:text-sm">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+{/* Stats Section */}
+<section className="py-10 md:py-16 px-4 bg-gradient-to-b from-black to-gray-900 -mt-10 md:-mt-0 relative z-10">
+  <div className="max-w-7xl mx-auto">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+      {stats.map((stat, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: i * 0.1 }}
+          viewport={{ once: true }}
+          whileHover={{ y: -5 }}
+          className="bg-white/10 backdrop-blur-lg rounded-xl md:rounded-2xl p-4 md:p-6 text-center border border-white/20 hover:bg-white/15 transition-all"
+        >
+          <stat.icon className="w-6 h-6 md:w-10 md:h-10 text-white mx-auto mb-2 md:mb-3" />
+          <div className="text-2xl md:text-4xl font-bold text-white mb-1">{stat.value}</div>
+          <div className="text-white/70 text-xs md:text-sm">{stat.label}</div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Our Journey Section */}
       <section className="py-12 md:py-20 px-4 bg-gray-900">

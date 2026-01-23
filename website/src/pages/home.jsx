@@ -237,47 +237,24 @@ const HomePage = () => {
             </p>
           </motion.div>
 
-          {/* Stats Bar */}
-          <div className="grid grid-cols-3 gap-4 mb-16">
-            {stats.map((stat, i) => {
-              const cardStyles = [
-                {
-                  gradient:
-                    "bg-gradient-to-br from-red-500 via-orange-500 to-amber-600",
-                  shadow: "hover:shadow-orange-500/50",
-                  border: "border-orange-400/30",
-                },
-                {
-                  gradient:
-                    "bg-gradient-to-br from-rose-600 via-red-600 to-pink-700",
-                  shadow: "hover:shadow-pink-500/50",
-                  border: "border-pink-400/30",
-                },
-                {
-                  gradient:
-                    "bg-gradient-to-br from-red-600 via-red-700 to-purple-800",
-                  shadow: "hover:shadow-purple-500/50",
-                  border: "border-purple-400/30",
-                },
-              ];
-              return (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                  viewport={{ once: true }}
-                  className={`${cardStyles[i].gradient} rounded-2xl p-6 shadow-2xl ${cardStyles[i].shadow} transition-all border ${cardStyles[i].border}`}
-                >
-                  <stat.icon className="w-8 h-8 text-white mb-3" />
-                  <div className="text-3xl font-bold text-white mb-1">
-                    {stat.value}
-                  </div>
-                  <div className="text-gray-200 text-sm">{stat.label}</div>
-                </motion.div>
-              );
-            })}
-          </div>
+{/* Stats Bar */}
+<div className="grid grid-cols-3 gap-4 mb-16">
+  {stats.map((stat, i) => (
+    <motion.div
+      key={i}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: i * 0.1 }}
+      viewport={{ once: true }}
+      className="relative bg-black/50 rounded-2xl p-6 overflow-hidden group"
+    >
+      <div className="absolute inset-0 rounded-2xl border border-white/10 group-hover:border-white/20 transition-all" />
+      <stat.icon className="w-8 h-8 text-white mb-3 relative z-10" />
+      <div className="text-3xl font-bold text-white mb-1 relative z-10">{stat.value}</div>
+      <div className="text-gray-400 text-sm relative z-10">{stat.label}</div>
+    </motion.div>
+  ))}
+</div>
 
           {/* Service Cards with Vivid BG Images */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
