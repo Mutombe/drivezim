@@ -475,7 +475,7 @@ const StoryPage = () => {
                       <item.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-base md:text-lg font-bold text-white mb-1">
+                      <h3 className="text-base md:text-lg font-bold text-red-500 mb-1">
                         {item.title}
                       </h3>
                       <p className="text-gray-300 text-xs md:text-sm">
@@ -568,63 +568,6 @@ const StoryPage = () => {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="py-12 md:py-20 px-4 relative overflow-hidden">
-        {/* Background Image - Blended */}
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{ backgroundImage: `url(/d9.jpeg)` }}
-        />
-        {/* Gradient Overlay for Blend Effect */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/10 to-black/10" />
-
-        <div className="max-w-7xl mx-auto relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-8 md:mb-12"
-          >
-            <span className="text-red-500 font-semibold text-sm md:text-base mb-2 block">
-              WHY US
-            </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">
-              Why Choose Drive Zimbabwe?
-            </h2>
-            <p className="text-sm md:text-lg text-gray-400 max-w-2xl mx-auto px-4">
-              We're not just a towing company—we're your roadside partner
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
-            {whyChooseUs.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.05 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.02 }}
-                className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl md:rounded-2xl p-4 md:p-6 hover:bg-white/10 hover:border-red-500/30 transition-all"
-              >
-                <div className="flex items-start space-x-3 md:space-x-4">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-red-600/20 rounded-xl flex items-center justify-center flex-shrink-0 text-xl md:text-2xl">
-                    {item.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-base md:text-lg font-bold text-white mb-1">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-400 text-xs md:text-sm">
-                      {item.desc}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
       {/* Team Section */}
       <section className="py-12 md:py-20 px-4 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-7xl mx-auto">
