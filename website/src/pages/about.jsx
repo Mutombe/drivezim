@@ -269,7 +269,7 @@ const StoryPage = () => {
                 className="bg-white/10 backdrop-blur-lg rounded-xl md:rounded-2xl p-4 md:p-6 text-center border border-white/20 hover:bg-white/15 transition-all"
               >
                 <stat.icon className="w-6 h-6 md:w-10 md:h-10 text-white mx-auto mb-2 md:mb-3" />
-                <div className="text-2xl md:text-4xl font-bold text-white mb-1">
+                <div className="text-2xl md:text-4xl font-bold text-red-600 mb-1">
                   {stat.value}
                 </div>
                 <div className="text-white/70 text-xs md:text-sm">
@@ -422,73 +422,73 @@ const StoryPage = () => {
 
       {/* Core Values Section */}
       {/* Why Choose Us Section */}
-<section className="py-12 md:py-20 px-4 relative overflow-hidden">
-  {/* Background Image - Blended */}
-  <div 
-    className="absolute inset-0 bg-cover bg-center opacity-20"
-    style={{ backgroundImage: `url(/37.jpg)` }}
-  />
-  {/* Gradient Overlay for Blend Effect */}
-  <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black" />
-  
-  <div className="max-w-7xl mx-auto relative z-10">
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="text-center mb-8 md:mb-12"
-    >
-      <span className="text-red-500 font-semibold text-sm md:text-base mb-2 block">
-        WHY US
-      </span>
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">
-        Why Choose Drive Zimbabwe?
-      </h2>
-      <p className="text-sm md:text-lg text-gray-400 max-w-2xl mx-auto px-4">
-        We're not just a towing company—we're your roadside partner
-      </p>
-    </motion.div>
+      <section className="py-12 md:py-20 px-4 relative overflow-hidden">
+        {/* Background Image - Blended */}
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-20"
+          style={{ backgroundImage: `url(/37.jpg)` }}
+        />
+        {/* Gradient Overlay for Blend Effect */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black" />
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
-      {coreValues.map((item, i) => (
-        <motion.div
-          key={i}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: i * 0.05 }}
-          viewport={{ once: true }}
-          whileHover={{ scale: 1.02 }}
-          className="relative overflow-hidden rounded-xl md:rounded-2xl group"
-        >
-          {/* Background Image */}
-          <div 
-            className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-            style={{ backgroundImage: `url(${item.bgImage})` }}
-          />
-          {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition-all" />
-          
-          {/* Content */}
-          <div className="relative z-10 p-4 md:p-6">
-            <div className="flex items-start space-x-3 md:space-x-4">
-              <div className="w-10 h-10 md:w-12 md:h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                <item.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
-              </div>
-              <div>
-                <h3 className="text-base md:text-lg font-bold text-white mb-1">
-                  {item.title}
-                </h3>
-                <p className="text-gray-300 text-xs md:text-sm">
-                  {item.desc}
-                </p>
-              </div>
-            </div>
+        <div className="max-w-7xl mx-auto relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-8 md:mb-12"
+          >
+            <span className="text-red-500 font-semibold text-sm md:text-base mb-2 block">
+              WHY US
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">
+              Why Choose Drive Zimbabwe?
+            </h2>
+            <p className="text-sm md:text-lg text-gray-400 max-w-2xl mx-auto px-4">
+              We're not just a towing company—we're your roadside partner
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+            {coreValues.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.05 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.02 }}
+                className="relative overflow-hidden rounded-xl md:rounded-2xl group"
+              >
+                {/* Background Image */}
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                  style={{ backgroundImage: `url(${item.bgImage})` }}
+                />
+                {/* Dark Overlay */}
+                <div className="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition-all" />
+
+                {/* Content */}
+                <div className="relative z-10 p-4 md:p-6">
+                  <div className="flex items-start space-x-3 md:space-x-4">
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <item.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-base md:text-lg font-bold text-white mb-1">
+                        {item.title}
+                      </h3>
+                      <p className="text-gray-300 text-xs md:text-sm">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
       {/* Timeline Section */}
       <section className="py-12 md:py-20 px-4 bg-gradient-to-b from-gray-900 to-black">
@@ -568,63 +568,63 @@ const StoryPage = () => {
         </div>
       </section>
 
-{/* Why Choose Us Section */}
-<section className="py-12 md:py-20 px-4 relative overflow-hidden">
-  {/* Background Image - Blended */}
-  <div 
-    className="absolute inset-0 bg-cover bg-center opacity-20"
-    style={{ backgroundImage: `url(/d9.jpeg)` }}
-  />
-  {/* Gradient Overlay for Blend Effect */}
-  <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/10 to-black/10" />
-  
-  <div className="max-w-7xl mx-auto relative z-10">
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="text-center mb-8 md:mb-12"
-    >
-      <span className="text-red-500 font-semibold text-sm md:text-base mb-2 block">
-        WHY US
-      </span>
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">
-        Why Choose Drive Zimbabwe?
-      </h2>
-      <p className="text-sm md:text-lg text-gray-400 max-w-2xl mx-auto px-4">
-        We're not just a towing company—we're your roadside partner
-      </p>
-    </motion.div>
+      {/* Why Choose Us Section */}
+      <section className="py-12 md:py-20 px-4 relative overflow-hidden">
+        {/* Background Image - Blended */}
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-20"
+          style={{ backgroundImage: `url(/d9.jpeg)` }}
+        />
+        {/* Gradient Overlay for Blend Effect */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/10 to-black/10" />
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
-      {whyChooseUs.map((item, i) => (
-        <motion.div
-          key={i}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: i * 0.05 }}
-          viewport={{ once: true }}
-          whileHover={{ scale: 1.02 }}
-          className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl md:rounded-2xl p-4 md:p-6 hover:bg-white/10 hover:border-red-500/30 transition-all"
-        >
-          <div className="flex items-start space-x-3 md:space-x-4">
-            <div className="w-10 h-10 md:w-12 md:h-12 bg-red-600/20 rounded-xl flex items-center justify-center flex-shrink-0 text-xl md:text-2xl">
-              {item.icon}
-            </div>
-            <div>
-              <h3 className="text-base md:text-lg font-bold text-white mb-1">
-                {item.title}
-              </h3>
-              <p className="text-gray-400 text-xs md:text-sm">
-                {item.desc}
-              </p>
-            </div>
+        <div className="max-w-7xl mx-auto relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-8 md:mb-12"
+          >
+            <span className="text-red-500 font-semibold text-sm md:text-base mb-2 block">
+              WHY US
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">
+              Why Choose Drive Zimbabwe?
+            </h2>
+            <p className="text-sm md:text-lg text-gray-400 max-w-2xl mx-auto px-4">
+              We're not just a towing company—we're your roadside partner
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+            {whyChooseUs.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.05 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.02 }}
+                className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl md:rounded-2xl p-4 md:p-6 hover:bg-white/10 hover:border-red-500/30 transition-all"
+              >
+                <div className="flex items-start space-x-3 md:space-x-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-red-600/20 rounded-xl flex items-center justify-center flex-shrink-0 text-xl md:text-2xl">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-base md:text-lg font-bold text-white mb-1">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray-400 text-xs md:text-sm">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
       {/* Team Section */}
       <section className="py-12 md:py-20 px-4 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-7xl mx-auto">
