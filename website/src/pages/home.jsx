@@ -106,7 +106,7 @@ const HomePage = () => {
         style={{
           backgroundImage: `url(/${
             [
-              "26.jpg",
+              "d2.jpeg",
               "20.jpg",
               "21.jpg",
               "5.jpg",
