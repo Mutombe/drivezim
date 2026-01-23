@@ -1,6 +1,21 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Phone, Clock, Wrench, Truck, Shield, Zap, Battery, Key, Fuel, MapPin, CheckCircle, ArrowRight, Star, Award } from 'lucide-react';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Phone,
+  Clock,
+  Wrench,
+  Truck,
+  Shield,
+  Zap,
+  Battery,
+  Key,
+  Fuel,
+  MapPin,
+  CheckCircle,
+  ArrowRight,
+  Star,
+  Award,
+} from "lucide-react";
 import { MdStarPurple500 } from "react-icons/md";
 import { FiZap } from "react-icons/fi";
 import { SiFsecure } from "react-icons/si";
@@ -14,73 +29,132 @@ import { GiAlarmClock } from "react-icons/gi";
 import { IoCheckmarkDone } from "react-icons/io5";
 import { BsTruckFlatbed } from "react-icons/bs";
 import { MdOutlineSettings } from "react-icons/md";
+import { IoLogoWhatsapp } from "react-icons/io";
 
 // Mock translation object
 const mockTranslations = {
   services: {
-    title: "Our Services"
-  }
+    title: "Our Services",
+  },
 };
 
 const ServicesPage = () => {
   const t = mockTranslations;
   const [activeService, setActiveService] = useState(0);
 
+      const handleAction = (action) => {
+    if (action === "call") {
+      window.location.href = "tel:+263785948128";
+    } else if (action === "email") {
+      window.location.href = "mailto:info@biddulphs.co.zw";
+    } else if (action === "whatsapp") {
+      window.location.href =
+        "https://wa.me/263780579261text=Hello%20Drive%20Zimbabwe%2C%20I%20would%20like%20to%20inquire%20about%20your%20services.";
+    }
+  };
+
   const allServices = [
     {
       icon: BsTruckFlatbed,
-      title: 'Emergency Towing',
-      desc: 'Quality towing services for all vehicle types, anywhere, anytime',
-      features: ['Flatbed Towing Service', 'Wheel Lift Towing', 'Long Distance Transport', 'Safe Vehicle Handling'],
-      stats: { availability: '24/7', service: 'Reliable', coverage: 'Nationwide' },
-      gradient: 'from-red-600 via-orange-600 to-yellow-500',
-      bgImage: '/5.jpg',
-      accentColor: 'red'
+      title: "Emergency Towing",
+      desc: "Quality towing services for all vehicle types, anywhere, anytime",
+      features: [
+        "Flatbed Towing Service",
+        "Wheel Lift Towing",
+        "Long Distance Transport",
+        "Safe Vehicle Handling",
+      ],
+      stats: {
+        availability: "24/7",
+        service: "Reliable",
+        coverage: "Nationwide",
+      },
+      gradient: "from-red-600 via-orange-600 to-yellow-500",
+      bgImage: "/5.jpg",
+      accentColor: "red",
     },
     {
       icon: MdOutlineSettings,
-      title: 'Roadside Repairs',
-      desc: 'Expert on-the-spot repairs to get you back on the road quickly',
-      features: ['Battery Jump Start', 'Tyre Changes & Repair', 'Minor Mechanical Fixes',],
-      stats: { availability: '24/7', rate: '98% Success', service: 'Professional' },
-      gradient: 'from-blue-600 via-cyan-600 to-teal-500',
-      bgImage: '/20.jpg',
-      accentColor: 'blue'
+      title: "Roadside Repairs",
+      desc: "Expert on-the-spot repairs to get you back on the road quickly",
+      features: [
+        "Battery Jump Start",
+        "Tyre Changes & Repair",
+        "Minor Mechanical Fixes",
+      ],
+      stats: {
+        availability: "24/7",
+        rate: "98% Success",
+        service: "Professional",
+      },
+      gradient: "from-blue-600 via-cyan-600 to-teal-500",
+      bgImage: "/20.jpg",
+      accentColor: "blue",
     },
     {
       icon: SiFsecure,
-      title: 'Vehicle Recovery',
-      desc: 'Specialised recovery services for challenging situations',
-      features: ['Off-Road Recovery', 'Accident Scene Recovery', 'Winch-Out Service', 'Stuck Vehicle Rescue'],
-      stats: { availability: '24/7', equipment: 'Well-Equipped', service: 'Reliable' },
-      gradient: 'from-purple-600 via-pink-600 to-rose-500',
-      bgImage: '/37.jpg',
-      accentColor: 'purple'
+      title: "Vehicle Recovery",
+      desc: "Specialised recovery services for challenging situations",
+      features: [
+        "Off-Road Recovery",
+        "Accident Scene Recovery",
+        "Winch-Out Service",
+        "Stuck Vehicle Rescue",
+      ],
+      stats: {
+        availability: "24/7",
+        equipment: "Well-Equipped",
+        service: "Reliable",
+      },
+      gradient: "from-purple-600 via-pink-600 to-rose-500",
+      bgImage: "/37.jpg",
+      accentColor: "purple",
     },
     {
       icon: FiZap,
-      title: 'Emergency Response',
-      desc: 'Rapid 24/7 emergency assistance for critical roadside situations',
-      features: ['Accident Assistance', 'Vehicle Lockout Service', 'Emergency Fuel Delivery', 'Priority Transport'],
-      stats: { availability: '24/7', rating: '4.8★', priority: 'Fast Response' },
-      gradient: 'from-green-600 via-emerald-600 to-lime-500',
-      bgImage: '/5.jpg',
-      accentColor: 'green'
-    }
+      title: "Emergency Response",
+      desc: "Rapid 24/7 emergency assistance for critical roadside situations",
+      features: [
+        "Accident Assistance",
+        "Vehicle Lockout Service",
+        "Emergency Fuel Delivery",
+        "Priority Transport",
+      ],
+      stats: {
+        availability: "24/7",
+        rating: "4.8★",
+        priority: "Fast Response",
+      },
+      gradient: "from-green-600 via-emerald-600 to-lime-500",
+      bgImage: "/5.jpg",
+      accentColor: "green",
+    },
   ];
 
   const quickServices = [
-    { icon: Battery, label: 'Jump Start', color: 'from-yellow-500 to-orange-500' },
-    { icon: MdOutlineSettings, label: 'Tyre Change', color: 'from-blue-500 to-cyan-500' },
-    { icon: Key, label: 'Lockout', color: 'from-purple-500 to-pink-500' },
-    { icon: Fuel, label: 'Fuel Delivery', color: 'from-green-500 to-emerald-500' },
+    {
+      icon: Battery,
+      label: "Jump Start",
+      color: "from-yellow-500 to-orange-500",
+    },
+    {
+      icon: MdOutlineSettings,
+      label: "Tyre Change",
+      color: "from-blue-500 to-cyan-500",
+    },
+    { icon: Key, label: "Lockout", color: "from-purple-500 to-pink-500" },
+    {
+      icon: Fuel,
+      label: "Fuel Delivery",
+      color: "from-green-500 to-emerald-500",
+    },
   ];
 
   const accentColors = {
-    red: 'text-red-500 bg-red-500',
-    blue: 'text-blue-500 bg-blue-500',
-    purple: 'text-purple-500 bg-purple-500',
-    green: 'text-green-500 bg-green-500',
+    red: "text-red-500 bg-red-500",
+    blue: "text-blue-500 bg-blue-500",
+    purple: "text-purple-500 bg-purple-500",
+    green: "text-green-500 bg-green-500",
   };
 
   return (
@@ -96,12 +170,14 @@ const ServicesPage = () => {
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.7 }}
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${allServices[activeService].bgImage})` }}
+            style={{
+              backgroundImage: `url(${allServices[activeService].bgImage})`,
+            }}
           />
         </AnimatePresence>
 
         {/* Gradient Overlay */}
-        <motion.div 
+        <motion.div
           key={`gradient-${activeService}`}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -111,17 +187,17 @@ const ServicesPage = () => {
         {/* Floating Geometric Shapes */}
         <div className="absolute inset-0 overflow-hidden opacity-20">
           <motion.div
-            animate={{ 
+            animate={{
               rotate: [0, 360],
-              scale: [1, 1.2, 1]
+              scale: [1, 1.2, 1],
             }}
             transition={{ duration: 20, repeat: Infinity }}
             className="absolute top-20 right-20 w-96 h-96 border-4 border-white/30 rounded-full"
           />
           <motion.div
-            animate={{ 
+            animate={{
               rotate: [360, 0],
-              scale: [1, 1.3, 1]
+              scale: [1, 1.3, 1],
             }}
             transition={{ duration: 25, repeat: Infinity }}
             className="absolute bottom-20 left-20 w-64 h-64 border-4 border-red-500/30 rounded-3xl"
@@ -138,12 +214,15 @@ const ServicesPage = () => {
             >
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
                 Premium Roadside
-                <span className={`block bg-gradient-to-r ${allServices[activeService].gradient} bg-clip-text text-transparent`}>
+                <span
+                  className={`block bg-gradient-to-r ${allServices[activeService].gradient} bg-clip-text text-transparent`}
+                >
                   Services
                 </span>
               </h1>
               <p className="text-2xl text-gray-300 max-w-3xl mx-auto">
-                Quality, reliable, and cost-effective assistance when you need it most
+                Quality, reliable, and cost-effective assistance when you need
+                it most
               </p>
             </motion.div>
 
@@ -157,15 +236,17 @@ const ServicesPage = () => {
                   whileTap={{ scale: 0.95 }}
                   className={`relative overflow-hidden rounded-2xl p-6 transition-all ${
                     activeService === i
-                      ? 'bg-white text-black shadow-2xl'
-                      : 'bg-white/10 backdrop-blur-xl text-white border border-white/20'
+                      ? "bg-white text-black shadow-2xl"
+                      : "bg-white/10 backdrop-blur-xl text-white border border-white/20"
                   }`}
                 >
-                  <service.icon className={`w-10 h-10 mx-auto mb-3 ${
-                    activeService === i ? 'text-black' : 'text-white'
-                  }`} />
+                  <service.icon
+                    className={`w-10 h-10 mx-auto mb-3 ${
+                      activeService === i ? "text-black" : "text-white"
+                    }`}
+                  />
                   <div className="font-bold text-sm">{service.title}</div>
-                  
+
                   {activeService === i && (
                     <motion.div
                       layoutId="activeIndicator"
@@ -208,7 +289,9 @@ const ServicesPage = () => {
                 whileHover={{ scale: 1.05 }}
                 className="group relative overflow-hidden bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:border-white/30 transition-all"
               >
-                <div className={`w-12 h-12 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform`}>
+                <div
+                  className={`w-12 h-12 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform`}
+                >
                   <service.icon className="w-6 h-6 text-white" />
                 </div>
                 <div className="text-white font-semibold">{service.label}</div>
@@ -218,120 +301,130 @@ const ServicesPage = () => {
         </div>
       </section>
 
-{/* Detailed Services Section - Bento Grid Style */}
-<section className="py-24 px-4 bg-gradient-to-b from-black via-gray-900 to-black">
-  <div className="max-w-7xl mx-auto">
-    <AnimatePresence mode="wait">
-      <motion.div
-        key={activeService}
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -50 }}
-        transition={{ duration: 0.5 }}
-        className="grid md:grid-cols-3 gap-6"
-      >
-        {/* Main Service Card - Spans 2 columns */}
-        <div className="md:col-span-2 relative overflow-hidden rounded-3xl">
-          {/* Background Image */}
-          <div 
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${allServices[activeService].bgImage})` }}
-          />
-          {/* Dark Overlay for readability */}
-          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
-          
-          {/* Content */}
-          <div className="relative z-10 p-12 h-full">
+      {/* Detailed Services Section - Bento Grid Style */}
+      <section className="py-24 px-4 bg-gradient-to-b from-black via-gray-900 to-black">
+        <div className="max-w-7xl mx-auto">
+          <AnimatePresence mode="wait">
             <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ type: "spring", duration: 0.6 }}
+              key={activeService}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -50 }}
+              transition={{ duration: 0.5 }}
+              className="grid md:grid-cols-3 gap-6"
             >
-              {React.createElement(allServices[activeService].icon, {
-                className: "w-20 h-20 text-white mb-6"
-              })}
-            </motion.div>
-            
-            <h2 className="text-5xl font-bold text-white mb-4">
-              {allServices[activeService].title}
-            </h2>
-            <p className="text-white/80 text-xl mb-8 leading-relaxed">
-              {allServices[activeService].desc}
-            </p>
+              {/* Main Service Card - Spans 2 columns */}
+              <div className="md:col-span-2 relative overflow-hidden rounded-3xl">
+                {/* Background Image */}
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{
+                    backgroundImage: `url(${allServices[activeService].bgImage})`,
+                  }}
+                />
+                {/* Dark Overlay for readability */}
+                <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
 
-            {/* Features List */}
-            <div className="space-y-4 mb-8">
-              {allServices[activeService].features.map((feature, i) => (
+                {/* Content */}
+                <div className="relative z-10 p-12 h-full">
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ type: "spring", duration: 0.6 }}
+                  >
+                    {React.createElement(allServices[activeService].icon, {
+                      className: "w-20 h-20 text-white mb-6",
+                    })}
+                  </motion.div>
+
+                  <h2 className="text-5xl font-bold text-white mb-4">
+                    {allServices[activeService].title}
+                  </h2>
+                  <p className="text-white/80 text-xl mb-8 leading-relaxed">
+                    {allServices[activeService].desc}
+                  </p>
+
+                  {/* Features List */}
+                  <div className="space-y-4 mb-8">
+                    {allServices[activeService].features.map((feature, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: i * 0.1 }}
+                        className="flex items-center space-x-3"
+                      >
+                        <IoCheckmarkDone className="w-6 h-6 text-white flex-shrink-0" />
+                        <span className="text-white font-medium text-lg">
+                          {feature}
+                        </span>
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-white text-black px-8 py-4 rounded-xl font-bold text-lg flex items-center space-x-2 hover:shadow-2xl transition-shadow"
+                  >
+                    <Phone className="w-5 h-5" />
+                    <span>Request This Service</span>
+                    <ArrowRight className="w-5 h-5" />
+                  </motion.button>
+                </div>
+
+                {/* Decorative Elements */}
+                <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
+                <div className="absolute bottom-0 left-0 w-48 h-48 bg-black/30 rounded-full blur-3xl" />
+              </div>
+
+              {/* Stats Cards */}
+              <div className="space-y-6">
+                {Object.entries(allServices[activeService].stats).map(
+                  ([key, value], i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.2 + i * 0.1 }}
+                      className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6"
+                    >
+                      <div className="text-gray-400 text-sm uppercase tracking-wider mb-2">
+                        {key.replace(/([A-Z])/g, " $1").trim()}
+                      </div>
+                      <div className="text-4xl font-bold text-white">
+                        {value}
+                      </div>
+                    </motion.div>
+                  ),
+                )}
+
+                {/* CTA Card */}
                 <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                  className="flex items-center space-x-3"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.5 }}
+                  className="bg-white rounded-2xl p-6 text-center"
                 >
-                  <IoCheckmarkDone className="w-6 h-6 text-white flex-shrink-0" />
-                  <span className="text-white font-medium text-lg">{feature}</span>
+                  <GiAlarmClock className="w-12 h-12 text-black mx-auto mb-3" />
+                  <div className="font-bold text-black text-lg mb-2">
+                    Available Now
+                  </div>
+                  <div className="text-gray-600 text-sm mb-4">
+                    24/7 Emergency Service
+                  </div>
+                  <a
+                    href="tel:0780579261"
+                    className="block bg-black text-white px-6 py-3 rounded-xl font-bold hover:bg-zinc-800 transition-colors"
+                  >
+                    Call 078 057 9261
+                  </a>
                 </motion.div>
-              ))}
-            </div>
-
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white text-black px-8 py-4 rounded-xl font-bold text-lg flex items-center space-x-2 hover:shadow-2xl transition-shadow"
-            >
-              <Phone className="w-5 h-5" />
-              <span>Request This Service</span>
-              <ArrowRight className="w-5 h-5" />
-            </motion.button>
-          </div>
-
-          {/* Decorative Elements */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-48 h-48 bg-black/30 rounded-full blur-3xl" />
-        </div>
-
-        {/* Stats Cards */}
-        <div className="space-y-6">
-          {Object.entries(allServices[activeService].stats).map(([key, value], i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 + i * 0.1 }}
-              className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6"
-            >
-              <div className="text-gray-400 text-sm uppercase tracking-wider mb-2">
-                {key.replace(/([A-Z])/g, ' $1').trim()}
-              </div>
-              <div className="text-4xl font-bold text-white">
-                {value}
               </div>
             </motion.div>
-          ))}
-
-          {/* CTA Card */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.5 }}
-            className="bg-white rounded-2xl p-6 text-center"
-          >
-            <GiAlarmClock className="w-12 h-12 text-black mx-auto mb-3" />
-            <div className="font-bold text-black text-lg mb-2">Available Now</div>
-            <div className="text-gray-600 text-sm mb-4">24/7 Emergency Service</div>
-            <a
-              href="tel:0780579261"
-              className="block bg-black text-white px-6 py-3 rounded-xl font-bold hover:bg-zinc-800 transition-colors"
-            >
-              Call 078 057 9261
-            </a>
-          </motion.div>
+          </AnimatePresence>
         </div>
-      </motion.div>
-    </AnimatePresence>
-  </div>
-</section>
+      </section>
 
       {/* Why Choose Us Section */}
       <section className="py-24 px-4 bg-gradient-to-b from-black to-gray-900">
@@ -345,14 +438,31 @@ const ServicesPage = () => {
             <h2 className="text-5xl md:text-6xl font-bold text-white mb-4">
               Why Choose Us?
             </h2>
-            <p className="text-xl text-gray-400">Excellence in every service, every time</p>
+            <p className="text-xl text-gray-400">
+              Excellence in every service, every time
+            </p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { icon: MdStarPurple500, title: '4.8 Rating', desc: 'Satisfied customers', color: 'from-yellow-500 to-orange-500' },
-              { icon: GiAlarmClock, title: 'Always Ready', desc: 'Available around the clock', color: 'from-blue-500 to-cyan-500' },
-              { icon: LiaAwardSolid, title: 'Experienced', desc: 'Trained professional', color: 'from-purple-500 to-pink-500' },
+              {
+                icon: MdStarPurple500,
+                title: "4.8 Rating",
+                desc: "Satisfied customers",
+                color: "from-yellow-500 to-orange-500",
+              },
+              {
+                icon: GiAlarmClock,
+                title: "Always Ready",
+                desc: "Available around the clock",
+                color: "from-blue-500 to-cyan-500",
+              },
+              {
+                icon: LiaAwardSolid,
+                title: "Experienced",
+                desc: "Trained professional",
+                color: "from-purple-500 to-pink-500",
+              },
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -364,25 +474,41 @@ const ServicesPage = () => {
                 className="relative group"
               >
                 <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:border-white/30 transition-all">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${item.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                  <div
+                    className={`w-16 h-16 bg-gradient-to-br ${item.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}
+                  >
                     <item.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-3">{item.title}</h3>
+                  <h3 className="text-2xl font-bold text-white mb-3">
+                    {item.title}
+                  </h3>
                   <p className="text-gray-400 text-lg">{item.desc}</p>
                 </div>
-                <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-10 rounded-3xl transition-opacity blur-xl`} />
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-10 rounded-3xl transition-opacity blur-xl`}
+                />
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* Floating Action Elements */}
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        <button
+          className="group bg-gradient-to-r from-green-400 via-green-600 to-primary-dark hover:bg-green-300 text-white p-3 rounded-full shadow-2xl transform hover:scale-110 transition-all duration-300"
+          onClick={() => handleAction("whatsapp")}
+        >
+          <IoLogoWhatsapp className="w-6 h-6 group-hover:rotate-12 transition-transform text-white" />
+        </button>
+      </div>
+
       {/* CTA Section */}
       <section className="py-24 px-4 relative overflow-hidden">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-fixed"
-          style={{ backgroundImage: 'url(/26.jpg)' }}
+          style={{ backgroundImage: "url(/26.jpg)" }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-red-900/50 to-black/60" />
 
@@ -398,7 +524,8 @@ const ServicesPage = () => {
               Need Our Services?
             </h2>
             <p className="text-xl text-gray-300 mb-4">
-              Our professional team is ready to assist you 24/7, anywhere in Zimbabwe.
+              Our professional team is ready to assist you 24/7, anywhere in
+              Zimbabwe.
             </p>
             <p className="text-lg text-gray-400 mb-8">
               Call us: 078 057 9261 | 071 808 4297 | 073 652 3424

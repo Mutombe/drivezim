@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Calendar, Clock, User, ArrowRight, Tag, Phone, BookOpen, ChevronRight, Search } from 'lucide-react';
+import { IoLogoWhatsapp } from "react-icons/io";
 
 const BlogPage = () => {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -14,6 +15,17 @@ const BlogPage = () => {
     { id: 'emergency', label: 'Emergency Tips' },
     { id: 'guides', label: 'How-To Guides' },
   ];
+
+      const handleAction = (action) => {
+    if (action === "call") {
+      window.location.href = "tel:+263785948128";
+    } else if (action === "email") {
+      window.location.href = "mailto:info@biddulphs.co.zw";
+    } else if (action === "whatsapp") {
+      window.location.href =
+        "https://wa.me/263780579261text=Hello%20Drive%20Zimbabwe%2C%20I%20would%20like%20to%20inquire%20about%20your%20services.";
+    }
+  };
 
   const articles = [
     {
@@ -292,6 +304,16 @@ const BlogPage = () => {
           </motion.div>
         </div>
       </section>
+
+                          {/* Floating Action Elements */}
+            <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+              <button
+                className="group bg-gradient-to-r from-green-400 via-green-600 to-primary-dark hover:bg-green-300 text-white p-3 rounded-full shadow-2xl transform hover:scale-110 transition-all duration-300"
+                onClick={() => handleAction("whatsapp")}
+              >
+                <IoLogoWhatsapp className="w-6 h-6 group-hover:rotate-12 transition-transform text-white" />
+              </button>
+            </div>
 
       {/* Featured Article */}
       {featuredArticle && (

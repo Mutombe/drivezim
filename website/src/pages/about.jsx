@@ -9,6 +9,7 @@ import { IoCheckmarkDone } from "react-icons/io5";
 import { FaHeart, FaHandshake, FaUsers } from "react-icons/fa";
 import { MdVerified } from "react-icons/md";
 import { BsLightningCharge, BsTruck } from "react-icons/bs";
+import { IoLogoWhatsapp } from "react-icons/io";
 
 const StoryPage = () => {
   const coreValues = [
@@ -48,6 +49,17 @@ const StoryPage = () => {
       bgImage: '/2.jpg'
     }
   ];
+
+      const handleAction = (action) => {
+    if (action === "call") {
+      window.location.href = "tel:+263785948128";
+    } else if (action === "email") {
+      window.location.href = "mailto:info@biddulphs.co.zw";
+    } else if (action === "whatsapp") {
+      window.location.href =
+        "https://wa.me/263780579261text=Hello%20Drive%20Zimbabwe%2C%20I%20would%20like%20to%20inquire%20about%20your%20services.";
+    }
+  };
 
 const stats = [
   { value: '1000+', label: 'Vehicles Assisted', icon: HiArrowTrendingUp },
@@ -171,6 +183,15 @@ const stats = [
         </motion.div>
       </section>
 
+                    {/* Floating Action Elements */}
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        <button
+          className="group bg-gradient-to-r from-green-400 via-green-600 to-primary-dark hover:bg-green-300 text-white p-3 rounded-full shadow-2xl transform hover:scale-110 transition-all duration-300"
+          onClick={() => handleAction("whatsapp")}
+        >
+          <IoLogoWhatsapp className="w-6 h-6 group-hover:rotate-12 transition-transform text-white" />
+        </button>
+      </div>
 {/* Stats Section */}
 <section className="py-10 md:py-16 px-4 bg-gradient-to-b from-black to-gray-900 -mt-10 md:-mt-0 relative z-10">
   <div className="max-w-7xl mx-auto">

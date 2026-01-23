@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ChevronDown, Phone, Mail, HelpCircle, Truck, Clock, CreditCard, Shield, MapPin, Wrench, AlertTriangle, MessageCircle } from 'lucide-react';
+import { IoLogoWhatsapp } from "react-icons/io";
 
 const FAQPage = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -14,6 +15,17 @@ const FAQPage = () => {
     { id: 'emergency', label: 'Emergency', icon: AlertTriangle },
     { id: 'coverage', label: 'Coverage', icon: MapPin },
   ];
+
+      const handleAction = (action) => {
+    if (action === "call") {
+      window.location.href = "tel:+263785948128";
+    } else if (action === "email") {
+      window.location.href = "mailto:info@biddulphs.co.zw";
+    } else if (action === "whatsapp") {
+      window.location.href =
+        "https://wa.me/263780579261text=Hello%20Drive%20Zimbabwe%2C%20I%20would%20like%20to%20inquire%20about%20your%20services.";
+    }
+  };
 
   const faqs = [
     {
@@ -146,6 +158,16 @@ const FAQPage = () => {
           </motion.div>
         </div>
       </section>
+
+                          {/* Floating Action Elements */}
+            <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+              <button
+                className="group bg-gradient-to-r from-green-400 via-green-600 to-primary-dark hover:bg-green-300 text-white p-3 rounded-full shadow-2xl transform hover:scale-110 transition-all duration-300"
+                onClick={() => handleAction("whatsapp")}
+              >
+                <IoLogoWhatsapp className="w-6 h-6 group-hover:rotate-12 transition-transform text-white" />
+              </button>
+            </div>
 
       {/* Category Filter */}
       <section className="py-8 px-4 bg-gradient-to-r from-gray-900 via-black to-gray-900 sticky top-20 z-40">
