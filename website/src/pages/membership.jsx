@@ -49,7 +49,7 @@ const MembershipPage = () => {
       window.location.href = "mailto:info@biddulphs.co.zw";
     } else if (action === "whatsapp") {
       window.location.href =
-        "https://wa.me/263780579261text=Hello%20Drive%20Zimbabwe%2C%20I%20would%20like%20to%20inquire%20about%20your%20services.";
+        "https://wa.me/263780579261?text=Hello%20Drive%20Zimbabwe%2C%20I%20would%20like%20to%20inquire%20about%20your%20services.";
     }
   };
 
