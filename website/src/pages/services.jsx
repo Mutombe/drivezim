@@ -107,7 +107,7 @@ const ServicesPage = () => {
         service: "Reliable",
       },
       gradient: "from-purple-600 via-pink-600 to-rose-500",
-      bgImage: "/37.jpg",
+      bgImage: "/38.jpg",
       accentColor: "purple",
     },
     {
