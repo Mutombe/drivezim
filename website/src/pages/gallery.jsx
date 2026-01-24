@@ -439,7 +439,7 @@ const GalleryPage = () => {
         />
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black" />
 
         {/* Geometric Patterns */}
         <div className="absolute inset-0 opacity-10 hidden md:block">
