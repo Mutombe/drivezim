@@ -70,7 +70,7 @@ const ServicesPage = () => {
         coverage: "Nationwide",
       },
       gradient: "from-red-600 via-orange-600 to-yellow-500",
-      bgImage: "/5.jpg",
+      bgImage: "/d14.jpeg",
       accentColor: "red",
     },
     {
