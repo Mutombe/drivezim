@@ -264,7 +264,7 @@ const BlogPage = () => {
       <section className="relative min-h-[50vh] md:min-h-[60vh] overflow-hidden flex items-center">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(/2.jpg)' }}
+          style={{ backgroundImage: 'url(/d18.jpeg)' }}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-black/95 via-black/80 to-red-900/50" />
 

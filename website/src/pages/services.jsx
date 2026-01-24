@@ -42,7 +42,7 @@ const ServicesPage = () => {
   const t = mockTranslations;
   const [activeService, setActiveService] = useState(0);
 
-      const handleAction = (action) => {
+  const handleAction = (action) => {
     if (action === "call") {
       window.location.href = "tel:+263785948128";
     } else if (action === "email") {
@@ -55,7 +55,7 @@ const ServicesPage = () => {
 
   const allServices = [
     {
-      icon: BsTruckFlatbed,
+      icon: "/TowTruck.webp",
       title: "Emergency Towing",
       desc: "Quality towing services for all vehicle types, anywhere, anytime",
       features: [
@@ -74,7 +74,7 @@ const ServicesPage = () => {
       accentColor: "red",
     },
     {
-      icon: MdOutlineSettings,
+      icon: "/Flatbed.webp",
       title: "Roadside Repairs",
       desc: "Expert on-the-spot repairs to get you back on the road quickly",
       features: [
@@ -92,7 +92,7 @@ const ServicesPage = () => {
       accentColor: "blue",
     },
     {
-      icon: SiFsecure,
+      icon: "/Accident.webp",
       title: "Vehicle Recovery",
       desc: "Specialised recovery services for challenging situations",
       features: [
@@ -111,7 +111,7 @@ const ServicesPage = () => {
       accentColor: "purple",
     },
     {
-      icon: FiZap,
+      icon: "/24Hour.webp",
       title: "Emergency Response",
       desc: "Rapid 24/7 emergency assistance for critical roadside situations",
       features: [
@@ -176,12 +176,12 @@ const ServicesPage = () => {
           />
         </AnimatePresence>
 
-        {/* Gradient Overlay */}
+        {/* Gradient Overlay - Lighter for clearer background */}
         <motion.div
           key={`gradient-${activeService}`}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/70 to-transparent"
+          className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-transparent"
         />
 
         {/* Floating Geometric Shapes */}
@@ -226,7 +226,7 @@ const ServicesPage = () => {
               </p>
             </motion.div>
 
-            {/* Service Selector Cards */}
+            {/* Service Selector Cards - Updated with webp icons */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
               {allServices.map((service, i) => (
                 <motion.button
@@ -240,9 +240,12 @@ const ServicesPage = () => {
                       : "bg-white/10 backdrop-blur-xl text-white border border-white/20"
                   }`}
                 >
-                  <service.icon
-                    className={`w-10 h-10 mx-auto mb-3 ${
-                      activeService === i ? "text-black" : "text-white"
+                  {/* Webp Icon - invert filter when on white background */}
+                  <img
+                    src={service.icon}
+                    alt={service.title}
+                    className={`w-10 h-10 mx-auto mb-3 object-contain ${
+                      activeService === i ? "invert" : ""
                     }`}
                   />
                   <div className="font-bold text-sm">{service.title}</div>
@@ -322,22 +325,25 @@ const ServicesPage = () => {
                     backgroundImage: `url(${allServices[activeService].bgImage})`,
                   }}
                 />
-                {/* Dark Overlay for readability */}
-                <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
+                {/* Dark Overlay for readability - slightly lighter for clearer bg */}
+                <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/50" />
 
                 {/* Content */}
                 <div className="relative z-10 p-12 h-full">
+                  {/* Webp Icon - white icon on dark background */}
                   <motion.div
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ type: "spring", duration: 0.6 }}
                   >
-                    {React.createElement(allServices[activeService].icon, {
-                      className: "w-20 h-20 text-white mb-6",
-                    })}
+                    <img
+                      src={allServices[activeService].icon}
+                      alt={allServices[activeService].title}
+                      className="w-20 h-20 mb-6 object-contain"
+                    />
                   </motion.div>
 
-                  <h2 className="text-5xl font-bold text-white mb-4">
+                  <h2 className="text-5xl font-bold text-red-600 mb-4">
                     {allServices[activeService].title}
                   </h2>
                   <p className="text-white/80 text-xl mb-8 leading-relaxed">
@@ -354,7 +360,7 @@ const ServicesPage = () => {
                         transition={{ delay: i * 0.1 }}
                         className="flex items-center space-x-3"
                       >
-                        <IoCheckmarkDone className="w-6 h-6 text-white flex-shrink-0" />
+                        <IoCheckmarkDone className="w-6 h-6 text-red-600 flex-shrink-0" />
                         <span className="text-white font-medium text-lg">
                           {feature}
                         </span>
@@ -392,7 +398,7 @@ const ServicesPage = () => {
                       <div className="text-gray-400 text-sm uppercase tracking-wider mb-2">
                         {key.replace(/([A-Z])/g, " $1").trim()}
                       </div>
-                      <div className="text-4xl font-bold text-white">
+                      <div className="text-4xl font-bold text-red-600">
                         {value}
                       </div>
                     </motion.div>
@@ -479,7 +485,7 @@ const ServicesPage = () => {
                   >
                     <item.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-3">
+                  <h3 className="text-2xl font-bold text-red-600 mb-3">
                     {item.title}
                   </h3>
                   <p className="text-gray-400 text-lg">{item.desc}</p>

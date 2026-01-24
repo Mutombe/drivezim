@@ -491,82 +491,90 @@ const StoryPage = () => {
       </section>
 
       {/* Timeline Section */}
-      <section className="py-12 md:py-20 px-4 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-8 md:mb-12"
-          >
-            <span className="text-red-500 font-semibold text-sm md:text-base mb-2 block">
-              OUR JOURNEY
-            </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">
-              Key Milestones
-            </h2>
-            <p className="text-sm md:text-lg text-gray-400">
-              Our journey of growth since 2019
-            </p>
-          </motion.div>
+<section className="py-12 md:py-20 px-4 relative overflow-hidden">
+  {/* Background Image */}
+  <div 
+    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+    style={{ backgroundImage: "url('/d17.jpeg')" }}
+  />
+  {/* Dark Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-b from-gray-900/90 via-black/85 to-black/95" />
+  
+  <div className="max-w-7xl mx-auto relative z-10">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-center mb-8 md:mb-12"
+    >
+      <span className="text-red-500 font-semibold text-sm md:text-base mb-2 block">
+        OUR JOURNEY
+      </span>
+      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">
+        Key Milestones
+      </h2>
+      <p className="text-sm md:text-lg text-gray-400">
+        Our journey of growth since 2019
+      </p>
+    </motion.div>
 
-          {/* Mobile Timeline */}
-          <div className="md:hidden space-y-4">
-            {milestones.map((milestone, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: i * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-4 flex items-start space-x-4"
-              >
-                <div className="flex-shrink-0 w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center text-2xl">
-                  {milestone.icon}
-                </div>
-                <div>
-                  <div className="text-red-500 font-bold text-lg">
-                    {milestone.year}
-                  </div>
-                  <h3 className="text-white font-bold text-base mb-1">
-                    {milestone.title}
-                  </h3>
-                  <p className="text-gray-400 text-sm">{milestone.desc}</p>
-                </div>
-              </motion.div>
-            ))}
+    {/* Mobile Timeline */}
+    <div className="md:hidden space-y-4">
+      {milestones.map((milestone, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ delay: i * 0.1 }}
+          viewport={{ once: true }}
+          className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-4 flex items-start space-x-4"
+        >
+          <div className="flex-shrink-0 w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center text-2xl">
+            {milestone.icon}
           </div>
+          <div>
+            <div className="text-red-500 font-bold text-lg">
+              {milestone.year}
+            </div>
+            <h3 className="text-white font-bold text-base mb-1">
+              {milestone.title}
+            </h3>
+            <p className="text-gray-400 text-sm">{milestone.desc}</p>
+          </div>
+        </motion.div>
+      ))}
+    </div>
 
-          {/* Desktop Timeline */}
-          <div className="hidden md:grid grid-cols-4 gap-6">
-            {milestones.map((milestone, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-                className="relative"
-              >
-                <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all h-full">
-                  <div className="text-4xl mb-3">{milestone.icon}</div>
-                  <div className="text-4xl font-bold text-red-500 mb-2">
-                    {milestone.year}
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-2">
-                    {milestone.title}
-                  </h3>
-                  <p className="text-gray-400 text-sm">{milestone.desc}</p>
-                </div>
-                {i < milestones.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-red-500/30" />
-                )}
-              </motion.div>
-            ))}
+    {/* Desktop Timeline */}
+    <div className="hidden md:grid grid-cols-4 gap-6">
+      {milestones.map((milestone, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: i * 0.1 }}
+          viewport={{ once: true }}
+          whileHover={{ y: -5 }}
+          className="relative"
+        >
+          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all h-full">
+            <div className="text-4xl mb-3">{milestone.icon}</div>
+            <div className="text-4xl font-bold text-red-500 mb-2">
+              {milestone.year}
+            </div>
+            <h3 className="text-xl font-bold text-white mb-2">
+              {milestone.title}
+            </h3>
+            <p className="text-gray-400 text-sm">{milestone.desc}</p>
           </div>
-        </div>
-      </section>
+          {i < milestones.length - 1 && (
+            <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-red-500/30" />
+          )}
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Team Section */}
       <section className="py-12 md:py-20 px-4 bg-gradient-to-b from-gray-900 to-black">

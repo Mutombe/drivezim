@@ -116,7 +116,7 @@ const FAQPage = () => {
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(/20.jpg)' }}
+          style={{ backgroundImage: 'url(/24.jpg)' }}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-black/95 via-black/80 to-red-900/50" />
 

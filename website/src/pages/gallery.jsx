@@ -386,7 +386,7 @@ const GalleryPage = () => {
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url(/20.jpg)" }}
+          style={{ backgroundImage: "url(/23.jpg)" }}
         />
 
         {/* Overlay */}

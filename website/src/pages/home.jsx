@@ -64,7 +64,7 @@ const HomePage = () => {
       icon: SiFsecure,
       title: t.services.recovery,
       desc: "Quality vehicle recovery services",
-      image: "/37.jpg",
+      image: "/d1.jpeg",
       hoverGlow: "group-hover:shadow-purple-500/50",
       accentColor: "bg-purple-600",
     },
@@ -103,16 +103,16 @@ const HomePage = () => {
               style={{
                 backgroundImage: `url(/${
                   [
+                    "29.jpg",
                     "d2.jpeg",
                     "20.jpg",
-                    "21.jpg",
-                    "5.jpg",
-                    "37.jpg",
+                    "19.jpg",
+                    "d14.jpeg",
+                    "39.jpg",
                     "15.jpg",
                     "18.jpg",
                     "22.jpg",
                     "25.jpg",
-                    "30.jpg",
                   ][activeSlide]
                 })`,
               }}
@@ -390,7 +390,7 @@ const HomePage = () => {
                   </div>
 
                   <div>
-                    <h3 className="text-2xl font-bold text-white mb-2 drop-shadow-lg">
+                    <h3 className="text-2xl font-bold text-red-600 mb-2 drop-shadow-lg">
                       {service.title}
                     </h3>
                     <p className="text-white/90 drop-shadow-md mb-4">

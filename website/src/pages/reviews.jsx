@@ -183,7 +183,7 @@ const ReviewsPage = () => {
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(/5.jpg)' }}
+          style={{ backgroundImage: 'url(/9.jpg)' }}
         />
 
         {/* Gradient Overlay */}

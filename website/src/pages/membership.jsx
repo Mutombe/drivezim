@@ -306,12 +306,13 @@ I would like to apply for the ${planName} membership plan. Please contact me to 
             <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 md:mb-6 leading-tight">
               Join Our
               <span className="block bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
-                Membership Program
+                Membership
               </span>
             </h1>
             <p className="text-base md:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto px-4">
-              Get peace of mind on every journey with our comprehensive roadside
-              assistance coverage
+Get peace of mind on every journey with reliable, all-round roadside assistance.
+Breakdowns happen stress doesn’t have to. We’re always just a call away.
+Anywhere. Anyplace. Anytime
             </p>
           </motion.div>
         </div>
