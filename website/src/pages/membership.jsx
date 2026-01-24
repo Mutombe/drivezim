@@ -42,7 +42,7 @@ const MembershipPage = () => {
     registrationNumber: "",
   });
 
-    const handleAction = (action) => {
+  const handleAction = (action) => {
     if (action === "call") {
       window.location.href = "tel:+263785948128";
     } else if (action === "email") {
@@ -310,9 +310,9 @@ I would like to apply for the ${planName} membership plan. Please contact me to 
               </span>
             </h1>
             <p className="text-base md:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto px-4">
-Get peace of mind on every journey with reliable, all-round roadside assistance.
-Breakdowns happen stress doesn’t have to. We’re always just a call away.
-Anywhere. Anyplace. Anytime
+              Get peace of mind on every journey with reliable, all-round
+              roadside assistance. Breakdowns happen stress doesn’t have to.
+              We’re always just a call away. Anywhere. Anyplace. Anytime
             </p>
           </motion.div>
         </div>
@@ -346,15 +346,15 @@ Anywhere. Anyplace. Anytime
         </div>
       </section>
 
-                          {/* Floating Action Elements */}
-            <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
-              <button
-                className="group bg-gradient-to-r from-green-400 via-green-600 to-primary-dark hover:bg-green-300 text-white p-3 rounded-full shadow-2xl transform hover:scale-110 transition-all duration-300"
-                onClick={() => handleAction("whatsapp")}
-              >
-                <IoLogoWhatsapp className="w-6 h-6 group-hover:rotate-12 transition-transform text-white" />
-              </button>
-            </div>
+      {/* Floating Action Elements */}
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        <button
+          className="group bg-gradient-to-r from-green-400 via-green-600 to-primary-dark hover:bg-green-300 text-white p-3 rounded-full shadow-2xl transform hover:scale-110 transition-all duration-300"
+          onClick={() => handleAction("whatsapp")}
+        >
+          <IoLogoWhatsapp className="w-6 h-6 group-hover:rotate-12 transition-transform text-white" />
+        </button>
+      </div>
 
       {/* Membership Plans */}
       <section className="py-16 md:py-24 px-4 relative overflow-hidden">
