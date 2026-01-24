@@ -186,7 +186,7 @@ Sent via Drive Zimbabwe Contact Form`;
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: 'url(/d12.jpeg)' }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/70 to-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black" />
 
         {/* Geometric Patterns - Hidden on mobile */}
         <div className="absolute inset-0 opacity-10 hidden md:block">
@@ -261,7 +261,7 @@ Sent via Drive Zimbabwe Contact Form`;
                     <info.icon className="w-5 h-5 md:w-7 md:h-7 text-white" />
                   </div>
                   <div className="text-gray-400 text-xs md:text-sm font-semibold mb-1 md:mb-2">{info.label}</div>
-                  <div className="text-white text-sm md:text-lg font-bold mb-1 break-words">{info.value}</div>
+                  <div className="text-red-600 text-sm md:text-lg font-bold mb-1 break-words">{info.value}</div>
                   <div className="text-gray-500 text-xs md:text-sm hidden md:block">{info.subtext}</div>
                 </div>
                 <div className={`absolute inset-0 bg-gradient-to-br ${info.gradient} opacity-0 group-hover:opacity-10 rounded-2xl md:rounded-3xl transition-opacity blur-xl`} />

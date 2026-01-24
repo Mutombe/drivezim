@@ -373,7 +373,7 @@ const ServicesPage = () => {
                     whileTap={{ scale: 0.95 }}
                     className="bg-white text-black px-8 py-4 rounded-xl font-bold text-lg flex items-center space-x-2 hover:shadow-2xl transition-shadow"
                   >
-                    <Phone className="w-5 h-5" />
+                    <Phone className="w-5 h-5 text-red-600" />
                     <span>Request This Service</span>
                     <ArrowRight className="w-5 h-5" />
                   </motion.button>
