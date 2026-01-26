@@ -115,7 +115,7 @@ const FAQPage = () => {
       <section className="relative min-h-[60vh] overflow-hidden flex items-center">
         {/* Background Image */}
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-top"
           style={{ backgroundImage: 'url(/24.jpg)' }}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-black/95 via-black/80 to-red-900/50" />

@@ -1,8 +1,8 @@
 // Footer Component
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Phone, Mail, ChevronRight, Shield, Clock, Award, Facebook, Linkedin, Instagram, X } from 'lucide-react';
+import { Phone, Mail, ChevronRight, Shield, Clock, Award, Facebook, Linkedin, Instagram, X, Eye } from 'lucide-react';
 import { useLanguage } from '../lunguageContext';
 import { FaXTwitter } from "react-icons/fa6";
 
@@ -10,6 +10,28 @@ const Footer = () => {
   const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
   const [activeModal, setActiveModal] = useState(null);
+  const [visitCount, setVisitCount] = useState(0);
+
+  // Track visitor count
+  useEffect(() => {
+    const VISIT_COUNT_KEY = 'drivezim_visit_count';
+    const SESSION_VISITED_KEY = 'drivezim_session_visited';
+
+    // Get current count from localStorage
+    let currentCount = parseInt(localStorage.getItem(VISIT_COUNT_KEY) || '0', 10);
+
+    // Check if this session has already been counted
+    const sessionVisited = sessionStorage.getItem(SESSION_VISITED_KEY);
+
+    if (!sessionVisited) {
+      // New session - increment the counter
+      currentCount += 1;
+      localStorage.setItem(VISIT_COUNT_KEY, currentCount.toString());
+      sessionStorage.setItem(SESSION_VISITED_KEY, 'true');
+    }
+
+    setVisitCount(currentCount);
+  }, []);
 
   const footerLinks = {
     company: [
@@ -301,8 +323,14 @@ const Footer = () => {
           {/* Bottom Bar */}
           <div className="border-t border-white/20 pt-6 md:pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 mb-4">
-              <div className="text-gray-400 text-xs md:text-sm text-center md:text-left">
-                &copy; {currentYear} Drive Zimbabwe Roadside Assistance Pvt. Ltd. All rights reserved.
+              <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
+                <div className="flex items-center space-x-1 md:space-x-2 text-gray-400 text-xs md:text-sm">
+                  <Eye className="w-3 h-3 md:w-4 md:h-4 text-red-500" />
+                  <span>Visits {visitCount.toLocaleString()}</span>
+                </div>
+                <div className="text-gray-400 text-xs md:text-sm text-center md:text-left">
+                  &copy; {currentYear} Drive Zimbabwe Roadside Assistance Pvt. Ltd. All rights reserved.
+                </div>
               </div>
               <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6 text-xs md:text-sm text-gray-400">
                 <div className="flex items-center space-x-1 md:space-x-2">

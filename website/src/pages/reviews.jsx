@@ -182,7 +182,7 @@ const ReviewsPage = () => {
       <section className="relative min-h-[70vh] overflow-hidden flex items-center">
         {/* Background Image */}
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-top"
           style={{ backgroundImage: 'url(/9.jpg)' }}
         />
 

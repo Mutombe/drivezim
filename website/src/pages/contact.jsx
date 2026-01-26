@@ -184,7 +184,7 @@ Sent via Drive Zimbabwe Contact Form`;
       {/* Hero Section */}
       <section className="relative h-[50vh] md:h-[60vh] overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-top"
           style={{ backgroundImage: 'url(/d12.jpeg)' }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black" />
