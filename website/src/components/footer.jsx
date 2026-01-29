@@ -326,7 +326,7 @@ const Footer = () => {
               <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
                 <div className="flex items-center space-x-1 md:space-x-2 text-gray-400 text-xs md:text-sm">
                   <Eye className="w-3 h-3 md:w-4 md:h-4 text-red-500" />
-                  <span>Visits {visitCount.toLocaleString()}</span>
+                  <span>Visits {visitCount.toLocaleString()}9</span>
                 </div>
                 <div className="text-gray-400 text-xs md:text-sm text-center md:text-left">
                   &copy; {currentYear} Drive Zimbabwe Roadside Assistance Pvt. Ltd. All rights reserved.
