@@ -139,33 +139,7 @@ const BlogPage = () => {
         <p>If you're on a busy highway, don't have a spare, or feel unsafe, call Drive Zimbabwe at 078 057 9261. We will change your tyre safely and quickly.</p>
       `
     },
-    {
-      id: 5,
-      category: 'maintenance',
-      title: 'Understanding Your Vehicle\'s Warning Lights',
-      excerpt: 'Those dashboard lights aren\'t just for decoration. Learn what each warning light means and what action to take.',
-      image: '/2.jpg',
-      author: 'Technical Team',
-      date: 'December 20, 2025',
-      readTime: '6 min read',
-      featured: false,
-      content: `
-        <h3>Check Engine Light</h3>
-        <p>This amber light can indicate various issues from a loose gas cap to serious engine problems. If it's steady, you can drive to a mechanic soon. If it's flashing, pull over safely and call for assistance—driving could cause serious damage.</p>
-
-        <h3>Oil Pressure Warning</h3>
-        <p>This red light shaped like an oil can is critical. Stop immediately if this comes on while driving. Continuing could destroy your engine. Check oil level first—if it's fine, you may have a pump or sensor issue requiring towing.</p>
-
-        <h3>Temperature Warning</h3>
-        <p>A thermometer icon means your engine is overheating. Pull over immediately and turn off the engine. Wait for it to cool before checking coolant levels. Never open the radiator cap on a hot engine. Call for assistance if needed.</p>
-
-        <h3>Battery/Charging Alert</h3>
-        <p>This light indicates your battery isn't charging properly. You may have a failing alternator, loose belt, or battery issue. Drive directly to a garage or call for help—your car will eventually lose power.</p>
-
-        <h3>Brake System Warning</h3>
-        <p>If the handbrake is released but this light stays on, you may have low brake fluid or a brake system fault. This is a safety issue—have it checked immediately. If brakes feel spongy, don't drive; call for towing.</p>
-      `
-    },
+  
     {
       id: 6,
       category: 'guides',
@@ -248,6 +222,358 @@ const BlogPage = () => {
 
         <h3>Plan Your Journey</h3>
         <p>Check weather forecasts before traveling. Avoid traveling during severe storms if possible. If caught in a heavy downpour with zero visibility, pull over safely with hazards on until it passes.</p>
+      `
+    },
+    // NEW ARTICLES FROM DRIVE ZIMBABWE CONTENT
+    {
+      id: 9,
+      category: 'safety',
+      title: 'The Hidden Danger: Why Feet on the Dashboard Can Be Fatal',
+      excerpt: 'It looks relaxed and feels comfortable, but putting your feet on the dashboard is one of the most dangerous positions in a moving vehicle. Here\'s why.',
+      image: '/blog/d1.jpeg',
+      author: 'Drive Zimbabwe Team',
+      date: 'January 20, 2026',
+      readTime: '4 min read',
+      featured: false,
+      content: `
+        <h3>The Illusion of Comfort</h3>
+        <p>On long journeys, it's common to see front-seat passengers resting their feet on the dashboard. It looks relaxed and feels comfortable. But it is one of the most dangerous positions anyone can sit in inside a moving vehicle.</p>
+
+        <h3>How Airbags Become Weapons</h3>
+        <p>In a collision, airbags deploy from the dashboard at extremely high speed—up to 320 km/h. That force is designed to protect a properly seated passenger. But with feet on the dashboard, even a minor crash can turn tragic.</p>
+
+        <h3>The Devastating Injuries</h3>
+        <p>When the airbag deploys with feet on the dashboard, the legs are thrown violently back toward the face, chest, and spine. Common injuries include severe foot and ankle fractures, shattered knees and leg bones, facial fractures, traumatic brain injuries, and permanent spinal and pelvic damage.</p>
+
+        <h3>Life-Altering Consequences</h3>
+        <p>These injuries are not just painful—they are often life-altering for the victim and their family. A moment of comfort is not worth a lifetime of damage.</p>
+
+        <h3>Simple Safety Rules</h3>
+        <p>Keep your feet down. Wear your seatbelt correctly. Protect the people you love. On Zimbabwe's unpredictable roads, safety doesn't end at good driving—it includes how you sit in the vehicle.</p>
+      `
+    },
+    {
+      id: 10,
+      category: 'safety',
+      title: 'Active Vision: Why Looking Isn\'t the Same as Seeing',
+      excerpt: 'Many accidents don\'t happen because drivers are reckless—they happen because drivers stay still and trust mirrors to show everything. Learn how to truly see the road.',
+      image: '/blog/d2.jpeg',
+      author: 'Safety Department',
+      date: 'January 18, 2026',
+      readTime: '5 min read',
+      featured: false,
+      content: `
+        <h3>Vision Changes With Movement</h3>
+        <p>Vision is not fixed—it changes every time you move your head. Many incidents on our roads don't happen because drivers are reckless. They happen because drivers stay still and trust mirrors to show everything. They never will.</p>
+
+        <h3>Understanding Blind Spots</h3>
+        <p>Blind spots are created by structure, not carelessness. Windscreen pillars, door frames, headrests, mirrors—even passengers—all block parts of your view. No mirror setup can eliminate that. But the solution is simple: move.</p>
+
+        <h3>The Power of Small Movements</h3>
+        <p>At junctions across Zimbabwe—from busy city intersections to quiet rural turn-offs—a pillar can hide an entire car, cyclist, or pedestrian. A small lean forward, back, or side-to-side can reveal what was hidden. On bends, a subtle shift lets you read further ahead, spotting oncoming vehicles, animals, debris, or narrowing roads in time.</p>
+
+        <h3>Mirrors Confirm, Eyes Detect</h3>
+        <p>Mirrors are important, but mirrors confirm—your eyes detect. Good drivers scan actively. They don't freeze and hope the mirror has the answer. This matters because many breakdowns, collisions, and roadside emergencies happen at low speed—pulling out, turning, or navigating tight spaces.</p>
+
+        <h3>Active Driving Saves Lives</h3>
+        <p>Good driving is active. Your eyes move. Your head moves. Your body adjusts. Vision creates time. Time creates options. Options save lives and journeys.</p>
+      `
+    },
+    {
+      id: 11,
+      category: 'safety',
+      title: 'Just a Second: The True Cost of Distracted Driving',
+      excerpt: 'A thumb on glass instead of brake. Thirty km an hour feels forgiving—until it isn\'t. Understanding why that quick glance at your phone can change everything.',
+      image: '/blog/d3.jpeg',
+      author: 'Drive Zimbabwe Team',
+      date: 'January 16, 2026',
+      readTime: '5 min read',
+      featured: false,
+      content: `
+        <h3>The Deceptive Second</h3>
+        <p>Just a second. Just a glance. A thumb on glass instead of brake. Thirty km an hour feels forgiving—until it isn't. Until metal remembers speed and lives remember pain.</p>
+
+        <h3>The Green Light Trap</h3>
+        <p>The light turns green. Your car doesn't move. The world waits while you scroll. A horn reminds you you're alive. A heartbeat later, you might not be. Just a second steals momentum. Just a second steals control. Just a second steals attention from a job that demands your whole soul.</p>
+
+        <h3>No One Plans an Accident</h3>
+        <p>No one wakes up planning an accident. No one means to change a family forever. No one chooses sirens, broken glass, or the long silence after a phone call. It always starts the same way: "Let me just reply."</p>
+
+        <h3>The Road's Simple Demand</h3>
+        <p>The road doesn't negotiate. It doesn't forgive distractions. It doesn't care how urgent the message felt. It only asks one thing of drivers: Look up. Stay present. Keep control.</p>
+
+        <h3>Drive Like Lives Depend On It</h3>
+        <p>To every motorist, every car owner, every mechanic, every company with vehicles on the road: Drive like lives depend on it—because they do. And when the road reminds you who's in charge, make sure help is already on your side.</p>
+      `
+    },
+    {
+      id: 12,
+      category: 'safety',
+      title: 'We Share the Same Road: A Zimbabwean Perspective on Road Responsibility',
+      excerpt: 'From combis to haulage trucks, bicycles to pedestrians—every road user shares the same stretch of tarmac and the same responsibility.',
+      image: '/blog/d4.jpeg',
+      author: 'Drive Zimbabwe Team',
+      date: 'January 14, 2026',
+      readTime: '6 min read',
+      featured: false,
+      content: `
+        <h3>One Road, Many Journeys</h3>
+        <p>From the early morning rush on Samora Machel to the long night drives along the Beitbridge Road, we all meet on the same stretch of tarmac. Different wheels, different speeds—combis, haulage trucks, buses, bicycles, scotch carts, and feet. Different journeys, the same borrowed time.</p>
+
+        <h3>Understanding Each Road User</h3>
+        <p>A cyclist rides the edge of the lane, dodging potholes and wind, balancing skill with constant risk. Often unmarked, often unseen, passed too close. A motorcyclist reads the road carefully because two wheels leave no room for error. A haulage truck pushes forward—forty-four tonnes can't stop suddenly. Physics, not pride, decides what happens next.</p>
+
+        <h3>The Pedestrian's Faith</h3>
+        <p>A pedestrian steps off the curb in Mbare, Gweru, Mutare, or Bulawayo. No metal shell. No safety net. Just faith—faith that the driver will slow down, faith that someone will see them.</p>
+
+        <h3>This Is Not a Race</h3>
+        <p>The truth is this: No one on this road is trying to win. This is not a race. Courtesy costs only seconds. Impatience costs lives. So slow the breath. Ease the grip on the steering wheel. Lift your eyes beyond the bonnet.</p>
+
+        <h3>Respect Is Wisdom</h3>
+        <p>Respect is not weakness. On our roads, it is wisdom. It is how families reunite at night. It is how businesses open again tomorrow. It is how everyone gets home.</p>
+      `
+    },
+    {
+      id: 13,
+      category: 'safety',
+      title: 'The Cultural Shift on Our Roads: Food for Thought',
+      excerpt: 'There was a time when being on the road meant responsibility and courtesy. Today, something has changed—and it\'s time to address it.',
+      image: '/blog/d5.jpeg',
+      author: 'Drive Zimbabwe Team',
+      date: 'January 12, 2026',
+      readTime: '6 min read',
+      featured: false,
+      content: `
+        <h3>A Time of Responsibility</h3>
+        <p>There was a time when being on the road meant more than simply getting from point A to point B. It meant responsibility. Courtesy. An unspoken agreement that every life on the road mattered. Today, something has changed—not just the condition of our roads, but the culture on them.</p>
+
+        <h3>The Erosion of Road Discipline</h3>
+        <p>We are witnessing a steady erosion of road discipline and mutual respect. Tailgating has become normal. Speeding is brushed off as confidence. Phones are used behind the wheel as if consequences no longer exist. Indicators feel optional. Amber lights are treated as green. And the hooter—once a warning—has become an outlet for frustration.</p>
+
+        <h3>The Deeper Issue</h3>
+        <p>The deeper issue isn't poor driving skills—it's impatience. Impatience with learners. Impatience with cyclists. Impatience with anyone who chooses to drive within the law. As enforcement becomes less visible, accountability fades. But the truth is this: Every choice behind the wheel still matters.</p>
+
+        <h3>Real Confidence Redefined</h3>
+        <p>Real confidence on today's roads isn't about matching chaos with chaos. It's about staying grounded when others are not. It's about planning ahead, respecting space, and refusing to let anger take control of a moving vehicle.</p>
+
+        <h3>Be the Change</h3>
+        <p>Be the driver who slows down when others rush. Be the one who creates space instead of tension. Be calm when the road feels chaotic. Because one moment of patience can prevent a lifetime of regret.</p>
+      `
+    },
+    {
+      id: 14,
+      category: 'safety',
+      title: 'Your Safety Matters More Than You Think',
+      excerpt: 'That quiet feeling when something doesn\'t feel right—that\'s not weakness, that\'s instinct. Here\'s why your safety deserves respect.',
+      image: '/blog/d6.jpeg',
+      author: 'Safety Department',
+      date: 'January 10, 2026',
+      readTime: '4 min read',
+      featured: false,
+      content: `
+        <h3>Trust Your Instincts</h3>
+        <p>That quiet feeling in your chest when something doesn't feel right… That moment when you wish the journey would just end safely… That's not weakness. That's instinct. And it deserves respect.</p>
+
+        <h3>Breaking the Silence</h3>
+        <p>Every day on Zimbabwe's roads, people stay quiet out of politeness. They endure discomfort out of fear of being "awkward." And sometimes, that silence costs too much.</p>
+
+        <h3>No One Should Feel Trapped</h3>
+        <p>Whether you're a driver carrying loved ones or a passenger trusting someone else with your life, you deserve peace of mind knowing that if something goes wrong, help will come. Breakdowns happen. Emergencies happen. Fear happens. But being prepared changes everything.</p>
+
+        <h3>Asking for Help Is Wisdom</h3>
+        <p>Leaving an unsafe situation is strength. Asking for help is wisdom. And your life matters. When the road feels unsafe, you're never alone.</p>
+
+        <h3>Be Prepared</h3>
+        <p>Join a roadside assistance membership before trouble finds you. Share this message—it could protect a friend, a sibling, a parent. Because preparation isn't optional on our roads—it's protection.</p>
+      `
+    },
+    {
+      id: 15,
+      category: 'safety',
+      title: 'That "Oops" Moment: Learning from Near Misses',
+      excerpt: 'Your foot slams the brake. Your breath catches. Then you whisper "That was close." What do these near-miss moments teach us?',
+      image: '/blog/d7.jpeg',
+      author: 'Drive Zimbabwe Team',
+      date: 'January 8, 2026',
+      readTime: '6 min read',
+      featured: false,
+      content: `
+        <h3>The Moment We All Know</h3>
+        <p>Every driver knows that moment. Your foot slams the brake. Your breath catches. Your heart races, and for a split second, the world goes quiet. Then you whisper, "That was close." These are moments when nothing happened, but everything could have.</p>
+
+        <h3>The Statistics Behind the Silence</h3>
+        <p>Africa has just 2% of the world's vehicles, yet carries nearly 20% of global road deaths. Behind those numbers are real people—parents, children, friends, journeys that never ended the way they were meant to.</p>
+
+        <h3>Most Tragedies Start Small</h3>
+        <p>Most tragedies don't begin with recklessness. They begin with a second of lost focus, a familiar road we stopped respecting, speed we thought we could handle, or weather we underestimated. The truth is painful but hopeful: many of these moments are preventable.</p>
+
+        <h3>Reflect and Learn</h3>
+        <p>We're not asking you to relive the fear while driving. We're asking you to pause after the journey. To reflect quietly and ask: Why did that nearly happen? What did I miss? What can I change starting tomorrow? That brief moment of honesty could be the reason you arrive home safely next time.</p>
+
+        <h3>Four Life-Saving Habits</h3>
+        <p>Think about risk every time you drive. Expect the unexpected, especially where you feel comfortable. Remove the word "suddenly" from your driving—nothing should happen suddenly if you've anticipated well. And learn from mistakes without blame.</p>
+      `
+    },
+    {
+      id: 16,
+      category: 'emergency',
+      title: 'Severe Weather Driving: A Motoring Advisory for Zimbabwe',
+      excerpt: 'Heavy rainfall, lightning, and strong winds significantly increase risks for motorists. Here\'s how to stay safe when severe weather hits.',
+      image: '/blog/d12.jpeg',
+      author: 'Safety Department',
+      date: 'January 6, 2026',
+      readTime: '5 min read',
+      featured: false,
+      content: `
+        <h3>Understanding the Risks</h3>
+        <p>Heavy rainfall, lightning, and strong winds significantly increase the risk for motorists on Zimbabwe's roads. Flooded roads and hidden potholes can cause sudden loss of control. Rivers and low-lying bridges can rise without warning. Reduced visibility increases collision risk, especially at night.</p>
+
+        <h3>Essential Safety Measures</h3>
+        <p>Avoid crossing flooded roads or rivers—if you can't see the road, don't risk it. Reduce speed and increase following distance. Switch on headlights in heavy rain, even during the day. Avoid parking under trees, power lines, or unstable structures.</p>
+
+        <h3>Vehicle Preparation</h3>
+        <p>Check tyres, wipers, brakes, and battery before travelling. Ensure all lights are working properly. Delay non-essential trips during storms where possible.</p>
+
+        <h3>The Importance of Membership</h3>
+        <p>Most breakdowns happen in bad weather. And most accidents happen when drivers push their luck. If you must travel, make sure you are not alone on the road. Having roadside assistance membership ensures help is just a call away.</p>
+
+        <h3>Stay Prepared</h3>
+        <p>Don't let severe weather catch you unprepared. Save emergency numbers. Know your route alternatives. And remember: breakdowns don't wait for good weather.</p>
+      `
+    },
+    {
+      id: 17,
+      category: 'guides',
+      title: 'After an Accident in Zimbabwe: What the Law Requires',
+      excerpt: 'In Zimbabwe, a road accident is not just a frightening moment—it\'s a legal responsibility. Here\'s what you need to know.',
+      image: '/blog/d9.jpeg',
+      author: 'Drive Zimbabwe Team',
+      date: 'January 4, 2026',
+      readTime: '7 min read',
+      featured: false,
+      content: `
+        <h3>Your Legal Obligations</h3>
+        <p>In Zimbabwe, a road accident is not just a frightening moment—it is a legal responsibility. Whether it happens on a busy Harare highway or a dust road in Mashonaland, the law is clear: You must stop. You must remain at the scene. You must take reasonable steps to ensure safety.</p>
+
+        <h3>What Zimbabwean Law Requires</h3>
+        <p>Stop immediately and remain at the scene. Assist injured persons and call for help. Switch on hazard lights and warn other road users. Report the accident to the Zimbabwe Republic Police (ZRP). Do not remove vehicles unless instructed or for safety reasons. Do not admit fault at the scene—investigations determine liability.</p>
+
+        <h3>Consequences of Non-Compliance</h3>
+        <p>Failing to comply can result in serious charges, including hit-and-run, fines, or imprisonment. This is not theory—it happens every day on our roads.</p>
+
+        <h3>Zimbabwe's Road Realities</h3>
+        <p>Our roads come with unique challenges: narrow highways with no shoulders, poor lighting at night, livestock crossing unexpectedly, long distances between towns, limited emergency services in rural areas. After an accident or breakdown, standing alone on such roads is not just stressful—it's dangerous.</p>
+
+        <h3>When Police Arrive</h3>
+        <p>ZRP officers will secure the scene, record statements, and issue accident reports. But police do not tow every vehicle. They do not transport families. That responsibility falls on qualified towing and recovery operators. This is why professional roadside assistance membership matters.</p>
+      `
+    },
+    {
+      id: 18,
+      category: 'safety',
+      title: 'Driving Is a Team Activity: Even When It Feels Individual',
+      excerpt: 'Every steering input, every brake press reaches beyond your own vehicle. Understanding why driving is never truly solo.',
+      image: '/blog/d10.jpeg',
+      author: 'Safety Department',
+      date: 'January 2, 2026',
+      readTime: '4 min read',
+      featured: false,
+      content: `
+        <h3>Beyond Your Vehicle</h3>
+        <p>Every steering input. Every brake press. Every moment of hesitation or urgency. Each decision reaches beyond your own vehicle. Driving is not a solo performance. It only feels that way because you are seated alone.</p>
+
+        <h3>How Your Choices Affect Others</h3>
+        <p>Your lane choice affects the flow of traffic behind you. Your speed determines whether a pedestrian crosses safely. Your spacing decides if a cyclist feels protected or exposed. Your awareness allows emergency vehicles to pass—or forces them to stop.</p>
+
+        <h3>No Move Exists in Isolation</h3>
+        <p>No move exists in isolation. No decision ends with your own car. The safest motorists understand this. They read the road as a shared system, not a personal challenge.</p>
+
+        <h3>Responsibility Beyond Good Habits</h3>
+        <p>Responsible driving does not stop at good habits—it includes being prepared for when things go wrong. Breakdowns, punctures, and unexpected incidents affect everyone on the road. How quickly and professionally they are handled matters.</p>
+
+        <h3>Fitting In Without Friction</h3>
+        <p>Driving well is not about asserting yourself. It is about fitting in without friction and being backed when you need help. Whether you acknowledge it or not, you are always part of the team. Be responsible. Be prepared. Be covered.</p>
+      `
+    },
+    {
+      id: 19,
+      category: 'safety',
+      title: 'Eyes Open, Mind Elsewhere: Understanding Cognitive Distraction',
+      excerpt: 'You can be looking directly at the road and still not truly see it. Here\'s how to combat the invisible danger of cognitive distraction.',
+      image: '/blog/d11.jpeg',
+      author: 'Safety Department',
+      date: 'December 30, 2025',
+      readTime: '5 min read',
+      featured: false,
+      content: `
+        <h3>The Invisible Distraction</h3>
+        <p>Distraction is not always visible. You can be looking directly at the road and still not truly see it. Cognitive distraction happens when the eyes are present, but the mind is elsewhere—thinking about work, replaying a conversation, planning the next stop, feeling stressed or rushed.</p>
+
+        <h3>The Illusion of Attention</h3>
+        <p>From the outside, everything looks fine. Hands on the wheel. Eyes facing forward. But the information isn't being processed. This is why drivers later say: "I never saw them." "I didn't realise how fast I was going." "It came out of nowhere." The danger was visible. The awareness was not.</p>
+
+        <h3>Looking vs. Seeing vs. Understanding</h3>
+        <p>Good road craft isn't just about where you look—it's about what your brain does with what you see. Reading the road, scanning early, noticing patterns, movement, and change. These skills fail the moment the mind drifts. Looking is not the same as seeing. Seeing is not the same as understanding.</p>
+
+        <h3>Reducing Invisible Distraction</h3>
+        <p>Actively scan mirrors and junctions instead of staring ahead. Quietly narrate hazards in your mind to stay mentally engaged. Increase following distance to give your brain time to process. Reduce in-car conversation when conditions become complex. If your mind feels busy, slow down slightly until full awareness returns.</p>
+
+        <h3>Attention Is the Skill</h3>
+        <p>Eyes open is not enough. Attention is the skill that keeps you alive. And because even the most attentive drivers can face the unexpected, having reliable backup matters. Drive prepared. Drive aware. Drive with confidence.</p>
+      `
+    },
+    {
+      id: 20,
+      category: 'guides',
+      title: 'A Note for New Drivers and Parents',
+      excerpt: 'Passing your driving test is the beginning, not the finish line. Here\'s essential guidance for new drivers and the parents who support them.',
+      image: '/6.jpg',
+      author: 'Drive Zimbabwe Team',
+      date: 'December 26, 2025',
+      readTime: '5 min read',
+      featured: false,
+      content: `
+        <h3>The Beginning of a Journey</h3>
+        <p>Passing your driving test is a proud moment. It's an achievement worth celebrating. But it's not the finish line—it's the beginning of a new journey: learning how to drive independently, safely, and with confidence.</p>
+
+        <h3>Where Real Habits Form</h3>
+        <p>The months after passing are where real habits are formed. This is when patience matters most, when experience is built quietly—kilometer by kilometer, mistake by lesson.</p>
+
+        <h3>For New Drivers</h3>
+        <p>Fewer passengers can make a world of difference. Friends bring laughter, music, movement, and noise—all wonderful things, but powerful distractions when confidence is still growing. The road deserves your full attention. Take your time. Keep distractions low. Learn at your own pace.</p>
+
+        <h3>For Parents</h3>
+        <p>The first car matters more than many realise. A smaller, lower-powered vehicle gives room to learn without unnecessary pressure. It's not about limiting freedom—it's about giving your child the safest chance to grow into a capable, responsible driver. Stay involved. Set gentle boundaries. Support every early kilometer.</p>
+
+        <h3>Building Experience Gradually</h3>
+        <p>Confidence will come. Skill will follow. But they don't arrive at the same time. Night driving, highways, bad weather, and unfamiliar roads all take practice. There's no rush to master everything at once. The goal isn't just passing a test—it's coming home safely every single time.</p>
+      `
+    },
+    {
+      id: 21,
+      category: 'safety',
+      title: 'Drink Driving: The Rules Haven\'t Changed',
+      excerpt: 'Whether you passed your test last week or twenty years ago, the rules of the road have not changed. Here\'s what every driver needs to remember about alcohol.',
+      image: '/blog/d13.jpeg',
+      author: 'Safety Department',
+      date: 'December 24, 2025',
+      readTime: '5 min read',
+      featured: false,
+      content: `
+        <h3>Experience Doesn't Change Biology</h3>
+        <p>Whether you passed your driving test last week or twenty years ago, the rules of the road have not changed. Experience does not make alcohol safer. Confidence does not help your body process it faster. And feeling "fine" does not mean you are fit or legal to drive.</p>
+
+        <h3>How Alcohol Affects Driving</h3>
+        <p>Alcohol affects judgement, reaction time, and decision-making long before you feel drunk. That is why so many people get caught out—not because they are reckless, but because they believe they are being sensible.</p>
+
+        <h3>The Morning After Risk</h3>
+        <p>Festive seasons and holidays add another layer of risk: late nights, fatigue, heavier traffic, and the dangerous assumption that the morning after is safe. Often, it is not. Alcohol can remain in your system for hours. You can wake up over the limit without realising it. You can feel clear-headed and still be unsafe to drive.</p>
+
+        <h3>This Applies to Everyone</h3>
+        <p>This applies to learners, new drivers, experienced motorists, and professional drivers alike. The safest decision is also the simplest one: If you are drinking, you are not driving.</p>
+
+        <h3>Plan Your Journey Home</h3>
+        <p>Plan your journey home before the first drink. A taxi. A lift. A spare bed. Public transport. Let the celebration end well. Let the next day begin safely. Arrive home alive. Arrive home supported.</p>
       `
     },
   ];
