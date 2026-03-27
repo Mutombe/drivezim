@@ -29,6 +29,46 @@ const BlogPage = () => {
 
   const articles = [
     {
+      id: 22,
+      category: 'safety',
+      title: 'The Word "Accident" Minimises What Really Happens on Our Roads',
+      excerpt: 'The word "accident" suggests something random and unavoidable. But most serious incidents on our roads are collision-avoidable events caused by human decisions.',
+      image: '/blog/new.jpeg',
+      author: 'Drive Zimbabwe Team',
+      date: 'March 27, 2026',
+      readTime: '8 min read',
+      featured: true,
+      content: `
+        <h3>Why the Word "Accident" Is a Problem</h3>
+        <p>One word I feel very strongly about in road safety discussions is "accident." It's used constantly. But here's the problem: it suggests something random, something unavoidable, something no one could have prevented.</p>
+        <p>The truth? Most serious incidents on our roads are not accidents. They are collision-avoidable events caused by human decisions: speed, distraction, impatience, alcohol or drugs, fatigue, and poor judgment.</p>
+
+        <h3>Every Road User Shares the Risk</h3>
+        <p>Whether you're a pedestrian, cyclist, motorcyclist, Gonyeti driver, Bus driver, or someone moving animals on the road, the outcome is almost always the result of a chain of choices and circumstances. Driving isn't just a practical skill; it's physics in motion.</p>
+        <p>A vehicle weighing over a tonne is governed by forces like momentum, grip, and stopping distance. Tyres, brakes, steering, road conditions, and visibility all place limits on what that vehicle can safely do. Understanding these limitations is far more important than knowing how fast your vehicle can go.</p>
+
+        <h3>The Person Behind the Wheel</h3>
+        <p>Driving is also about the person behind the wheel: your mood, your concentration, your health, your fatigue, and any substances or medications in your system. All these influence how safely you control your vehicle. Driving isn't just sitting behind a wheel and knowing where the pedals are. Driving is a responsibility.</p>
+
+        <h3>We Take This Responsibility Seriously</h3>
+        <p>At DRIVE ZIMBABWE ROADSIDE ASSISTANCE, we take this responsibility seriously. We are here to protect lives, save vehicles, and keep Zimbabwe's roads moving safely.</p>
+        <p>Every time someone sees a broken-down car or faces a problem on the road, they should think of us first. We are not just a roadside assistance service; we are your safety net, your lifeline, your partner on the road. A car breakdown doesn't give notice. It doesn't care if it's late at night. It doesn't care if you're with your children. It doesn't care if you're rushing to work.</p>
+        <p>It just happens. And in that moment, the most important question becomes: <strong>Who do I call?</strong></p>
+
+        <h3>We Have Been There</h3>
+        <p>At Drive Zimbabwe Roadside Assistance, we have stood in the rain with stranded motorists. We have responded to midnight calls. We have supported families, taxi drivers, kombi operators, business owners, and individuals who simply needed someone dependable to show up.</p>
+
+        <h3>Membership Is Peace of Mind</h3>
+        <p>That's why our membership is not a luxury. It's peace of mind. It's protection. It's security for you and your loved ones. For a small annual fee, you avoid roadside panic. You avoid inflated towing charges. You avoid feeling helpless.</p>
+        <p>You make one call, and we come. Whether you drive a private vehicle, mushikashika, taxi, kombi, or manage a fleet, this membership is for you.</p>
+        <p>Don't wait until you are already stranded. Join while everything is still working. You can now join easily online. Secure your peace of mind today.</p>
+
+        <h3>Drive Safely Today</h3>
+        <p>Drive Zimbabwe Roadside Assistance — Reliable. Professional. Always There. Drive safely today. And if you ever need us, know we are just a call away.</p>
+        <p>Share your thoughts and let's make Zimbabwe's roads safer together.</p>
+      `
+    },
+    {
       id: 1,
       category: 'emergency',
       title: 'What to Do When You\'re in a Car Accident: A Complete Guide',
@@ -37,7 +77,7 @@ const BlogPage = () => {
       author: 'Drive Zimbabwe Team',
       date: 'January 15, 2026',
       readTime: '8 min read',
-      featured: true,
+      featured: false,
       content: `
         <h3>Stay Calm and Assess the Situation</h3>
         <p>The moments after an accident can be overwhelming, but staying calm is crucial. Take a deep breath and check yourself and your passengers for injuries. If anyone is seriously injured, call emergency services immediately at 999 or 112.</p>
